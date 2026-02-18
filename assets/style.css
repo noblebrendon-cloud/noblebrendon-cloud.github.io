@@ -1,0 +1,90 @@
+:root{
+  --bg:#0b0f14;
+  --card:#101823;
+  --text:#e6edf3;
+  --muted:#9fb0c0;
+  --line:#1f2a37;
+  --btn:#e6edf3;
+  --btnText:#0b0f14;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 800px at 20% 0%, #122033, var(--bg));
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.wrap{max-width:980px;margin:0 auto;padding:28px 18px}
+.top{display:flex;gap:18px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+h1{margin:0;font-size:32px;letter-spacing:.2px}
+.sub{margin:8px 0 0;color:var(--muted)}
+.nav{display:flex;gap:14px}
+.nav a{color:var(--muted);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+.nav a:hover{color:var(--text);border-bottom-color:var(--text)}
+
+.hero{margin-top:26px;padding:22px;border:1px solid var(--line);border-radius:16px;background:rgba(16,24,35,.75)}
+.lead{margin:0;font-size:18px;color:var(--text)}
+.cta{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+
+.btn{
+  display:inline-block;
+  background:var(--btn);
+  color:var(--btnText);
+  text-decoration:none;
+  padding:10px 14px;
+  border-radius:12px;
+  font-weight:600;
+}
+.btn.ghost{
+  background:transparent;
+  color:var(--text);
+  border:1px solid var(--line);
+}
+.btn.ghost:hover{border-color:var(--text)}
+
+.card{
+  margin-top:18px;
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:rgba(16,24,35,.72);
+}
+h2{margin:0 0 8px;font-size:20px}
+h3{margin:0 0 6px;font-size:16px}
+.muted{color:var(--muted);margin:0 0 10px}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap:12px;
+  margin-top:12px;
+}
+.item{
+  padding:14px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:rgba(11,15,20,.55);
+}
+.item p{margin:0 0 10px;color:var(--muted)}
+.links a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--muted)}
+.links a:hover{border-bottom-color:var(--text)}
+
+.list{margin:10px 0 0;padding-left:18px}
+.list li{margin:8px 0;color:var(--muted)}
+.tag{
+  display:inline-block;
+  font-size:12px;
+  padding:2px 8px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  color:var(--text);
+  margin-right:8px;
+}
+
+.contact{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:12px 0 0}
+.hint{color:var(--muted);font-size:13px}
+
+.foot{padding-top:10px}

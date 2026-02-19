@@ -1,29 +1,89 @@
 ﻿<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>brendonrcoleman.com</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Noble Home Essentials</title>
+  <meta name="description" content="Noble Home Essentials — practical home support and services." />
+  <link rel="stylesheet" href="/assets/css/site.css" />
+  <style>
+    /* small helper styles for logo + layout */
+    .brand-logo{width:44px;height:44px;border-radius:10px;border:1px solid var(--line);object-fit:cover}
+    .nav-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .muted{color:var(--steel)}
+  </style>
 </head>
 <body>
-  <main>
-    <h1>brendonrcoleman.com</h1>
-    <p>Deterministic static multi-endpoint architecture.</p>
+  <div class="nav">
+    <div class="brand">
+      <img class="brand-logo" src="/assets/img/logo.png" alt="Noble Home Essentials logo" />
+      <div class="brand-name">Noble Home Essentials</div>
+    </div>
 
-    <h2>Routes</h2>
-    <ul>
-      <li><a href="/services/">/services/</a></li>
-      <li><a href="/whitepapers/">/whitepapers/</a></li>
-      <li><a href="/noble/">/noble/</a></li>
-      <li><a href="/mini-sites/">/mini-sites/</a></li>
-      <li><a href="/templates/">/templates/</a></li>
-    </ul>
+    <div class="nav-links">
+      <a class="btn ghost" href="/services/handyman/">Handyman</a>
+      <a class="btn ghost" href="/services/scooters/">Scooters</a>
+      <a class="btn ghost" href="/services/diagnostics/">Diagnostics</a>
+      <a class="btn" href="/whitepapers/">Whitepapers</a>
+    </div>
+  </div>
 
-    <h2>Status</h2>
-    <ul>
-      <li>Root: routed hub</li>
-      <li>System: folder-based routing, no build, no runtime deps</li>
-    </ul>
+  <main class="container">
+    <section class="hero">
+      <h1>Home essentials. Done clean.</h1>
+      <p class="muted">
+        This site is a routed static skeleton. Each section is a folder with an <code>index.html</code>.
+        Routing first. Content expands after.
+      </p>
+    </section>
+
+    <section class="grid" aria-label="Primary routes">
+      <div class="card">
+        <h2>Handyman</h2>
+        <p>Repairs, installs, small fixes, and practical maintenance.</p>
+        <a href="/services/handyman/">Open</a>
+      </div>
+
+      <div class="card">
+        <h2>Scooters</h2>
+        <p>Basic repair + diagnostics notes for small equipment.</p>
+        <a href="/services/scooters/">Open</a>
+      </div>
+
+      <div class="card">
+        <h2>Diagnostics</h2>
+        <p>Structured troubleshooting, checklists, and simple assessments.</p>
+        <a href="/services/diagnostics/">Open</a>
+      </div>
+
+      <div class="card">
+        <h2>Whitepapers</h2>
+        <p>Short writeups, methods, and operational notes.</p>
+        <a href="/whitepapers/">Open</a>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Services</h3>
+        <a href="/services/handyman/">Handyman</a><br/>
+        <a href="/services/scooters/">Scooters</a><br/>
+        <a href="/services/diagnostics/">Diagnostics</a>
+      </div>
+      <div class="footer-col">
+        <h3>Writing</h3>
+        <a href="/whitepapers/">Whitepapers</a>
+      </div>
+      <div class="footer-col">
+        <h3>Site</h3>
+        <a href="/">Home</a>
+      </div>
+    </div>
+    <div class="container small">© <span id="y"></span> Noble Home Essentials</div>
+  </footer>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>

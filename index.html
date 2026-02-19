@@ -6,6 +6,13 @@
   <title>Brendon R. Coleman</title>
   <meta name="description" content="Systems + governance under pressure. Deterministic publishing. Runtime stability." />
   <link rel="stylesheet" href="assets/style.css" />
+<style>
+/* LINKS_CSS_START */
+.link-list { list-style: none; padding-left: 0; margin: 0; display: grid; gap: .6rem; }
+.link-list a { text-decoration: underline; text-underline-offset: 3px; }
+.muted { opacity: .8; }
+/* LINKS_CSS_END */
+</style>
 </head>
 <body>
   <header class="wrap">
@@ -104,11 +111,24 @@
         © <span id="y"></span> Brendon R. Coleman • Built as a static projection of a deterministic system.
       </p>
     </footer>
-  </main>
+  <!-- LINKS_SECTION_START -->
+<section id="links" class="section">
+  <h2>Links</h2>
+  <p class="muted">Music, writing, and contact endpoints.</p>
+  <div class="card">
+    <ul class="link-list">
+      <li><a href="https://github.com/noblebrendon-cloud" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="mailto:hello@brendonrcoleman.com" target="_blank" rel="noopener noreferrer">Email</a></li>
+    </ul>
+  </div>
+</section>
+<!-- LINKS_SECTION_END -->
+</main>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
+
 

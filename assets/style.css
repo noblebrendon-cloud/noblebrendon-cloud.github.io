@@ -1,4 +1,4 @@
-:root{
+﻿:root{
   --bg:#0b0f14;
   --card:#101823;
   --text:#e6edf3;
@@ -88,3 +88,14 @@ h3{margin:0 0 6px;font-size:16px}
 .hint{color:var(--muted);font-size:13px}
 
 .foot{padding-top:10px}
+/* --- Global footer sitemap (skeleton) --- */
+.site-footer{margin-top:64px;padding:28px 0;border-top:1px solid rgba(255,255,255,.10)}
+.footer-inner{max-width:1100px;margin:0 auto;padding:0 18px;display:grid;grid-template-columns:1.5fr 1fr;gap:22px}
+.footer-title{font-weight:600;letter-spacing:.2px;margin-bottom:10px;opacity:.95}
+.footer-links{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 14px}
+.footer-links a{text-decoration:none}
+.footer-text{margin:6px 0}
+.footer-note{margin-top:10px;opacity:.75;font-size:.95rem}
+.footer-muted{opacity:.75}
+@media (max-width:720px){.footer-inner{grid-template-columns:1fr}}
+

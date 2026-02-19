@@ -1,0 +1,74 @@
+warning: in the working copy of 'assets/style.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'index.html', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/assets/style.css b/assets/style.css[m
+[1mindex 2bcbd8f..3f9f780 100644[m
+[1m--- a/assets/style.css[m
+[1m+++ b/assets/style.css[m
+[36m@@ -1,4 +1,4 @@[m
+[31m-:root{[m
+[32m+[m[32m﻿:root{[m
+   --bg:#0b0f14;[m
+   --card:#101823;[m
+   --text:#e6edf3;[m
+[36m@@ -88,3 +88,14 @@[m [mh3{margin:0 0 6px;font-size:16px}[m
+ .hint{color:var(--muted);font-size:13px}[m
+ [m
+ .foot{padding-top:10px}[m
+[32m+[m[32m/* --- Global footer sitemap (skeleton) --- */[m
+[32m+[m[32m.site-footer{margin-top:64px;padding:28px 0;border-top:1px solid rgba(255,255,255,.10)}[m
+[32m+[m[32m.footer-inner{max-width:1100px;margin:0 auto;padding:0 18px;display:grid;grid-template-columns:1.5fr 1fr;gap:22px}[m
+[32m+[m[32m.footer-title{font-weight:600;letter-spacing:.2px;margin-bottom:10px;opacity:.95}[m
+[32m+[m[32m.footer-links{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 14px}[m
+[32m+[m[32m.footer-links a{text-decoration:none}[m
+[32m+[m[32m.footer-text{margin:6px 0}[m
+[32m+[m[32m.footer-note{margin-top:10px;opacity:.75;font-size:.95rem}[m
+[32m+[m[32m.footer-muted{opacity:.75}[m
+[32m+[m[32m@media (max-width:720px){.footer-inner{grid-template-columns:1fr}}[m
+[41m+[m
+[1mdiff --git a/index.html b/index.html[m
+[1mindex 1460270..20c7762 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -139,6 +139,37 @@[m
+   <script>[m
+     document.getElementById("y").textContent = new Date().getFullYear();[m
+   </script>[m
+[32m+[m[32m<!-- GLOBAL_FOOTER_START -->[m
+[32m+[m[32m<footer class="site-footer" role="contentinfo">[m
+[32m+[m[32m  <div class="footer-inner" id="other-services">[m
+[32m+[m[32m    <div class="footer-col">[m
+[32m+[m[32m      <div class="footer-title">Other services / sitemap</div>[m
+[32m+[m[32m      <ul class="footer-links">[m
+[32m+[m[32m      <li><a href="/">Home</a></li>[m
+[32m+[m[32m      <li><a href="https://calendly.com/noblebrendon150/90min">Operational Stability Diagnostic</a></li>[m
+[32m+[m[32m      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSf3n3Nfj37nPtyjzoblFCIhgsAHpjaxMW4hLZOf2LeF_wU8vA/viewform?usp=header">Intake Form</a></li>[m
+[32m+[m[32m      <li><a href="#other-services">Other Services (coming soon)</a></li>[m
+[32m+[m[32m      <li><a href="#contact">Contact</a></li>[m
+[32m+[m[32m      </ul>[m
+[32m+[m[32m      <div class="footer-note">More sections will appear here as the site expands (whitepapers, mini-sites, etc.).</div>[m
+[32m+[m[32m    </div>[m
+[32m+[m
+[32m+[m[32m    <div class="footer-col" id="contact">[m
+[32m+[m[32m      <div class="footer-title">Contact</div>[m
+[32m+[m[32m      <div class="footer-text">[m
+[32m+[m[32m        <a href="mailto:hello@brendonrcoleman.com">hello@brendonrcoleman.com</a>[m
+[32m+[m[32m      </div>[m
+[32m+[m[32m      <div class="footer-text footer-muted">[m
+[32m+[m[32m        © <span id="y"></span> Brendon R. Coleman[m
+[32m+[m[32m      </div>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m  </div>[m
+[32m+[m
+[32m+[m[32m  <script>[m
+[32m+[m[32m    (function(){ var y=document.getElementById('y'); if(y){ y.textContent = new Date().getFullYear(); } })();[m
+[32m+[m[32m  </script>[m
+[32m+[m[32m</footer>[m
+[32m+[m[32m<!-- GLOBAL_FOOTER_END -->[m
+ </body>[m
+ </html>[m
+ [m
+[36m@@ -149,3 +180,4 @@[m
+ [m
+ [m
+ [m
+[41m+[m

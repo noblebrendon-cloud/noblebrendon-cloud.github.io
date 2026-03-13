@@ -8,30 +8,26 @@
   <link rel="stylesheet" href="/assets/style.css"/>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <div class="brand">
-        <a href="/">Brendon R. Coleman</a>
-        <span class="tag">runtime governance · deterministic publishing</span>
-      </div>
-      <nav class="nav">
-        <a href="/projects/">Projects</a>
-        <a href="/writing/">Writing</a>
-        <a href="/feed/">Feed</a>
-      </nav>
+  <header class="site-header site-shell">
+    <div class="brand">
+      <a href="/">Brendon R. Coleman</a>
+      <span class="tag">runtime governance · deterministic publishing</span>
     </div>
+    <nav class="nav">
+      <a href="/projects/">Projects</a>
+      <a href="/writing/">Writing</a>
+      <a href="/feed/">Feed</a>
+    </nav>
   </header>
 
-  <main class="container">
+  <main class="site-shell">
     {{content}}
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-row">
-        <span>© {{year}} Brendan R. Coleman</span>
-        <span><a href="https://github.com/noblebrendon-cloud">GitHub</a></span>
-      </div>
+  <footer class="site-footer site-shell">
+    <div class="footer-row">
+      <span>© {{year}} Brendan R. Coleman</span>
+      <span><a href="https://github.com/noblebrendon-cloud">GitHub</a></span>
     </div>
   </footer>
 </body>

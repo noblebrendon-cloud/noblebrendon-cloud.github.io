@@ -1,89 +1,243 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Noble Home Essentials</title>
-  <meta name="description" content="Noble Home Essentials — practical home support and services." />
-  <link rel="stylesheet" href="/assets/css/site.css" />
-  <style>
-    /* small helper styles for logo + layout */
-    .brand-logo{width:44px;height:44px;border-radius:10px;border:1px solid var(--line);object-fit:cover}
-    .nav-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-    .muted{color:var(--steel)}
-  </style>
+  <title>Brendon R. Coleman</title>
+  <meta name="description" content="Brendon Coleman — runtime governance, deterministic publishing, operational stability." />
+  <link rel="stylesheet" href="/assets/style.css" />
 </head>
 <body>
-  <div class="nav">
-    <div class="brand">
-      <img class="brand-logo" src="/assets/img/logo.png" alt="Noble Home Essentials logo" />
-      <div class="brand-name">Noble Home Essentials</div>
-    </div>
+  <div class="site-shell">
+    
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="brand">
+        <a href="/">Brendon R. Coleman</a>
+        <span class="tag">runtime governance · deterministic publishing</span>
+      </div>
+      <nav class="nav">
+        <a href="/services/">Services</a>
+        <a href="/whitepapers/">Whitepapers</a>
+      </nav>
+    </header>
 
-    <div class="nav-links">
-      <a class="btn ghost" href="/services/handyman/">Handyman</a>
-      <a class="btn ghost" href="/services/scooters/">Scooters</a>
-      <a class="btn ghost" href="/services/diagnostics/">Diagnostics</a>
-      <a class="btn" href="/whitepapers/">Whitepapers</a>
-    </div>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <!-- Optional Avatar Hook -->
+        <img class="hero-avatar" src="" alt="Avatar" />
+        
+        <h1 class="hero-title">Operational stability.<br>Systems cleanly built.</h1>
+        <p class="hero-subtitle">
+          I diagnose structural bottlenecks, stabilize infrastructure operations, and build runtime environments that resist degradation over time.
+        </p>
+        
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:noblebrendon150@gmail.com?subject=Diagnostic%20Review">Book Diagnostic Review</a>
+          <a class="btn btn-secondary" href="/mini-sites/">View Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK ROUTES -->
+    <section class="section" aria-label="Quick Navigation">
+      <div class="route-pills">
+        <a href="/services/" class="route-pill">All Services</a>
+        <a href="/whitepapers/" class="route-pill">Whitepapers</a>
+        <a href="/noble/" class="route-pill">Noble Hub</a>
+        <a href="/mini-sites/" class="route-pill">Mini-Sites / Demos</a>
+      </div>
+    </section>
+    <!-- CURRENT SIGNAL -->
+    <section class="section">
+      <header class="section-header">
+        <span class="section-kicker">Latest</span>
+        <h2 class="section-title">Current Signal</h2>
+      </header>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-content">
+            <h3 class="card-title" data-latest="project-title">Latest Project</h3>
+            <p class="card-text" data-latest="project-desc">
+              Loading latest project...
+            </p>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-secondary" data-latest="project-link" href="/services/">
+              Open Project
+            </a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-content">
+            <h3 class="card-title" data-latest="whitepaper-title">Latest Whitepaper</h3>
+            <p class="card-text" data-latest="whitepaper-desc">
+              Loading latest whitepaper...
+            </p>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-secondary" data-latest="whitepaper-link" href="/whitepapers/">
+              Open Whitepaper
+            </a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-content">
+            <h3 class="card-title" data-latest="service-title">Latest Service</h3>
+            <p class="card-text" data-latest="service-desc">
+              Loading latest service...
+            </p>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" data-latest="service-link" href="/services/diagnostic/">
+              Open Service
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- WHAT I DO -->
+    <section class="section">
+      <header class="section-header">
+        <span class="section-kicker">Core Value</span>
+        <h2 class="section-title">What I Do</h2>
+      </header>
+      <div class="card-grid">
+        
+        <div class="card">
+          <!-- Optional Thumbnail Hook -->
+          <img class="card-thumbnail" src="" alt="" />
+          <div class="card-content">
+            <h3 class="card-title">Diagnostics & Review</h3>
+            <p class="card-text">Structured troubleshooting, architecture checklists, and clear pathways to stable system operation.</p>
+          </div>
+          <div class="card-actions">
+            <a href="/services/diagnostics/" class="btn btn-secondary">Learn more</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <h3 class="card-title">Practical Maintenance</h3>
+            <p class="card-text">Hands-on, clean execution for home and small equipment setups. Routine support and optimization.</p>
+          </div>
+          <div class="card-actions">
+            <a href="/services/handyman/" class="btn btn-secondary">Learn more</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <h3 class="card-title">Project Engineering</h3>
+            <p class="card-text">End-to-end setups prioritizing reliability, fast recovery, and low maintenance overhead.</p>
+          </div>
+          <div class="card-actions">
+            <a href="/services/" class="btn btn-secondary">View all services</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SELECTED INITIATIVES / PROJECTS -->
+    <section class="section">
+      <header class="section-header">
+        <span class="section-kicker">Showcase</span>
+        <h2 class="section-title">Selected Initiatives</h2>
+      </header>
+      <div class="card-grid">
+        
+        <div class="card">
+          <div class="card-content">
+            <h3 class="card-title">Hardware Repair Protocols</h3>
+            <p class="card-text">Diagnostic breakdowns and procedural fixes for consumer electric scooters.</p>
+          </div>
+          <div class="card-actions">
+            <a href="/services/scooters/" class="btn btn-secondary">Read notes</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <h3 class="card-title">Noble Home Essentials</h3>
+            <p class="card-text">A dedicated site hub for practical repairs, handyman services, and field diagnostics.</p>
+          </div>
+          <div class="card-actions">
+            <a href="/noble/" class="btn btn-secondary">Visit Noble</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WHITEPAPERS / PUBLIC ARTIFACTS -->
+    <section class="section">
+      <header class="section-header">
+        <span class="section-kicker">Writing</span>
+        <h2 class="section-title">Public Artifacts</h2>
+        <p class="muted">Short writeups, methods, and operational notes focusing on system reliability.</p>
+      </header>
+      <div class="artifact-list">
+        
+        <a href="/whitepapers/" class="artifact-link">
+          <div class="artifact-item">
+            <div class="artifact-meta">
+              <span class="artifact-title">The Value of Deterministic Publishing</span>
+              <span class="artifact-desc">An overview on maintaining predictable state in deployed systems.</span>
+            </div>
+            <div class="artifact-action muted">Read &rarr;</div>
+          </div>
+        </a>
+
+        <a href="/whitepapers/" class="artifact-link">
+          <div class="artifact-item">
+            <div class="artifact-meta">
+              <span class="artifact-title">On Runtime Governance</span>
+              <span class="artifact-desc">Approaches to observing and controlling bounded execution loops.</span>
+            </div>
+            <div class="artifact-action muted">Read &rarr;</div>
+          </div>
+        </a>
+
+      </div>
+      <div style="margin-top: 24px;">
+        <a href="/whitepapers/" class="btn btn-secondary">View all whitepapers</a>
+      </div>
+    </section>
+
+    <!-- CONTACT / ENTRY -->
+    <section class="section" id="contact">
+      <div class="contact-box">
+        <h2 class="section-title">Ready to align your systems?</h2>
+        <p class="muted">Get in touch to establish stable operations or schedule a diagnostic review.</p>
+        <div class="contact-actions">
+          <a href="mailto:noblebrendon150@gmail.com" class="btn btn-primary">Book a review</a>
+          <a href="mailto:noblebrendon150@gmail.com" class="btn btn-secondary">General inquiry</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-nav">
+        <a href="/">Home</a>
+        <a href="/services/">Services</a>
+        <a href="/whitepapers/">Whitepapers</a>
+        <a href="/noble/">Noble</a>
+        <a href="/mini-sites/">Mini-Sites</a>
+      </div>
+      <div class="footer-meta">
+        © <span id="y"></span> Brendon R. Coleman. All rights reserved.
+      </div>
+    </footer>
+
   </div>
 
-  <main class="container">
-    <section class="hero">
-      <h1>Home essentials. Done clean.</h1>
-      <p class="muted">
-        This site is a routed static skeleton. Each section is a folder with an <code>index.html</code>.
-        Routing first. Content expands after.
-      </p>
-    </section>
-
-    <section class="grid" aria-label="Primary routes">
-      <div class="card">
-        <h2>Handyman</h2>
-        <p>Repairs, installs, small fixes, and practical maintenance.</p>
-        <a href="/services/handyman/">Open</a>
-      </div>
-
-      <div class="card">
-        <h2>Scooters</h2>
-        <p>Basic repair + diagnostics notes for small equipment.</p>
-        <a href="/services/scooters/">Open</a>
-      </div>
-
-      <div class="card">
-        <h2>Diagnostics</h2>
-        <p>Structured troubleshooting, checklists, and simple assessments.</p>
-        <a href="/services/diagnostics/">Open</a>
-      </div>
-
-      <div class="card">
-        <h2>Whitepapers</h2>
-        <p>Short writeups, methods, and operational notes.</p>
-        <a href="/whitepapers/">Open</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-grid">
-      <div class="footer-col">
-        <h3>Services</h3>
-        <a href="/services/handyman/">Handyman</a><br/>
-        <a href="/services/scooters/">Scooters</a><br/>
-        <a href="/services/diagnostics/">Diagnostics</a>
-      </div>
-      <div class="footer-col">
-        <h3>Writing</h3>
-        <a href="/whitepapers/">Whitepapers</a>
-      </div>
-      <div class="footer-col">
-        <h3>Site</h3>
-        <a href="/">Home</a>
-      </div>
-    </div>
-    <div class="container small">© <span id="y"></span> Noble Home Essentials</div>
-  </footer>
-
+  <script src="/assets/js/latest-router.js"></script>
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>

@@ -1,0 +1,17 @@
+{
+  "latest_project": {
+    "title": "Scooter Diagnostics",
+    "url": "/services/scooters/",
+    "description": "Field diagnostics, repair direction, and practical service routing."
+  },
+  "latest_whitepaper": {
+    "title": "Operational Stability Brief",
+    "url": "/whitepapers/",
+    "description": "Public-facing architecture and operational thinking artifacts."
+  },
+  "latest_service": {
+    "title": "AI Stability Diagnostic",
+    "url": "/services/diagnostic/",
+    "description": "Operational friction review for AI adoption and structural stability."
+  }
+}

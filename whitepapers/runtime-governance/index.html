@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>On Runtime Governance | Brendon R. Coleman</title>
+  <meta name="description" content="A short artifact on observing bounded systems, reducing drift, and governing runtime behavior with practical constraints." />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="brand">
+        <a href="/">Brendon R. Coleman</a>
+        <span class="tag">artifact detail</span>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="/whitepapers/">Whitepapers</a>
+        <a href="/services/">Services</a>
+        <a href="/noble/">Noble</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">On Runtime Governance</h1>
+          <p class="hero-subtitle">
+            A short working artifact about watching bounded systems carefully, making fewer assumptions, and keeping control loops understandable over time.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="/whitepapers/">Back to whitepapers</a>
+            <a class="btn btn-secondary" href="mailto:noblebrendon150@gmail.com?subject=Runtime%20Governance%20Artifact">Comment on this artifact</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <header class="section-header">
+          <span class="section-kicker">About</span>
+          <h2 class="section-title">What This Artifact Covers</h2>
+        </header>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-content">
+              <h3 class="card-title">Bounded Observation</h3>
+              <p class="card-text">Why stable systems need clear limits, visible state, and fewer hidden execution paths that only show up after something slips.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-content">
+              <h3 class="card-title">Control Over Drift</h3>
+              <p class="card-text">How runtime governance helps keep environments from degrading through unchecked loops, unclear ownership, or silent changes.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="contact-box">
+          <h2 class="section-title">Status</h2>
+          <p class="muted">This is an initial public draft. It establishes the topic and direction now, with room for a deeper version later.</p>
+          <div class="contact-actions">
+            <a href="/whitepapers/" class="btn btn-primary">Return to hub</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-nav">
+        <a href="/">Home</a>
+        <a href="/whitepapers/">Whitepapers</a>
+        <a href="/services/">Services</a>
+      </div>
+      <div class="footer-meta">&copy; <span id="y"></span> Brendon R. Coleman</div>
+    </footer>
+  </div>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,20 +1,113 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Services | Brendon R. Coleman</title>
-  <link rel="stylesheet" href="/assets/style.css">
+  <meta name="description" content="Service routes for diagnostic review, consulting, field work, scooters, and handyman support." />
+  <link rel="stylesheet" href="/assets/style.css" />
 </head>
 <body>
-  <main class="site-shell">
-    <header class="section-header">
-      <h1 class="section-title">All Services</h1>
-      <p class="muted">This section is currently under construction.</p>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="brand">
+        <a href="/">Brendon R. Coleman</a>
+        <span class="tag">service routes</span>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/whitepapers/">Whitepapers</a>
+        <a href="/noble/">Noble</a>
+      </nav>
     </header>
-    <div style="margin-top: 32px;">
-      <a href="/" class="btn btn-secondary">&larr; Back to main site</a>
-    </div>
-  </main>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">Services</h1>
+          <p class="hero-subtitle">
+            Practical service entry points for diagnostics, consulting, field work, and hands-on repair support.
+            Each route stays lightweight and fully static.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="/services/diagnostic/">Open diagnostic review</a>
+            <a class="btn btn-secondary" href="mailto:noblebrendon150@gmail.com?subject=Service%20Inquiry">General inquiry</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <header class="section-header">
+          <span class="section-kicker">Active Routes</span>
+          <h2 class="section-title">Current Service Surfaces</h2>
+          <p class="muted">These pages are now real route hubs, even where the underlying service details are still being filled in.</p>
+        </header>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-content">
+              <h3 class="card-title">Diagnostic Review</h3>
+              <p class="card-text">Structured review for bottlenecks, operational friction, and recovery planning.</p>
+            </div>
+            <div class="card-actions">
+              <a href="/services/diagnostic/" class="btn btn-primary">Open</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-content">
+              <h3 class="card-title">Consulting</h3>
+              <p class="card-text">Focused advisory work for planning, cleanup, and clearer delivery sequencing.</p>
+            </div>
+            <div class="card-actions">
+              <a href="/services/consulting/" class="btn btn-secondary">Open</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-content">
+              <h3 class="card-title">Field Work</h3>
+              <p class="card-text">On-site support for practical execution, inspections, and physical troubleshooting tasks.</p>
+            </div>
+            <div class="card-actions">
+              <a href="/services/field/" class="btn btn-secondary">Open</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-content">
+              <h3 class="card-title">Scooters</h3>
+              <p class="card-text">Repair notes and diagnostic routing for small electric equipment.</p>
+            </div>
+            <div class="card-actions">
+              <a href="/services/scooters/" class="btn btn-secondary">Open</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-content">
+              <h3 class="card-title">Handyman</h3>
+              <p class="card-text">Practical repair and maintenance work, with a legacy mini-site still archived separately.</p>
+            </div>
+            <div class="card-actions">
+              <a href="/services/handyman/" class="btn btn-secondary">Open</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-nav">
+        <a href="/">Home</a>
+        <a href="/whitepapers/">Whitepapers</a>
+        <a href="/mini-sites/">Mini-Sites</a>
+        <a href="/noble/">Noble</a>
+      </div>
+      <div class="footer-meta">&copy; <span id="y"></span> Brendon R. Coleman</div>
+    </footer>
+  </div>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>

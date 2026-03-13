@@ -4,101 +4,101 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Noble Home Essentials</title>
-  <meta name="description" content="Noble Home Essentials — practical home support and services." />
+  <meta name="description" content="Noble Home Essentials - practical home support and services." />
   <link rel="stylesheet" href="/assets/style.css" />
-  <style>
-    /* small helper styles for logo + layout */
-    .brand-logo{width:44px;height:44px;border-radius:10px;border:1px solid var(--line);object-fit:cover}
-    .nav-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
-    .muted{color:var(--steel)}
-  </style>
 </head>
 <body>
-  <div class="nav">
-    <div class="brand">
-      <img class="brand-logo" src="/assets/img/logo.png" alt="Noble Home Essentials logo" />
-      <div class="brand-name">Noble Home Essentials</div>
-    </div>
-
-    <div class="nav-links">
-      <a class="btn ghost" href="/services/handyman/">Handyman</a>
-      <a class="btn ghost" href="/services/scooters/">Scooters</a>
-      <a class="btn ghost" href="/services/diagnostics/">Diagnostics</a>
-      <a class="btn" href="/whitepapers/">Whitepapers</a>
-    </div>
-  </div>
-
-  <main class="site-shell">
-    <section class="hero">
-      <h1>Home essentials. Done clean.</h1>
-      <p class="muted">
-        This site is a routed static skeleton. Each section is a folder with an <code>index.html</code>.
-        Routing first. Content expands after.
-      </p>
-    </section>
-
-    <section class="grid" aria-label="Primary routes">
-      <div class="card">
-        <div class="card-content">
-          <h3 class="card-title">Handyman</h3>
-          <p class="card-text">Repairs, installs, small fixes, and practical maintenance.</p>
-        </div>
-        <div class="card-actions">
-          <a href="/services/handyman/" class="btn btn-secondary">Open</a>
-        </div>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="brand">
+        <a href="/noble/">Noble Home Essentials</a>
+        <span class="tag">practical repairs · routed service hub</span>
       </div>
+      <nav class="nav" aria-label="Noble routes">
+        <a href="/services/handyman/">Handyman</a>
+        <a href="/services/scooters/">Scooters</a>
+        <a href="/services/diagnostic/">Diagnostic</a>
+        <a href="/whitepapers/">Whitepapers</a>
+      </nav>
+    </header>
 
-      <div class="card">
-        <div class="card-content">
-          <h3 class="card-title">Scooters</h3>
-          <p class="card-text">Basic repair + diagnostics notes for small equipment.</p>
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">Home essentials. Done clean.</h1>
+          <p class="hero-subtitle">
+            A routed static hub for practical repair work, service notes, and field diagnostics.
+            Each route is a standalone page that can grow without a build step.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="/services/handyman/">Open services</a>
+            <a class="btn btn-secondary" href="/whitepapers/">Read whitepapers</a>
+          </div>
         </div>
-        <div class="card-actions">
-          <a href="/services/scooters/" class="btn btn-secondary">Open</a>
-        </div>
-      </div>
+      </section>
 
-      <div class="card">
-        <div class="card-content">
-          <h3 class="card-title">Diagnostics</h3>
-          <p class="card-text">Structured troubleshooting, checklists, and simple assessments.</p>
-        </div>
-        <div class="card-actions">
-          <a href="/services/diagnostics/" class="btn btn-secondary">Open</a>
-        </div>
-      </div>
+      <section class="section" aria-label="Primary routes">
+        <header class="section-header">
+          <span class="section-kicker">Routes</span>
+          <h2 class="section-title">Primary Focus Areas</h2>
+          <p class="muted">Simple service entry points, kept on the shared static layout system.</p>
+        </header>
 
-      <div class="card">
-        <div class="card-content">
-          <h3 class="card-title">Whitepapers</h3>
-          <p class="card-text">Short writeups, methods, and operational notes.</p>
-        </div>
-        <div class="card-actions">
-          <a href="/whitepapers/" class="btn btn-secondary">Open</a>
-        </div>
-      </div>
-    </section>
-  </main>
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-content">
+              <h3 class="card-title">Handyman</h3>
+              <p class="card-text">Repairs, installs, small fixes, and practical maintenance.</p>
+            </div>
+            <div class="card-actions">
+              <a href="/services/handyman/" class="btn btn-secondary">Open</a>
+            </div>
+          </article>
 
-  <footer>
-    <div class="container footer-grid">
-      <div class="footer-col">
-        <h3>Services</h3>
-        <a href="/services/handyman/">Handyman</a><br/>
-        <a href="/services/scooters/">Scooters</a><br/>
-        <a href="/services/diagnostics/">Diagnostics</a>
-      </div>
-      <div class="footer-col">
-        <h3>Writing</h3>
+          <article class="card">
+            <div class="card-content">
+              <h3 class="card-title">Scooters</h3>
+              <p class="card-text">Basic repair notes and field diagnostics for small equipment.</p>
+            </div>
+            <div class="card-actions">
+              <a href="/services/scooters/" class="btn btn-secondary">Open</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-content">
+              <h3 class="card-title">Diagnostic Review</h3>
+              <p class="card-text">Structured troubleshooting, checklists, and simple assessments.</p>
+            </div>
+            <div class="card-actions">
+              <a href="/services/diagnostic/" class="btn btn-secondary">Open</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-content">
+              <h3 class="card-title">Whitepapers</h3>
+              <p class="card-text">Short writeups, methods, and operational notes.</p>
+            </div>
+            <div class="card-actions">
+              <a href="/whitepapers/" class="btn btn-secondary">Open</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-nav">
+        <a href="/">Home</a>
+        <a href="/services/handyman/">Handyman</a>
+        <a href="/services/scooters/">Scooters</a>
+        <a href="/services/diagnostic/">Diagnostic</a>
         <a href="/whitepapers/">Whitepapers</a>
       </div>
-      <div class="footer-col">
-        <h3>Site</h3>
-        <a href="/">Home</a>
-      </div>
-    </div>
-    <div class="container small">© <span id="y"></span> Noble Home Essentials</div>
-  </footer>
+      <div class="footer-meta">&copy; <span id="y"></span> Noble Home Essentials</div>
+    </footer>
+  </div>
 
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>

@@ -5,13 +5,13 @@
     "description": "Field diagnostics, repair direction, and practical service routing."
   },
   "latest_whitepaper": {
-    "title": "Operational Stability Brief",
-    "url": "/whitepapers/",
-    "description": "Public-facing architecture and operational thinking artifacts."
+    "title": "The Value of Deterministic Publishing",
+    "url": "/whitepapers/deterministic-publishing/",
+    "description": "Why predictable publishing state matters when you want stable, low-drift public surfaces."
   },
   "latest_service": {
-    "title": "AI Stability Diagnostic",
+    "title": "Diagnostic Review",
     "url": "/services/diagnostic/",
-    "description": "Operational friction review for AI adoption and structural stability."
+    "description": "Structured bottleneck review, recovery planning, and practical next-step guidance."
   }
 }

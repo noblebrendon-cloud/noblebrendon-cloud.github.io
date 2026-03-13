@@ -1,15 +1,66 @@
-﻿<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>mini-sites</title>
-  <link rel="stylesheet" href="/assets/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini-Sites | Brendon R. Coleman</title>
+  <meta name="description" content="Archive of mini-sites, experiments, and legacy routed surfaces." />
+  <link rel="stylesheet" href="/assets/style.css" />
 </head>
 <body>
-  <main style="padding:60px 20px;max-width:900px;margin:auto;">
-    <h1>mini-sites</h1>
-    <p>This section is under construction.</p>
-    <p><a href="/">← Back to main site</a></p>
-  </main>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="brand">
+        <a href="/">Brendon R. Coleman</a>
+        <span class="tag">archived surfaces</span>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/services/">Services</a>
+        <a href="/whitepapers/">Whitepapers</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">Mini-Sites</h1>
+          <p class="hero-subtitle">
+            This section holds smaller standalone surfaces, experiments, and archived site branches that still need a public home.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <header class="section-header">
+          <span class="section-kicker">Archive</span>
+          <h2 class="section-title">Available Surface</h2>
+        </header>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-content">
+              <h3 class="card-title">Handyman Legacy Site</h3>
+              <p class="card-text">An older standalone handyman surface kept here as an archived mini-site rather than the main service route.</p>
+            </div>
+            <div class="card-actions">
+              <a href="/mini-sites/handyman/" class="btn btn-secondary">Open archive</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-nav">
+        <a href="/">Home</a>
+        <a href="/services/">Services</a>
+        <a href="/noble/">Noble</a>
+      </div>
+      <div class="footer-meta">&copy; <span id="y"></span> Brendon R. Coleman</div>
+    </footer>
+  </div>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>

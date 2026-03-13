@@ -1,20 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Whitepapers | Brendon R. Coleman</title>
-  <link rel="stylesheet" href="/assets/style.css">
+  <meta name="description" content="Whitepaper and artifact hub for operational stability, deterministic publishing, and service methods." />
+  <link rel="stylesheet" href="/assets/style.css" />
 </head>
 <body>
-  <main class="site-shell">
-    <header class="section-header">
-      <h1 class="section-title">Whitepapers</h1>
-      <p class="muted">This section is under construction.</p>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="brand">
+        <a href="/">Brendon R. Coleman</a>
+        <span class="tag">public artifacts</span>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/services/">Services</a>
+        <a href="/noble/">Noble</a>
+      </nav>
     </header>
-    <div style="margin-top: 32px;">
-      <a href="/" class="btn btn-secondary">&larr; Back to main site</a>
-    </div>
-  </main>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">Whitepapers</h1>
+          <p class="hero-subtitle">
+            This hub is live, but the artifact library is still being populated.
+            For now it acts as a clean index of the topics and writeups being staged next.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="mailto:noblebrendon150@gmail.com?subject=Whitepaper%20Request">Request a writeup</a>
+            <a class="btn btn-secondary" href="/">Back to homepage</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <header class="section-header">
+          <span class="section-kicker">Available Now</span>
+          <h2 class="section-title">Artifact Tracks</h2>
+        </header>
+
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-content">
+              <h3 class="card-title">The Value Of Deterministic Publishing</h3>
+              <p class="card-text">Notes on keeping deployment state predictable and avoiding drift across static surfaces.</p>
+            </div>
+            <div class="card-actions">
+              <a href="/whitepapers/deterministic-publishing/" class="btn btn-secondary">Read artifact</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-content">
+              <h3 class="card-title">On Runtime Governance</h3>
+              <p class="card-text">Operational methods for observing bounded systems and reducing avoidable failure loops.</p>
+            </div>
+            <div class="card-actions">
+              <a href="/whitepapers/runtime-governance/" class="btn btn-secondary">Read artifact</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-content">
+              <h3 class="card-title">Service Protocols</h3>
+              <p class="card-text">Field notes and repeatable service checklists that can be turned into public reference material.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="contact-box">
+          <h2 class="section-title">Need something specific?</h2>
+          <p class="muted">If you want a particular artifact prioritized, send the topic and the operating problem it should help solve.</p>
+          <div class="contact-actions">
+            <a href="mailto:noblebrendon150@gmail.com?subject=Artifact%20Request" class="btn btn-primary">Send request</a>
+            <a href="/services/" class="btn btn-secondary">View services</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-nav">
+        <a href="/">Home</a>
+        <a href="/services/">Services</a>
+        <a href="/mini-sites/">Mini-Sites</a>
+      </div>
+      <div class="footer-meta">&copy; <span id="y"></span> Brendon R. Coleman</div>
+    </footer>
+  </div>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>

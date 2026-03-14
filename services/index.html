@@ -43,7 +43,7 @@
           <p class="muted">These pages are now real route hubs, even where the underlying service details are still being filled in.</p>
         </header>
 
-        <div class="card-grid">
+        <div class="card-grid" data-render="services-list" data-manifest="/assets/data/services.json">
           <article class="card">
             <div class="card-content">
               <h3 class="card-title">Diagnostic Review</h3>
@@ -108,6 +108,7 @@
     </footer>
   </div>
 
+  <script src="/assets/js/content-renderer.js"></script>
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>

@@ -42,7 +42,7 @@
           <h2 class="section-title">Artifact Tracks</h2>
         </header>
 
-        <div class="card-grid">
+        <div class="card-grid" data-render="whitepapers-list" data-manifest="/assets/data/whitepapers.json">
           <article class="card">
             <div class="card-content">
               <h3 class="card-title">The Value Of Deterministic Publishing</h3>
@@ -97,6 +97,7 @@
     </footer>
   </div>
 
+  <script src="/assets/js/content-renderer.js"></script>
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>

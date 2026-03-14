@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "slug": "diagnostic",
+      "title": "Diagnostic Review",
+      "url": "/services/diagnostic/",
+      "summary": "Structured review for bottlenecks, operational friction, and recovery planning.",
+      "category": "Assessment",
+      "featured": true
+    },
+    {
+      "slug": "consulting",
+      "title": "Consulting",
+      "url": "/services/consulting/",
+      "summary": "Planning, decision framing, and implementation direction for work that needs a clearer path.",
+      "category": "Advisory",
+      "featured": false
+    },
+    {
+      "slug": "field",
+      "title": "Field Work",
+      "url": "/services/field/",
+      "summary": "On-site support for inspection, hands-on troubleshooting, and practical execution.",
+      "category": "On-site",
+      "featured": false
+    },
+    {
+      "slug": "scooters",
+      "title": "Scooters",
+      "url": "/services/scooters/",
+      "summary": "Diagnostic direction and repair planning for small electric equipment.",
+      "category": "Equipment",
+      "featured": false
+    },
+    {
+      "slug": "handyman",
+      "title": "Handyman",
+      "url": "/services/handyman/",
+      "summary": "Practical repair, installs, and maintenance work with the legacy mini-site archived separately.",
+      "category": "Repair",
+      "featured": false
+    }
+  ]
+}

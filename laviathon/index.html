@@ -79,10 +79,9 @@
       color: var(--muted);
     }
 
+    input,
     textarea {
       width: 100%;
-      min-height: 220px;
-      resize: vertical;
       border: 1px solid var(--border);
       border-radius: 10px;
       background: #0d1117;
@@ -91,6 +90,12 @@
       font: inherit;
     }
 
+    textarea {
+      min-height: 220px;
+      resize: vertical;
+    }
+
+    input:focus,
     textarea:focus {
       outline: 1px solid var(--accent);
       border-color: var(--accent);
@@ -127,6 +132,42 @@
 
     .result-panel {
       margin-top: 1rem;
+    }
+
+    .section-title {
+      margin-bottom: 1rem;
+      font-size: 1.15rem;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-feedback {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .contact-feedback.error {
+      color: var(--red);
+    }
+
+    .contact-link {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-link:hover {
+      text-decoration: underline;
     }
 
     .status {
@@ -245,6 +286,37 @@ authority: approved by release policy"></textarea>
       <div id="checks" class="checks"></div>
       <p class="note">This interface does not execute actions. It enforces admissibility before execution is allowed.</p>
     </section>
+
+    <section class="panel result-panel">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-form">
+        <div>
+          <label for="contact-name">Name</label>
+          <input id="contact-name" type="text" autocomplete="name">
+        </div>
+        <div>
+          <label for="contact-email">Email</label>
+          <input id="contact-email" type="email" autocomplete="email">
+        </div>
+        <div>
+          <label for="contact-message">Message</label>
+          <textarea
+            id="contact-message"
+            placeholder="Tell me what system, business, or workflow you are trying to govern."
+          ></textarea>
+        </div>
+        <div class="contact-actions">
+          <button id="prepare-contact-button" type="button">Prepare Contact Message</button>
+          <a
+            id="contact-link"
+            class="contact-link"
+            href="#"
+            hidden
+          >Open Email Draft</a>
+          <span id="contact-feedback" class="contact-feedback"></span>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script>
@@ -288,6 +360,12 @@ authority: approved by release policy"></textarea>
     const buttonEl = document.getElementById("evaluate-button");
     const loadBlockedButtonEl = document.getElementById("load-blocked-button");
     const loadPermittedButtonEl = document.getElementById("load-permitted-button");
+    const contactNameEl = document.getElementById("contact-name");
+    const contactEmailEl = document.getElementById("contact-email");
+    const contactMessageEl = document.getElementById("contact-message");
+    const prepareContactButtonEl = document.getElementById("prepare-contact-button");
+    const contactLinkEl = document.getElementById("contact-link");
+    const contactFeedbackEl = document.getElementById("contact-feedback");
     const blockedExample = "do the thing";
     const permittedExample = `identity: operator brendon
 scope: update public release notes only
@@ -330,9 +408,39 @@ authority: approved by release policy`;
       evaluateIntent();
     }
 
+    function prepareContactMessage() {
+      const name = contactNameEl.value.trim();
+      const email = contactEmailEl.value.trim();
+      const message = contactMessageEl.value.trim();
+
+      contactLinkEl.hidden = true;
+      contactLinkEl.removeAttribute("href");
+      contactFeedbackEl.textContent = "";
+      contactFeedbackEl.className = "contact-feedback";
+
+      if (!email || !message) {
+        contactFeedbackEl.textContent = "Email and message are required to prepare the draft.";
+        contactFeedbackEl.className = "contact-feedback error";
+        return;
+      }
+
+      const body = [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        "Message:",
+        message
+      ].join("\n");
+      const mailto = `mailto:Hello@Laviathon.com?subject=${encodeURIComponent("Laviathon Inquiry")}&body=${encodeURIComponent(body)}`;
+
+      contactLinkEl.href = mailto;
+      contactLinkEl.hidden = false;
+      contactFeedbackEl.textContent = "Email draft prepared locally.";
+    }
+
     buttonEl.addEventListener("click", evaluateIntent);
     loadBlockedButtonEl.addEventListener("click", () => loadExample(blockedExample));
     loadPermittedButtonEl.addEventListener("click", () => loadExample(permittedExample));
+    prepareContactButtonEl.addEventListener("click", prepareContactMessage);
     inputEl.addEventListener("keydown", (event) => {
       if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
         evaluateIntent();

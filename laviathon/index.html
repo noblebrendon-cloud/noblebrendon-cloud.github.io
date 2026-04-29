@@ -233,6 +233,8 @@ authority: approved by release policy"></textarea>
 
       <div class="controls">
         <button id="evaluate-button" type="button">Evaluate</button>
+        <button id="load-blocked-button" type="button">Load Blocked Example</button>
+        <button id="load-permitted-button" type="button">Load Permitted Example</button>
         <span class="hint">Include identity, scope, constraints, state, and authority details.</span>
       </div>
     </section>
@@ -284,6 +286,14 @@ authority: approved by release policy"></textarea>
     const scoreEl = document.getElementById("score");
     const inputEl = document.getElementById("intent-input");
     const buttonEl = document.getElementById("evaluate-button");
+    const loadBlockedButtonEl = document.getElementById("load-blocked-button");
+    const loadPermittedButtonEl = document.getElementById("load-permitted-button");
+    const blockedExample = "do the thing";
+    const permittedExample = `identity: operator brendon
+scope: update public release notes only
+constraints: no runtime changes, no network calls
+state: compiled artifact awaiting publication
+authority: approved by release policy`;
 
     function hasKeyword(text, patterns) {
       return patterns.some((pattern) => pattern.test(text));
@@ -315,7 +325,14 @@ authority: approved by release policy"></textarea>
       scoreEl.textContent = `Pass count: ${passCount} / 5`;
     }
 
+    function loadExample(exampleText) {
+      inputEl.value = exampleText;
+      evaluateIntent();
+    }
+
     buttonEl.addEventListener("click", evaluateIntent);
+    loadBlockedButtonEl.addEventListener("click", () => loadExample(blockedExample));
+    loadPermittedButtonEl.addEventListener("click", () => loadExample(permittedExample));
     inputEl.addEventListener("keydown", (event) => {
       if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
         evaluateIntent();

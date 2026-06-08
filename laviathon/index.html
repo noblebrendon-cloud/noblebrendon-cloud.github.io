@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laviathon</title>
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --panel: #12161b;
+      --panel-strong: #171c23;
+      --border: #2a313b;
+      --text: #e7edf5;
+      --muted: #98a6b8;
+      --green: #4ade80;
+      --green-bg: rgba(74, 222, 128, 0.12);
+      --red: #f87171;
+      --red-bg: rgba(248, 113, 113, 0.12);
+      --accent: #8fb3ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #141a22 0%, var(--bg) 55%);
+      color: var(--text);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.5;
+    }
+
+    .shell {
+      width: min(860px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 3rem 0;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, var(--panel-strong), var(--panel));
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+    }
+
+    h1,
+    h2,
+    p {
+      margin: 0;
+    }
+
+    .hero {
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      margin-top: 0.35rem;
+      color: var(--muted);
+    }
+
+    .layout {
+      display: grid;
+      gap: 1rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #0d1117;
+      color: var(--text);
+      padding: 1rem;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 220px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: 1px solid var(--accent);
+      border-color: var(--accent);
+    }
+
+    .controls {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    button {
+      appearance: none;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #1d2530;
+      color: var(--text);
+      padding: 0.8rem 1.2rem;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      border-color: var(--accent);
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .result-panel {
+      margin-top: 1rem;
+    }
+
+    .section-title {
+      margin-bottom: 1rem;
+      font-size: 1.15rem;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .contact-actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-feedback {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .contact-feedback.error {
+      color: var(--red);
+    }
+
+    .contact-link {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+
+    .status {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .status.permitted {
+      color: var(--green);
+      background: var(--green-bg);
+      border-color: rgba(74, 222, 128, 0.35);
+    }
+
+    .status.blocked {
+      color: var(--red);
+      background: var(--red-bg);
+      border-color: rgba(248, 113, 113, 0.35);
+    }
+
+    .score {
+      margin-top: 0.75rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .checks {
+      display: grid;
+      gap: 0.65rem;
+      margin-top: 1rem;
+    }
+
+    .check {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.8rem 0.9rem;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .check-label {
+      text-transform: capitalize;
+    }
+
+    .badge {
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .badge.pass {
+      color: var(--green);
+    }
+
+    .badge.fail {
+      color: var(--red);
+    }
+
+    .note {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        width: min(100% - 1rem, 860px);
+        padding: 1rem 0 2rem;
+      }
+
+      .panel {
+        padding: 1rem;
+      }
+
+      .check {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero panel">
+      <h1>Laviathon</h1>
+      <p>Deterministic admissibility interface</p>
+    </section>
+
+    <section class="panel">
+      <label for="intent-input">Describe an intended action</label>
+      <textarea id="intent-input" placeholder="Example:
+identity: operator brendon
+scope: update public release notes only
+constraints: no runtime changes, no network calls
+state: compiled artifact awaiting publication
+authority: approved by release policy"></textarea>
+
+      <div class="controls">
+        <button id="evaluate-button" type="button">Evaluate</button>
+        <button id="load-blocked-button" type="button">Load Blocked Example</button>
+        <button id="load-permitted-button" type="button">Load Permitted Example</button>
+        <span class="hint">Include identity, scope, constraints, state, and authority details.</span>
+      </div>
+    </section>
+
+    <section class="panel result-panel" aria-live="polite">
+      <div id="status" class="status blocked">EXECUTION BLOCKED</div>
+      <div id="score" class="score">Pass count: 0 / 5</div>
+      <div id="checks" class="checks"></div>
+      <p class="note">This interface does not execute actions. It enforces admissibility before execution is allowed.</p>
+    </section>
+
+    <section class="panel result-panel">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-form">
+        <div>
+          <label for="contact-name">Name</label>
+          <input id="contact-name" type="text" autocomplete="name">
+        </div>
+        <div>
+          <label for="contact-email">Email</label>
+          <input id="contact-email" type="email" autocomplete="email">
+        </div>
+        <div>
+          <label for="contact-message">Message</label>
+          <textarea
+            id="contact-message"
+            placeholder="Tell me what system, business, or workflow you are trying to govern."
+          ></textarea>
+        </div>
+        <div class="contact-actions">
+          <button id="prepare-contact-button" type="button">Prepare Contact Message</button>
+          <a
+            id="contact-link"
+            class="contact-link"
+            href="#"
+            hidden
+          >Open Email Draft</a>
+          <span id="contact-feedback" class="contact-feedback"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const checks = {
+      identity: [
+        /\bidentity\s*:\s*\S+/,
+        /\bactor\s*:\s*\S+/,
+        /\boperator\s*:\s*\S+/,
+        /\brequested by\s+.+/
+      ],
+      scope: [
+        /\bscope\s*:\s*\S+/,
+        /\btarget\s*:\s*\S+/,
+        /\blimited to\s+.+/,
+        /\bwithin\s+.+/
+      ],
+      constraints: [
+        /\bconstraints?\s*:\s*\S+/,
+        /\bmust not\b.+/,
+        /\bdo not\b.+/,
+        /\bwithout\b.+/
+      ],
+      state: [
+        /\bstate\s*:\s*\S+/,
+        /\bstatus\s*:\s*\S+/,
+        /\bcurrent state\s*:\s*\S+/,
+        /\bawaiting\b.+/
+      ],
+      authority: [
+        /\bauthority\s*:\s*\S+/,
+        /\bapproved by\s+.+/,
+        /\bauthorized by\s+.+/,
+        /\bpermission from\s+.+/
+      ]
+    };
+
+    const checksContainer = document.getElementById("checks");
+    const statusEl = document.getElementById("status");
+    const scoreEl = document.getElementById("score");
+    const inputEl = document.getElementById("intent-input");
+    const buttonEl = document.getElementById("evaluate-button");
+    const loadBlockedButtonEl = document.getElementById("load-blocked-button");
+    const loadPermittedButtonEl = document.getElementById("load-permitted-button");
+    const contactNameEl = document.getElementById("contact-name");
+    const contactEmailEl = document.getElementById("contact-email");
+    const contactMessageEl = document.getElementById("contact-message");
+    const prepareContactButtonEl = document.getElementById("prepare-contact-button");
+    const contactLinkEl = document.getElementById("contact-link");
+    const contactFeedbackEl = document.getElementById("contact-feedback");
+    const blockedExample = "do the thing";
+    const permittedExample = `identity: operator brendon
+scope: update public release notes only
+constraints: no runtime changes, no network calls
+state: compiled artifact awaiting publication
+authority: approved by release policy`;
+
+    function hasKeyword(text, patterns) {
+      return patterns.some((pattern) => pattern.test(text));
+    }
+
+    function evaluateIntent() {
+      const text = inputEl.value.trim().toLowerCase();
+      let passCount = 0;
+      checksContainer.innerHTML = "";
+
+      Object.entries(checks).forEach(([name, keywords]) => {
+        const passed = hasKeyword(text, keywords);
+        if (passed) {
+          passCount += 1;
+        }
+
+        const row = document.createElement("div");
+        row.className = "check";
+        row.innerHTML = `
+          <span class="check-label">${name}</span>
+          <span class="badge ${passed ? "pass" : "fail"}">${passed ? "PASS" : "FAIL"}</span>
+        `;
+        checksContainer.appendChild(row);
+      });
+
+      const permitted = passCount >= 4;
+      statusEl.textContent = permitted ? "EXECUTION PERMITTED" : "EXECUTION BLOCKED";
+      statusEl.className = `status ${permitted ? "permitted" : "blocked"}`;
+      scoreEl.textContent = `Pass count: ${passCount} / 5`;
+    }
+
+    function loadExample(exampleText) {
+      inputEl.value = exampleText;
+      evaluateIntent();
+    }
+
+    function prepareContactMessage() {
+      const name = contactNameEl.value.trim();
+      const email = contactEmailEl.value.trim();
+      const message = contactMessageEl.value.trim();
+
+      contactLinkEl.hidden = true;
+      contactLinkEl.removeAttribute("href");
+      contactFeedbackEl.textContent = "";
+      contactFeedbackEl.className = "contact-feedback";
+
+      if (!email || !message) {
+        contactFeedbackEl.textContent = "Email and message are required to prepare the draft.";
+        contactFeedbackEl.className = "contact-feedback error";
+        return;
+      }
+
+      const body = [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        "Message:",
+        message
+      ].join("\n");
+      const mailto = `mailto:Hello@Laviathon.com?subject=${encodeURIComponent("Laviathon Inquiry")}&body=${encodeURIComponent(body)}`;
+
+      contactLinkEl.href = mailto;
+      contactLinkEl.hidden = false;
+      contactFeedbackEl.textContent = "Email draft prepared locally.";
+    }
+
+    buttonEl.addEventListener("click", evaluateIntent);
+    loadBlockedButtonEl.addEventListener("click", () => loadExample(blockedExample));
+    loadPermittedButtonEl.addEventListener("click", () => loadExample(permittedExample));
+    prepareContactButtonEl.addEventListener("click", prepareContactMessage);
+    inputEl.addEventListener("keydown", (event) => {
+      if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
+        evaluateIntent();
+      }
+    });
+
+    evaluateIntent();
+  </script>
+</body>
+</html>

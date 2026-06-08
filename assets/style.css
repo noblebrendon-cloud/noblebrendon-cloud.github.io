@@ -1,0 +1,367 @@
+/* ============================================================
+   Brendon Coleman Hub — Global Styles
+   ============================================================ */
+:root {
+  --bg-core: #09090b;
+  --bg-surface: #121214;
+  --bg-card: #18181b;
+  --bg-card-hover: #27272a;
+  
+  --text-main: #f4f4f5;
+  --text-muted: #a1a1aa;
+  
+  --accent-base: #3b82f6; 
+  --accent-hover: #60a5fa;
+
+  --border: rgba(255, 255, 255, 0.1);
+  --border-glow: rgba(59, 130, 246, 0.3);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-core);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   Layout
+   ============================================================ */
+.site-shell {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+@media (min-width: 640px) {
+  .site-shell { padding: 48px 24px; }
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   Typography
+   ============================================================ */
+h1, h2, h3, h4 { margin: 0 0 0.5em 0; color: var(--text-main); font-weight: 700; }
+p { margin: 0 0 1rem 0; color: var(--text-muted); }
+a { color: inherit; text-decoration: none; transition: all 0.2s ease; }
+
+.muted { color: var(--text-muted); }
+.text-center { text-align: center; }
+
+/* ============================================================
+   Header / Nav
+   ============================================================ */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand a {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.brand .tag {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 99px;
+  display: none;
+}
+@media (min-width: 600px) {
+  .brand .tag { display: inline-block; }
+}
+.nav {
+  display: flex;
+  gap: 16px;
+  font-size: 0.95rem;
+}
+.nav a {
+  color: var(--text-muted);
+}
+.nav a:hover {
+  color: var(--text-main);
+}
+
+/* ============================================================
+   Hero Section
+   ============================================================ */
+.hero {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.hero-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  object-fit: cover;
+  display: none; /* Display only if image actually added in markup */
+}
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.hero-subtitle {
+  font-size: 1.1rem;
+  max-width: 600px;
+}
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn-primary {
+  background-color: var(--accent-base);
+  color: #fff;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--accent-hover);
+  box-shadow: 0 0 12px var(--border-glow);
+}
+.btn-secondary, .btn.ghost {
+  background-color: transparent;
+  border-color: var(--border);
+  color: var(--text-main);
+}
+.btn-secondary:hover, .btn.ghost:hover, .btn-secondary:focus, .btn.ghost:focus {
+  background-color: var(--bg-surface);
+  border-color: var(--text-muted);
+}
+
+/* ============================================================
+   Sections
+   ============================================================ */
+.section {
+  margin-bottom: 48px;
+}
+.section-header {
+  margin-bottom: 24px;
+}
+.section-kicker {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-base);
+  margin-bottom: 8px;
+  display: block;
+}
+.section-title {
+  font-size: 1.5rem;
+}
+
+/* ============================================================
+   Route Pills (Quick Routes)
+   ============================================================ */
+.route-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+.route-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.route-pill:hover {
+  border-color: var(--text-muted);
+  background-color: var(--bg-card);
+}
+
+/* ============================================================
+   Cards
+   ============================================================ */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 640px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  height: 100%;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.card:hover {
+  border-color: var(--text-muted);
+}
+.card-thumbnail {
+  width: 100%;
+  height: 140px;
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  object-fit: cover;
+  display: none; /* Display only if image explicitly added */
+}
+.card-content {
+  flex-grow: 1;
+}
+.card-title {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+.card-text {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+.card-actions {
+  margin-top: auto;
+}
+
+/* ============================================================
+   Artifact List (Whitepapers)
+   ============================================================ */
+.artifact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.artifact-link {
+  display: block;
+  text-decoration: none;
+}
+.artifact-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+.artifact-link:hover .artifact-item {
+  background-color: var(--bg-card);
+  border-color: var(--text-muted);
+}
+.artifact-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.artifact-title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.artifact-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   Contact Entry
+   ============================================================ */
+.contact-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 32px 24px;
+  text-align: center;
+}
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.site-footer {
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+@media (min-width: 640px) {
+  .site-footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.9rem;
+}
+.footer-nav a { color: var(--text-muted); }
+.footer-nav a:hover { color: var(--text-main); }
+.footer-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   Alignments for other pages (Legacy classes)
+   ============================================================ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}

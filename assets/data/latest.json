@@ -1,0 +1,17 @@
+{
+  "latest_project": {
+    "title": "Scooter Diagnostics",
+    "url": "/services/scooters/",
+    "description": "Field diagnostics, repair direction, and practical service routing."
+  },
+  "latest_whitepaper": {
+    "title": "The Value of Deterministic Publishing",
+    "url": "/whitepapers/deterministic-publishing/",
+    "description": "Why predictable publishing state matters when you want stable, low-drift public surfaces."
+  },
+  "latest_service": {
+    "title": "Diagnostic Review",
+    "url": "/services/diagnostic/",
+    "description": "Structured bottleneck review, recovery planning, and practical next-step guidance."
+  }
+}

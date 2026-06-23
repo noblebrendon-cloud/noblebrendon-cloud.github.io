@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Invite Brendon To Speak | Brendon R. Coleman</title>
+  <meta name="description" content="Prepare a speaking invitation for Brendon R. Coleman." />
+  <link rel="canonical" href="https://brendonrcoleman.com/speaking/invite/" />
+  <meta property="og:title" content="Invite Brendon To Speak | Brendon R. Coleman" />
+  <meta property="og:description" content="Prepare a local email draft for a speaking invitation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://brendonrcoleman.com/speaking/invite/" />
+  <meta property="og:site_name" content="Brendon Coleman" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Invite Brendon To Speak | Brendon R. Coleman" />
+  <meta name="twitter:description" content="Prepare a local email draft for a speaking invitation." />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="brand">
+        <a href="/">Brendon R. Coleman</a>
+        <span class="tag">speaking invite</span>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="/speaking/">Speaking</a>
+        <a href="/speaking/letters-of-light-live/">Live</a>
+        <a href="/letters/">Letters</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <span class="section-kicker">Invitation</span>
+          <h1 class="hero-title">Invite Brendon To Speak</h1>
+          <p class="hero-subtitle">
+            Share the gathering, audience, timing, and format you are considering. This site prepares a local email draft and does not store submissions.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <form class="inquiry-form" id="speaking-invite-form" novalidate>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="invite-name">Name</label>
+              <input id="invite-name" name="name" type="text" autocomplete="name" />
+            </div>
+            <div class="form-field">
+              <label for="invite-organization">Organization</label>
+              <input id="invite-organization" name="organization" type="text" autocomplete="organization" />
+            </div>
+            <div class="form-field">
+              <label for="invite-email">Email <span class="field-required">required</span></label>
+              <input id="invite-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="form-field">
+              <label for="invite-timing">Event date or timing <span class="field-required">required</span></label>
+              <input id="invite-timing" name="timing" type="text" placeholder="Date, season, or tentative timing" required />
+            </div>
+            <div class="form-field">
+              <label for="invite-location">Location or virtual</label>
+              <input id="invite-location" name="location" type="text" placeholder="City/state, venue, or virtual" />
+            </div>
+            <div class="form-field">
+              <label for="invite-audience">Audience type</label>
+              <input id="invite-audience" name="audience" type="text" placeholder="Church, small group, classroom, podcast..." />
+            </div>
+            <div class="form-field">
+              <label for="invite-attendance">Expected attendance</label>
+              <input id="invite-attendance" name="attendance" type="text" inputmode="numeric" />
+            </div>
+            <div class="form-field">
+              <label for="invite-format">Requested format <span class="field-required">required</span></label>
+              <select id="invite-format" name="format" required>
+                <option value="">Select a format</option>
+                <option>Letters of Light Live</option>
+                <option>Teaching and Sermons</option>
+                <option>Conversations and Panels</option>
+                <option>The Architecture of a Renewed Mind</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-field form-field-full">
+              <label for="invite-purpose">Event purpose <span class="field-required">or message required</span></label>
+              <textarea id="invite-purpose" name="purpose" rows="4" placeholder="What is the gathering for, and what are you hoping the message will serve?"></textarea>
+            </div>
+            <div class="form-field form-field-full">
+              <label for="invite-budget">Budget or honorarium range (optional)</label>
+              <input id="invite-budget" name="budget" type="text" />
+            </div>
+            <div class="form-field form-field-full">
+              <label for="invite-message">Message</label>
+              <textarea id="invite-message" name="message" rows="5" placeholder="Add any context that would help Brendon understand the invitation."></textarea>
+            </div>
+          </div>
+
+          <p class="form-note">
+            The button below prepares an email draft on your device. It does not send the inquiry automatically, and this site does not store your submission.
+          </p>
+
+          <div class="contact-actions inquiry-actions">
+            <button class="btn btn-primary" type="submit">Prepare Email Draft</button>
+            <a class="btn btn-secondary" href="mailto:noblebrendon150@gmail.com?subject=Speaking%20Invitation">Email Directly</a>
+          </div>
+
+          <div class="inquiry-result" id="invite-result" hidden>
+            <p class="form-feedback" id="invite-feedback" role="status"></p>
+            <div class="contact-actions inquiry-actions">
+              <a class="btn btn-primary" id="invite-mailto" href="#">Open Email Draft</a>
+              <button class="btn btn-secondary" id="invite-copy" type="button">Copy Inquiry Text</button>
+            </div>
+            <textarea class="copy-box" id="invite-copy-text" readonly hidden></textarea>
+          </div>
+
+          <p class="form-feedback error" id="invite-error" role="alert" hidden></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-nav">
+        <a href="/">Home</a>
+        <a href="/speaking/">Speaking</a>
+        <a href="/speaking/letters-of-light-live/">Letters of Light Live</a>
+        <a href="/letters/">Letters</a>
+      </div>
+      <div class="footer-meta">&copy; <span id="y"></span> Brendon R. Coleman</div>
+    </footer>
+  </div>
+
+  <script src="/assets/js/speaking-invite.js"></script>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+{
+  "formats": [
+    {
+      "slug": "letters-of-light-live",
+      "title": "Letters of Light Live",
+      "duration": "20-30 minutes",
+      "summary": "A spoken message shaped from a Letter of Light, rooted in Scripture and carried as reflective encounter.",
+      "best_for": [
+        "churches",
+        "small gatherings",
+        "classrooms",
+        "podcasts",
+        "conversations"
+      ],
+      "source_letter_ids": [
+        "1c4a6e6838a7d2f0"
+      ]
+    },
+    {
+      "slug": "teaching-and-sermons",
+      "title": "Teaching and Sermons",
+      "duration": "35-50 minutes",
+      "summary": "Scripture-rooted teaching for churches, groups, classrooms, or gatherings.",
+      "best_for": [
+        "churches",
+        "groups",
+        "classrooms",
+        "gatherings"
+      ],
+      "source_letter_ids": []
+    },
+    {
+      "slug": "conversations-and-panels",
+      "title": "Conversations and Panels",
+      "duration": "Flexible",
+      "summary": "Moderated conversations about faith, truth, pressure, Scripture, culture, spiritual formation, and rebuilding a life.",
+      "best_for": [
+        "podcasts",
+        "panels",
+        "interviews",
+        "community conversations"
+      ],
+      "source_letter_ids": []
+    },
+    {
+      "slug": "architecture-of-a-renewed-mind",
+      "title": "The Architecture of a Renewed Mind",
+      "duration": "60-90 minutes",
+      "summary": "Teaching and guided discussion based on Letters of Light material about renewal, attention, pressure, and formation.",
+      "best_for": [
+        "workshops",
+        "retreats",
+        "classes",
+        "small groups"
+      ],
+      "source_letter_ids": []
+    }
+  ],
+  "topics": [
+    {
+      "slug": "architecture-of-a-renewed-mind-in-christ",
+      "title": "The Architecture of a Renewed Mind in Christ",
+      "summary": "A Scripture-rooted look at renewal, attention, thought patterns, and spiritual formation.",
+      "scripture_refs": [],
+      "related_letter_ids": [],
+      "format_slugs": [
+        "letters-of-light-live",
+        "teaching-and-sermons",
+        "architecture-of-a-renewed-mind"
+      ],
+      "status": "available"
+    },
+    {
+      "slug": "how-to-read-without-rules",
+      "title": "How to Read Without Rules",
+      "summary": "A reflective approach to reading Scripture with reverence, honesty, and encounter rather than performance.",
+      "scripture_refs": [],
+      "related_letter_ids": [],
+      "format_slugs": [
+        "teaching-and-sermons",
+        "conversations-and-panels"
+      ],
+      "status": "available"
+    },
+    {
+      "slug": "truth-is-more-than-a-position",
+      "title": "Truth Is More Than a Position",
+      "summary": "A message about truth as something to live, receive, and become responsible to, not merely defend.",
+      "scripture_refs": [],
+      "related_letter_ids": [],
+      "format_slugs": [
+        "teaching-and-sermons",
+        "conversations-and-panels"
+      ],
+      "status": "available"
+    },
+    {
+      "slug": "remaining-whole-under-pressure",
+      "title": "Remaining Whole Under Pressure",
+      "summary": "A message for people learning to stay present, honest, and spiritually grounded under strain.",
+      "scripture_refs": [],
+      "related_letter_ids": [],
+      "format_slugs": [
+        "letters-of-light-live",
+        "teaching-and-sermons",
+        "conversations-and-panels"
+      ],
+      "status": "available"
+    },
+    {
+      "slug": "when-religious-performance-loses-contact-with-love",
+      "title": "When Religious Performance Loses Contact With Love",
+      "summary": "A Scripture-rooted reflection on performance, love, honesty, and the recovery of living faith.",
+      "scripture_refs": [],
+      "related_letter_ids": [],
+      "format_slugs": [
+        "teaching-and-sermons",
+        "conversations-and-panels"
+      ],
+      "status": "available"
+    }
+  ],
+  "featured_letters": [
+    {
+      "letter_id": "1c4a6e6838a7d2f0",
+      "title": "The Letter of Release",
+      "theme": "release",
+      "scripture_ref": "Ecclesiastes 3:6 - A time to search and a time to give up.",
+      "excerpt": "Today you are invited to release what no longer serves your purpose.",
+      "url": "/letters/1c4a6e6838a7d2f0/",
+      "poster": "/assets/letters/1c4a6e6838a7d2f0/visual.png",
+      "media": "/assets/letters/1c4a6e6838a7d2f0/final.mp4",
+      "media_label": "Featured Letter release"
+    }
+  ],
+  "featured_recordings": [],
+  "upcoming_appearances": [],
+  "past_appearances": [],
+  "testimonials": []
+}

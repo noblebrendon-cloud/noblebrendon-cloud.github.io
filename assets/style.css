@@ -197,6 +197,41 @@ a { color: inherit; text-decoration: none; transition: all 0.2s ease; }
   font-size: 1.1rem;
   max-width: 600px;
 }
+.about-hero-grid {
+  display: grid;
+  gap: 24px;
+  align-items: center;
+}
+.about-portrait-panel {
+  width: min(100%, 220px);
+}
+.about-portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+.bio-copy {
+  max-width: 680px;
+}
+.bio-copy p {
+  color: var(--text-main);
+  font-size: 1.03rem;
+  line-height: 1.8;
+}
+@media (min-width: 640px) {
+  .about-hero-grid {
+    grid-template-columns: minmax(0, 1fr) 220px;
+  }
+
+  .about-portrait-panel {
+    justify-self: end;
+  }
+}
 .cta-row {
   display: flex;
   flex-wrap: wrap;

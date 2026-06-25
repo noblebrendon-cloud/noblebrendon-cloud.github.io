@@ -345,6 +345,60 @@ img.media-frame {
 }
 
 /* ============================================================
+   Essay Detail
+   ============================================================ */
+.essay-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.essay-body {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.essay-body p {
+  color: var(--text-main);
+  font-size: 1.03rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+.essay-divider {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 32px 0;
+}
+
+.essay-body .source-note,
+.source-list {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.source-list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.source-list li {
+  margin-bottom: 0.85rem;
+}
+
+.essay-body a {
+  border-bottom: 1px solid var(--border);
+}
+
+.essay-body a:hover {
+  border-bottom-color: var(--accent-base);
+}
+
+/* ============================================================
    Contact Entry
    ============================================================ */
 .contact-box {

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unsubscribed | Letters of Light</title>
+  <meta name="description" content="Static unsubscribe status page for Letters of Light." />
+  <link rel="canonical" href="https://brendonrcoleman.com/letters-of-light/unsubscribed/" />
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="brand">
+        <a href="/">Brendon R. Coleman</a>
+        <span class="tag">Letters of Light</span>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/letters-of-light/">Letters of Light</a>
+        <a href="/letters/">Letters</a>
+        <a href="/privacy/">Privacy</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <span class="section-kicker">Status</span>
+          <h1 class="hero-title">Unsubscribe Recorded</h1>
+          <p class="hero-subtitle">
+            If you arrived here from an unsubscribe message, the subscriber API is responsible for consuming the token before redirecting to this page without query parameters.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="status-panel warning">
+          <h2>What This Page Does</h2>
+          <p>
+            This is a static status page. It does not read tokens, inspect query strings, store private data, or send network requests.
+          </p>
+          <p>
+            You can still read public Letters of Light at any time from the released Letters page.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-secondary" href="/letters/">Read Released Letters</a>
+            <a class="btn btn-secondary" href="/">Return Home</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-nav">
+        <a href="/">Home</a>
+        <a href="/letters-of-light/">Letters of Light</a>
+        <a href="/privacy/">Privacy</a>
+      </div>
+      <div class="footer-meta">&copy; <span id="y"></span> Brendon R. Coleman</div>
+    </footer>
+  </div>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>

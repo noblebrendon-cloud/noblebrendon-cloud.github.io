@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy And Consent | Brendon R. Coleman</title>
+  <meta name="description" content="Plain-language privacy and consent notes for BrendonRcoleman.com and Letters of Light." />
+  <link rel="canonical" href="https://brendonrcoleman.com/privacy/" />
+  <meta property="og:title" content="Privacy And Consent | Brendon R. Coleman" />
+  <meta property="og:description" content="Plain-language privacy and consent notes for the owned Letters of Light signup system." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://brendonrcoleman.com/privacy/" />
+  <meta property="og:site_name" content="Brendon Coleman" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="brand">
+        <a href="/">Brendon R. Coleman</a>
+        <span class="tag">privacy</span>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/letters-of-light/">Letters of Light</a>
+        <a href="/letters/">Letters</a>
+        <a href="/essays/">Essays</a>
+        <a href="/books/">Books</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <span class="section-kicker">Privacy</span>
+          <h1 class="hero-title">Privacy And Consent</h1>
+          <p class="hero-subtitle">
+            Plain-language notes for BrendonRcoleman.com and the planned Letters of Light subscriber system.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="status-panel warning">
+          <h2>Current Status</h2>
+          <p>
+            The Letters of Light signup form is not live until the subscriber service is deployed, configured, and health-checked. The current static form is disabled by default and does not send addresses anywhere.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="privacy-panel">
+          <h2>Consent For Letters Of Light</h2>
+          <p>
+            The public website can invite interest, but visiting the site or entering an address after launch will not by itself make someone subscribed. The planned flow requires a confirmation step before an address is treated as opted in.
+          </p>
+          <p>
+            The planned subscriber system supports unsubscribe handling. Confirmation and unsubscribe tokens are handled by the private API service, then redirected to static status pages without token query parameters.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="privacy-panel">
+          <h2>What The Site Contains</h2>
+          <p>
+            This static site contains public pages, public Letters, public writing, service pages, and navigation. It must not contain raw subscriber emails, private subscriber storage paths, tokens, provider secrets, or email service credentials.
+          </p>
+          <p>
+            The planned subscriber service stores subscriber state privately outside the public site. Provider selection and deployment details have not been published or approved here.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="privacy-panel">
+          <h2>Contact</h2>
+          <p>
+            Until the owned signup flow is live, use the existing contact routes on the site for direct inquiries. Do not send private credentials, tokens, or sensitive account details through public page links.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-secondary" href="/letters-of-light/">Letters of Light</a>
+            <a class="btn btn-secondary" href="/">Home</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-nav">
+        <a href="/">Home</a>
+        <a href="/letters-of-light/">Letters of Light</a>
+        <a href="/letters/">Letters</a>
+        <a href="/essays/">Essays</a>
+        <a href="/books/">Books</a>
+      </div>
+      <div class="footer-meta">&copy; <span id="y"></span> Brendon R. Coleman</div>
+    </footer>
+  </div>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>

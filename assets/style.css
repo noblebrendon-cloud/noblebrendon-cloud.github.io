@@ -876,7 +876,7 @@ img.media-frame {
   gap: 16px;
 }
 
-/* Homepage name filigree */
+/* Homepage EVO maker stamp */
 .name-filigree {
   display: none;
 }
@@ -889,66 +889,19 @@ img.media-frame {
 
   .name-filigree {
     position: absolute;
-    top: 5.4rem;
-    left: max(1.75rem, calc(50% - 52rem));
+    top: 5.8rem;
+    left: max(3.05rem, calc(50% - 50.7rem));
     z-index: 0;
-    width: min(28rem, calc((100vw - 52rem) / 2 - 1.25rem));
-    min-width: 15rem;
-    height: 20rem;
     pointer-events: none;
     user-select: none;
   }
 
-  .name-filigree__ornament {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-  }
-
-  .name-filigree__ornament path {
-    fill: none;
-    stroke: rgba(181, 151, 105, 0.55);
-    stroke-width: 1.25;
-    vector-effect: non-scaling-stroke;
-  }
-
-  .name-filigree__ornament circle {
-    fill: rgba(181, 151, 105, 0.8);
-  }
-
-  .name-filigree__copy {
-    position: absolute;
-    top: 5.8rem;
-    left: 1.3rem;
-    display: flex;
-    flex-direction: column;
-    color: rgba(241, 235, 225, 0.82);
-    text-shadow: 0 0 28px rgba(181, 151, 105, 0.18);
-    transform: rotate(-8deg);
+  .name-filigree__stamp {
+    display: block;
+    width: auto;
+    height: 1.1rem;
+    opacity: 0.94;
+    transform: rotate(-5deg);
     transform-origin: left center;
-  }
-
-  .name-filigree__given {
-    font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
-    font-size: clamp(1rem, 1.45vw, 1.45rem);
-    font-style: italic;
-    letter-spacing: 0.15em;
-    line-height: 1;
-    text-transform: uppercase;
-  }
-
-  .name-filigree__family {
-    margin-top: -0.08em;
-    font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
-    font-size: clamp(3.2rem, 4.5vw, 5.9rem);
-    font-style: italic;
-    font-weight: 600;
-    letter-spacing: -0.07em;
-    line-height: 0.9;
-    transform: scaleX(0.9);
-    transform-origin: left center;
-    white-space: nowrap;
   }
 }

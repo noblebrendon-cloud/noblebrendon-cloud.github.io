@@ -1,0 +1,240 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Public Architecture | Clarity Systems Group</title>
+  <meta name="description" content="A Clarity Systems Group research series on making internal technical work externally understandable without separating claims from evidence.">
+  <style>
+    :root {
+      --bg: #101820;
+      --panel: #182631;
+      --text: #edf3f7;
+      --muted: #b6c7d2;
+      --line: #38515f;
+      --accent: #70c3d2;
+      --max: 900px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      padding: 1.25rem 1.5rem;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      font-size: 0.92rem;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 4.5rem 1.5rem 5rem;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1, h2 {
+      line-height: 1.15;
+      margin-top: 2.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
+      margin: 0.75rem 0 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      border-top: 1px solid var(--line);
+      padding-top: 2rem;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.3rem;
+      max-width: 760px;
+    }
+
+    .definition {
+      margin: 2rem 0;
+      padding: 1.4rem 1.5rem;
+      border-left: 4px solid var(--accent);
+      background: var(--panel);
+      font-size: 1.12rem;
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    figure {
+      margin: 0;
+      border: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-bottom: 1px solid var(--line);
+    }
+
+    figcaption {
+      padding: 1rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    ul {
+      padding-left: 1.3rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.9rem;
+      padding: 2rem 1.5rem;
+    }
+
+    footer div {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">Clarity Systems Group LLC</div>
+      <a href="/">brendonrcoleman.com</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="eyebrow">Public Architecture Research Series · Entry 001</div>
+
+    <h1>Public State Projection</h1>
+
+    <p class="lead">
+      Technical work has a public surface and an internal history. A release, post, demo, diagram, or announcement shows one visible state of the work. It does not show the total state that produced it.
+    </p>
+
+    <div class="definition">
+      <strong>Public state projection</strong> is the visible representation of technical work, not the complete internal state behind it.
+    </div>
+
+    <p>
+      Behind a visible release can sit notes, failed experiments, intermediate structures, audits, implementation fragments, design tradeoffs, schema revisions, validation work, proof materials, and unresolved questions.
+    </p>
+
+    <p>
+      Public projection is not false. It is incomplete.
+    </p>
+
+    <p>
+      A polished announcement can appear larger than the work beneath it. Quiet work can appear nonexistent simply because it has not yet been translated into a form other people can inspect. This research series examines that missing translation layer.
+    </p>
+
+    <h2>Evidence Layer</h2>
+
+    <p>
+      The opening evidence set documents three distinct layers behind visible work: an artifact archive, a formal schema layer, and a proof-boundary layer.
+    </p>
+
+    <section class="evidence-grid">
+      <figure>
+        <img src="../assets/public-architecture/2026-07-07__evidence__public-state-projection__01_artifacts.png" alt="Artifact archive containing walkthroughs, audits, reports, implementation plans, and validation materials.">
+        <figcaption>
+          <strong>Artifact Archive</strong><br>
+          Walkthroughs, audits, implementation plans, validation reports, release-system records, and generated artifacts.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/public-architecture/2026-07-07__evidence__public-state-projection__02_schemas.png" alt="Formal governance schema directory.">
+        <figcaption>
+          <strong>Formal Governance Schemas</strong><br>
+          Machine-readable structures for invariants, states, transitions, rollback paths, human triggers, and promotion decisions.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img src="../assets/public-architecture/2026-07-07__evidence__public-state-projection__03_proof-pack.png" alt="Proof pack directory containing formal governance documents.">
+        <figcaption>
+          <strong>Proof Pack</strong><br>
+          Claim boundaries, commitments, proof mapping, and verification-oriented documentation.
+        </figcaption>
+      </figure>
+    </section>
+
+    <h2>Why This Series Exists</h2>
+
+    <p>
+      The purpose is not bigger announcements. It is better reconstruction.
+    </p>
+
+    <p>
+      Clarity Systems Group is publishing this series to examine how accumulated internal work becomes externally understandable without separating public claims from the evidence that supports them.
+    </p>
+
+    <h2>Coming Entries</h2>
+
+    <ul>
+      <li>Internal State Accumulation</li>
+      <li>External State Narration</li>
+      <li>Why System Primitives Matter</li>
+      <li>Governance Architecture</li>
+      <li>Implementation Evidence</li>
+    </ul>
+  </main>
+
+  <footer>
+    <div>
+      Public Architecture Research Series · Clarity Systems Group LLC · 2026
+    </div>
+  </footer>
+</body>
+</html>

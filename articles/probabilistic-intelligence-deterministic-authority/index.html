@@ -1,0 +1,1119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Probabilistic Intelligence, Deterministic Authority | Brendon R. Coleman</title>
+
+  <meta name="description"
+        content="Bounding AI agency at the state-transition interface: an authority-separated architecture in which probabilistic model outputs are treated as proposals while deterministic systems retain authority over canonical state." />
+
+  <link rel="canonical"
+        href="https://brendonrcoleman.com/articles/probabilistic-intelligence-deterministic-authority/" />
+
+  <meta property="og:title"
+        content="Probabilistic Intelligence, Deterministic Authority" />
+
+  <meta property="og:description"
+        content="Bounding AI agency at the state-transition interface by separating probabilistic reasoning from deterministic authority over canonical state." />
+
+  <meta property="og:type"
+        content="article" />
+
+  <meta property="og:url"
+        content="https://brendonrcoleman.com/articles/probabilistic-intelligence-deterministic-authority/" />
+
+  <meta property="og:site_name"
+        content="Brendon R. Coleman" />
+
+  <meta property="article:published_time"
+        content="2026-08-16" />
+
+  <meta property="article:author"
+        content="Brendon R. Coleman" />
+
+  <meta name="twitter:card"
+        content="summary" />
+
+  <meta name="twitter:title"
+        content="Probabilistic Intelligence, Deterministic Authority" />
+
+  <meta name="twitter:description"
+        content="The AI does not need to own the state it reasons about." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Probabilistic Intelligence, Deterministic Authority",
+    "alternativeHeadline": "Bounding AI Agency at the State-Transition Interface",
+    "description": "An authority-separated agent architecture in which probabilistic model outputs are treated as untrusted transition proposals while deterministic systems retain authority over canonical state.",
+    "datePublished": "2026-08-16",
+    "dateModified": "2026-08-16",
+    "author": {
+      "@type": "Person",
+      "name": "Brendon R. Coleman",
+      "url": "https://brendonrcoleman.com/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Brendon R. Coleman"
+    },
+    "mainEntityOfPage": "https://brendonrcoleman.com/articles/probabilistic-intelligence-deterministic-authority/"
+  }
+  </script>
+
+  <link rel="stylesheet"
+        href="/assets/style.css" />
+
+  <script async
+          src="https://www.googletagmanager.com/gtag/js?id=G-YY69T9F3G3"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YY69T9F3G3');
+  </script>
+</head>
+
+<body>
+  <div class="site-shell">
+
+    <header class="site-header">
+      <div class="brand">
+        <a href="/">Brendon R. Coleman</a>
+        <span class="tag">article</span>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/articles/">Articles</a>
+        <a href="/essays/">Essays</a>
+        <a href="/public-architecture/">Research</a>
+        <a href="/books/">Books</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <span class="section-kicker">Article</span>
+
+          <h1 class="hero-title">Probabilistic Intelligence, Deterministic Authority</h1>
+
+          <p class="hero-subtitle">
+            Bounding AI Agency at the State-Transition Interface
+          </p>
+
+          <div class="essay-meta" aria-label="Article metadata">
+            <time datetime="2026-08-16">August 16, 2026</time>
+            <span>Brendon R. Coleman</span>
+            <span>AI systems, agent security, governance, and state-transition architecture</span>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-secondary"
+               href="/articles/">
+              Back to articles
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <article class="contact-box essay-body">
+
+          <span class="section-kicker">Central Claim</span>
+
+          <h2 class="section-title">
+            The AI does not need to own the state it reasons about.
+          </h2>
+
+          <p>
+            That sentence captures an architectural idea I have been converging on through months of work on governed AI systems.
+          </p>
+
+          <p>
+            Large language models are probabilistic. They reason, generate, interpret, plan, and choose in ways that are not perfectly predictable.
+          </p>
+
+          <p>
+            The systems we increasingly want them to operate inside are different.
+          </p>
+
+          <p>
+            A publication record has a state. A bank ledger has a state. A deployment environment has a state. A customer record has a state. A workflow has a state. An approval has a state.
+          </p>
+
+          <p>
+            At some point, probabilistic reasoning crosses a boundary and becomes an authoritative change in the world.
+          </p>
+
+          <p>
+            My question has become:
+          </p>
+
+          <p>
+            <strong>What if the important thing to make deterministic is not the intelligence itself, but the boundary through which intelligence acquires authority to change state?</strong>
+          </p>
+
+          <p>
+            That leads to a simple architectural proposition:
+          </p>
+
+          <blockquote>
+            <p><strong>A probabilistic system does not need to be made deterministic in order to operate inside a deterministic system. Its authority can instead be bounded at the transition interface.</strong></p>
+          </blockquote>
+
+          <div class="contact-box" style="margin-top:28px;">
+            <strong>Research boundary:</strong>
+            The broad principle is not new. Capability security, least privilege, reference monitoring, supervisory control, transaction processing, information-flow control, effect systems, and recent AI-agent security research all establish important parts of this territory. The contribution explored here is a narrower synthesis: treating <em>canonical-state authority</em> as the object to constrain, and making the path from capability existence to canonical commitment explicit and testable.
+          </div>
+
+          <hr class="essay-divider" />
+
+          <h2>Intelligence is not authority</h2>
+
+          <p>
+            A recurring mistake in discussions about AI agents is treating intelligence and authority as though they were the same variable.
+          </p>
+
+          <p>
+            They are not.
+          </p>
+
+          <p>
+            A system can be enormously capable at reasoning without being permitted to alter anything. Conversely, a relatively unintelligent program with unrestricted credentials can cause enormous damage.
+          </p>
+
+          <p>
+            That suggests two independent axes:
+          </p>
+
+          <pre><code>reasoning competence
+        !=
+operational authority</code></pre>
+
+          <p>
+            The architecture I have been working toward treats the model primarily as a <strong>proposal generator</strong>.
+          </p>
+
+          <p>
+            It can reason about the current state. It can identify a desirable transformation. It can propose an operation.
+          </p>
+
+          <p>
+            But it does not get to define what constitutes an authorized state transition.
+          </p>
+
+          <p>
+            That decision belongs somewhere else.
+          </p>
+
+          <h2>The state-transition boundary</h2>
+
+          <p>
+            At its simplest, the architecture looks like this:
+          </p>
+
+          <pre><code>State_n
+    |
+    v
+probabilistic proposal
+    |
+    v
+capability + validation + authority boundary
+    |
+    v
+authorized deterministic transition
+    |
+    v
+State_n+1</code></pre>
+
+          <p>
+            The model proposes.
+          </p>
+
+          <p>
+            The deterministic system decides whether the proposal is admissible.
+          </p>
+
+          <p>
+            That distinction has deep precedent. Capability security and the principle of least privilege have spent decades separating computation from the authority that computation possesses. Reference-monitor theory focuses on completely mediating access to protected resources. Transaction systems distinguish computation from durable commitment. Effect systems distinguish returned values from side effects. Ramadge and Wonham's supervisory-control theory showed that possibly nondeterministic processes can be constrained by disabling transitions that fall outside a legal behavior space.
+          </p>
+
+          <p>
+            Modern AI security research is now arriving at similar territory from another direction. Systems including CaMeL, Progent, Fides, RTBAS, and DRIFT move critical enforcement outside the language model rather than depending entirely on the model to recognize attacks and voluntarily refuse them.
+          </p>
+
+          <p>
+            So the claim cannot responsibly be:
+          </p>
+
+          <blockquote>
+            <p>“I discovered that deterministic controls can make AI agents safe.”</p>
+          </blockquote>
+
+          <p>
+            That would be historically inaccurate and far too broad.
+          </p>
+
+          <p>
+            The more interesting question is <strong>what, exactly, should those controls govern?</strong>
+          </p>
+
+          <h2>Canonical-state authority</h2>
+
+          <p>
+            The unit I keep returning to is not simply the tool call.
+          </p>
+
+          <p>
+            It is the <strong>canonical state transition</strong>.
+          </p>
+
+          <p>
+            A tool might execute. A command might run. A model might generate an artifact. None of those things necessarily mean the authoritative system state has changed.
+          </p>
+
+          <p>
+            That gives us a useful decomposition:
+          </p>
+
+          <pre><code>implementation
+      !=
+registration
+      !=
+model exposure
+      !=
+authorization
+      !=
+execution
+      !=
+canonical commit</code></pre>
+
+          <p>
+            These stages are often collapsed together in ordinary software systems.
+          </p>
+
+          <p>
+            For AI agents, I think separating them explicitly is useful.
+          </p>
+
+          <p>
+            A capability can exist in code without being registered. It can be registered without being visible to the model. It can be visible without necessarily being authorized in every context. It can be authorized but fail during execution. And execution itself does not automatically have to mean that protected canonical state accepted the resulting transition.
+          </p>
+
+          <p>
+            In the targeted literature review behind this article, I found the ingredients of these distinctions throughout existing security and systems work, but not this exact canonical-state-oriented decomposition commonly expressed as one agent architecture.
+          </p>
+
+          <p>
+            The cautious classification is therefore <strong>an uncommon synthesis and potentially distinctive implementation pattern</strong>, not a new foundational security principle.
+          </p>
+
+          <h2>Do not give the agent a machine. Give it verbs.</h2>
+
+          <p>
+            This principle becomes much easier to understand when translated into interface design.
+          </p>
+
+          <p>
+            Consider these two authority surfaces.
+          </p>
+
+          <pre><code>agent
+   |
+   v
+exec(command: string)
+   |
+   v
+arbitrary machine behavior</code></pre>
+
+          <p>
+            versus:
+          </p>
+
+          <pre><code>agent
+   |-- gs2c_status()
+   |
+   `-- gs2c_ingest_url(title, source_url)
+           |
+           v
+      fixed domain semantics</code></pre>
+
+          <p>
+            Both ultimately execute software.
+          </p>
+
+          <p>
+            But they give the model radically different expressive authority.
+          </p>
+
+          <p>
+            The first gives the model a general-purpose mechanism and then attempts to control how it uses that mechanism.
+          </p>
+
+          <p>
+            The second makes the available action vocabulary itself reflect the intended domain.
+          </p>
+
+          <p>
+            The distinction is subtle but important:
+          </p>
+
+          <p>
+            <strong>Authorization determines whether an operation may be performed. Capability design determines what operation can be expressed in the first place.</strong>
+          </p>
+
+          <p>
+            A sophisticated policy engine wrapped around <code>exec(string)</code> still exposes an enormous semantic surface after authorization. A narrow operation such as <code>gs2c_status()</code> expresses dramatically less authority before contextual policy is even considered.
+          </p>
+
+          <p>
+            This leads to a design discipline I intend to continue developing:
+          </p>
+
+          <blockquote>
+            <p><strong>Do not give an agent a machine. Give it verbs. Make the verbs domain-specific. Make dangerous verbs nonexistent by default. Re-check authorization at the boundary. Let the deterministic domain system—not the model—decide whether a proposed transition is legal. Keep canonical truth outside the conversation.</strong></p>
+          </blockquote>
+
+          <hr class="essay-divider" />
+
+          <h2>Building the idea</h2>
+
+          <p>
+            I now have a working reference implementation of part of this architecture.
+          </p>
+
+          <p>
+            It consists of four primary layers:
+          </p>
+
+          <pre><code>GPT-5.6 Sol
+probabilistic reasoning
+        |
+        v
+OpenClaw
+agent orchestration
+        |
+        v
+openclaw-gs2c
+narrow transition adapter
+        |
+        v
+GS2C
+governed deterministic runtime
+        |
+        v
+canonical workspace + state</code></pre>
+
+          <p>
+            GS2C—Governed Signal-to-Content—owns the domain state.
+          </p>
+
+          <p>
+            The model does not.
+          </p>
+
+          <p>
+            OpenClaw provides the agent runtime. A custom plugin exposes narrowly defined GS2C operations to the agent. Generic shell execution remains unavailable to the model. The adapter fixes the GS2C executable and canonical workspace instead of allowing the model to choose them.
+          </p>
+
+          <p>
+            That distinction is fundamental:
+          </p>
+
+          <p>
+            <strong>The intelligence can choose among authorized domain proposals without receiving general machine authority.</strong>
+          </p>
+
+          <h2>What the experiments have actually demonstrated</h2>
+
+          <p>
+            I wanted more than an architecture diagram.
+          </p>
+
+          <p>
+            So I have been testing the authority boundary using both positive and negative controls.
+          </p>
+
+          <h3>First: no capability</h3>
+
+          <p>
+            Before the GS2C plugin was available, the model was explicitly instructed to use a <code>gs2c_status</code> operation.
+          </p>
+
+          <p>
+            It could not.
+          </p>
+
+          <p>
+            It reported that the capability was unavailable.
+          </p>
+
+          <h3>Then: implemented and registered, but still unavailable</h3>
+
+          <p>
+            The plugin was installed and OpenClaw registered <code>gs2c_status</code>.
+          </p>
+
+          <p>
+            But the model's actual request vocabulary still contained only its existing session-status tool. The newly registered GS2C capability did not automatically become available merely because its implementation existed.
+          </p>
+
+          <h3>Then: explicit grant</h3>
+
+          <p>
+            I explicitly granted only:
+          </p>
+
+          <pre><code>gs2c_status</code></pre>
+
+          <p>
+            The next runtime trace showed the capability entering the model-visible tool set.
+          </p>
+
+          <p>
+            The model invoked it.
+          </p>
+
+          <p>
+            GS2C returned the authoritative state of its canonical workspace.
+          </p>
+
+          <p>
+            Generic shell execution remained denied.
+          </p>
+
+          <p>
+            The observed relationship was:
+          </p>
+
+          <pre><code>registered
++
+not granted
+->
+not model-visible
+
+registered
++
+explicitly granted
+->
+model-visible
++
+successfully invoked</code></pre>
+
+          <p>
+            This establishes a bounded observation about the tested configuration: model competence and operational authority were separate configuration dimensions.
+          </p>
+
+          <h2>Then I added mutation code—without granting mutation authority</h2>
+
+          <p>
+            The next experiment was more important.
+          </p>
+
+          <p>
+            I implemented:
+          </p>
+
+          <pre><code>gs2c_ingest_url(title, source_url)</code></pre>
+
+          <p>
+            This operation can create a GS2C candidate and advance it into its evidence-preserved state.
+          </p>
+
+          <p>
+            But its model-visible input contains only:
+          </p>
+
+          <pre><code>title
+source_url</code></pre>
+
+          <p>
+            The model cannot choose the workspace, executable, local source file, shell command, approval operation, release operation, or an arbitrary GS2C command through that interface.
+          </p>
+
+          <p>
+            The adapter fixes the executable and workspace and rejects non-HTTP(S) input.
+          </p>
+
+          <p>
+            Rather than testing mutation against production state, I created an isolated temporary GS2C workspace.
+          </p>
+
+          <p>
+            The integration suite performed a real mutation there, confirmed the expected state transition, cleaned the workspace up, and passed all seven tests.
+          </p>
+
+          <p>
+            Then the new mutation capability was loaded into OpenClaw.
+          </p>
+
+          <p>
+            But I did <strong>not</strong> grant it to the model.
+          </p>
+
+          <p>
+            Runtime inspection showed that the tool was registered. The actual model request still did not contain it. When explicitly instructed to perform an ingest, the agent returned:
+          </p>
+
+          <pre><code>GS2C_INGEST_NOT_AVAILABLE</code></pre>
+
+          <p>
+            Canonical production state remained unchanged.
+          </p>
+
+          <p>
+            That gives us an important empirical result:
+          </p>
+
+          <blockquote>
+            <p><strong>For the tested model principal and configuration, implementation and runtime registration did not themselves confer operational authority.</strong></p>
+          </blockquote>
+
+          <p>
+            That is much narrower than proving the entire system secure.
+          </p>
+
+          <p>
+            But it is real evidence.
+          </p>
+
+          <hr class="essay-divider" />
+
+          <h2>What this does not prove</h2>
+
+          <p>
+            This is where discipline matters most.
+          </p>
+
+          <p>
+            I have <strong>not</strong> proven a universally secure AI-agent architecture.
+          </p>
+
+          <p>
+            The current experiment does not establish protection against every possible attack or bypass.
+          </p>
+
+          <p>
+            In particular, it has not yet solved or fully tested:
+          </p>
+
+          <ul>
+            <li>prompt injection that convinces the model to misuse a legitimately permitted operation;</li>
+            <li>confused-deputy attacks;</li>
+            <li>malicious but syntactically valid parameters;</li>
+            <li>forged internal tool invocation;</li>
+            <li>revocation races;</li>
+            <li>replay and duplicate calls;</li>
+            <li>concurrency and TOCTOU conditions;</li>
+            <li>compromised plugin or OpenClaw runtime;</li>
+            <li>compromised host operating system;</li>
+            <li>supply-chain compromise;</li>
+            <li>direct modification of the canonical database through another privileged path;</li>
+            <li>stolen credentials;</li>
+            <li>human approval mistakes;</li>
+            <li>complete system-wide non-bypassability.</li>
+          </ul>
+
+          <p>
+            Prompt injection against <strong>legitimate authority</strong> is one of the most important next problems.
+          </p>
+
+          <p>
+            Narrow capabilities reduce the amount of authority an attacker can inherit if the model is manipulated, but they do not guarantee that an allowed capability will always be used for the correct intent.
+          </p>
+
+          <p>
+            That suggests authorization will eventually need to consider more than:
+          </p>
+
+          <pre><code>Is this capability allowed?</code></pre>
+
+          <p>
+            It may need something closer to:
+          </p>
+
+          <pre><code>principal
++
+capability
++
+arguments
++
+current state
++
+task intent
++
+data provenance
++
+approval context</code></pre>
+
+          <p>
+            That is a movement from ordinary static least privilege toward what I would call <strong>task-scoped least authority</strong>.
+          </p>
+
+          <h2>Determinism is not the safety property</h2>
+
+          <p>
+            There is another important correction.
+          </p>
+
+          <p>
+            A deterministic system can be deterministically wrong.
+          </p>
+
+          <p>
+            If its policy is incorrect, perfect reproducibility simply means it will reproduce the incorrect behavior reliably.
+          </p>
+
+          <p>
+            So my thesis is <strong>not</strong>:
+          </p>
+
+          <blockquote>
+            <p>Determinism creates safety.</p>
+          </blockquote>
+
+          <p>
+            It is:
+          </p>
+
+          <blockquote>
+            <p><strong>Deterministic mediation makes specified safety properties enforceable independently of probabilistic model compliance.</strong></p>
+          </blockquote>
+
+          <p>
+            The policy still has to be correct. The implementation has to be trusted within the stated threat model. Protected state changes have to be completely mediated. And the canonical state itself has to be protected from alternate write paths.
+          </p>
+
+          <p>
+            That last requirement may eventually push this architecture beyond a plugin boundary.
+          </p>
+
+          <p>
+            A stronger system could separate OpenClaw from GS2C at the operating-system or service boundary:
+          </p>
+
+          <pre><code>model / OpenClaw
+      |
+      | no canonical DB write access
+      v
+authenticated narrow transition API
+      |
+      v
+GS2C transition service
+dedicated identity
+      |
+      v
+canonical state</code></pre>
+
+          <p>
+            At that point, even compromising the agent process would not automatically imply direct authority over protected state.
+          </p>
+
+          <p>
+            That is closer to the classical reference-monitor ideal of complete mediation and a deliberately constrained trusted computing base.
+          </p>
+
+          <hr class="essay-divider" />
+
+          <h2>A formal direction</h2>
+
+          <p>
+            The core system can be expressed without attempting to formalize the internal cognition of the language model.
+          </p>
+
+          <p>
+            Let:
+          </p>
+
+          <pre><code>S = canonical state
+p = model-generated proposal
+c = proposed capability
+x = capability arguments
+A = authorization function
+G = state/domain guard
+T = deterministic state transition</code></pre>
+
+          <p>
+            The model may probabilistically produce:
+          </p>
+
+          <pre><code>p = (c, x)</code></pre>
+
+          <p>
+            But it does not own <code>T</code>.
+          </p>
+
+          <p>
+            The mediator asks whether the proposal is admissible.
+          </p>
+
+          <p>
+            Conceptually:
+          </p>
+
+          <pre><code>Admit(p)
+=
+capability exposed
+AND parameters valid
+AND principal authorized
+AND state guard satisfied</code></pre>
+
+          <p>
+            Then:
+          </p>
+
+          <pre><code>if admitted:
+    State_n+1 = T(State_n, p)
+else:
+    State_n+1 = State_n</code></pre>
+
+          <p>
+            That makes an interesting research strategy possible.
+          </p>
+
+          <p>
+            Instead of proving that the LLM itself will behave correctly, treat it as an arbitrary or even adversarial proposal generator.
+          </p>
+
+          <p>
+            Then prove properties of the surrounding transition system.
+          </p>
+
+          <h3>Candidate properties</h3>
+
+          <p>
+            <strong>Unauthorized Transition Non-Interference</strong><br />
+            An unauthorized or invalid proposal cannot change protected canonical state.
+          </p>
+
+          <p>
+            <strong>Capability Confinement</strong><br />
+            Every model-caused canonical transition belongs to the semantics of an explicitly authorized operation.
+          </p>
+
+          <p>
+            <strong>Revocation Safety</strong><br />
+            Once authority is revoked under the specified policy boundary, stale authority cannot subsequently commit a transition.
+          </p>
+
+          <p>
+            <strong>Approval Separation</strong><br />
+            A transition requiring independent human authority cannot be enabled solely through actions available to the model principal.
+          </p>
+
+          <p>
+            That may be one of the most useful simplifications in the entire architecture:
+          </p>
+
+          <blockquote>
+            <p><strong>The probabilistic model does not have to become part of the trusted proof obligation.</strong></p>
+          </blockquote>
+
+          <p>
+            It can be treated as an uncertain component whose effects are bounded elsewhere.
+          </p>
+
+          <h2>Where the idea actually sits</h2>
+
+          <p>
+            The research did not validate a story in which I independently discovered a completely new field of computer security.
+          </p>
+
+          <p>
+            Good.
+          </p>
+
+          <p>
+            That would have been a much weaker foundation to build on.
+          </p>
+
+          <p>
+            Instead, the architecture appears to sit at the intersection of several mature traditions:
+          </p>
+
+          <ul>
+            <li>capability security and least authority;</li>
+            <li>reference monitoring;</li>
+            <li>information-flow control;</li>
+            <li>supervisory control;</li>
+            <li>effect systems;</li>
+            <li>transaction processing;</li>
+            <li>deterministic workflow systems;</li>
+            <li>and emerging out-of-model security mechanisms for AI agents.</li>
+          </ul>
+
+          <p>
+            The established principle is that untrusted computation can be constrained by external authority mechanisms.
+          </p>
+
+          <p>
+            The potentially distinctive part is the synthesis:
+          </p>
+
+          <pre><code>probabilistic proposal
+        |
+        v
+explicit capability lifecycle
+        |
+        v
+domain-state guard
+        |
+        v
+deterministic transition
+        |
+        v
+canonical commit</code></pre>
+
+          <p>
+            with <strong>canonical-state authority itself</strong> treated as the thing being confined.
+          </p>
+
+          <p>
+            I am currently using the following terminology:
+          </p>
+
+          <p>
+            <strong>Probabilistic Intelligence, Deterministic Authority</strong><br />
+            The umbrella framing.
+          </p>
+
+          <p>
+            <strong>Authority-Separated Agent Architecture</strong><br />
+            The broader architectural model.
+          </p>
+
+          <p>
+            <strong>Deterministic Transition Mediation</strong><br />
+            The enforcement mechanism.
+          </p>
+
+          <p>
+            <strong>Least-Authority Transition Interface</strong><br />
+            The narrow boundary through which the agent proposes effects.
+          </p>
+
+          <p>
+            <strong>Canonical-State Authority Confinement</strong><br />
+            The property ultimately being investigated.
+          </p>
+
+          <h2>What comes next</h2>
+
+          <p>
+            The next experiment is already defined.
+          </p>
+
+          <p>
+            The mutation capability exists. It has been tested. It is registered. And it is still withheld from the model.
+          </p>
+
+          <p>
+            The next sequence will be:
+          </p>
+
+          <pre><code>snapshot canonical state
+        |
+        v
+grant gs2c_ingest_url
+        |
+        v
+perform one legitimate bounded mutation
+        |
+        v
+capture candidate / evidence / receipt identity
+        |
+        v
+independently verify canonical state
+        |
+        v
+revoke gs2c_ingest_url
+        |
+        v
+prove mutation authority disappeared</code></pre>
+
+          <p>
+            That will establish:
+          </p>
+
+          <pre><code>grant
+-> bounded effect
+-> revoke</code></pre>
+
+          <p>
+            After that come harder experiments: forged-call enforcement below the model layer, replay and idempotency, revocation races, adversarial parameters, prompt injection against granted authority, alternate-path bypass analysis, model independence, and adaptive red teaming.
+          </p>
+
+          <p>
+            The architecture should be attacked, not merely admired.
+          </p>
+
+          <p>
+            If a model can alter protected canonical state without traversing an admitted transition and producing the expected evidence, the security claim should be considered false for that configuration.
+          </p>
+
+          <p>
+            That makes the idea falsifiable.
+          </p>
+
+          <p>
+            And therefore worth testing.
+          </p>
+
+          <hr class="essay-divider" />
+
+          <h2>The larger principle</h2>
+
+          <p>
+            As AI systems become more capable, I do not think the only question should be:
+          </p>
+
+          <p>
+            <strong>How do we make the model behave?</strong>
+          </p>
+
+          <p>
+            There is another question:
+          </p>
+
+          <p>
+            <strong>What authority should the model possess even if it does not behave?</strong>
+          </p>
+
+          <p>
+            That distinction changes the architecture.
+          </p>
+
+          <p>
+            It moves safety away from asking a probabilistic model to reliably remember a prohibition and toward designing systems in which the model's reasoning and the system's authority are deliberately separate.
+          </p>
+
+          <p>
+            The model may suggest. The model may reason. The model may discover. The model may propose.
+          </p>
+
+          <p>
+            But protected reality does not have to change simply because the model generated an action.
+          </p>
+
+          <p>
+            There can be a boundary.
+          </p>
+
+          <p>
+            And that boundary can have its own semantics, authorization, state guards, invariants, receipts, and human authority.
+          </p>
+
+          <p>
+            The most defensible formulation I have reached so far is this:
+          </p>
+
+          <blockquote>
+            <p><strong>This work develops and evaluates an authority-separated agent architecture in which probabilistic model outputs are treated as untrusted transition proposals, while a deterministic least-authority mediator—not the model—owns the admissibility and commitment of changes to canonical state.</strong></p>
+          </blockquote>
+
+          <p>
+            Or, more simply:
+          </p>
+
+          <blockquote>
+            <p><strong>The object that must be made deterministic is not the intelligence. It is the authority boundary between proposal and protected state transition.</strong></p>
+          </blockquote>
+
+          <p>
+            That is the idea I intend to keep testing.
+          </p>
+
+          <p>
+            Not by assuming it works.
+          </p>
+
+          <p>
+            By trying to break it.
+          </p>
+
+          <hr class="essay-divider" />
+
+          <span class="section-kicker">Selected Research</span>
+          <h2>Research foundations and adjacent literature</h2>
+
+          <p>
+            The architecture above is deliberately situated in prior work rather than presented as a claim that its component mechanisms are unprecedented. The following sources are among the most important theoretical and engineering neighbors identified in the research review.
+          </p>
+
+          <ol>
+            <li>
+              Dennis, J. B., &amp; Van Horn, E. C. (1966). "Programming Semantics for Multiprogrammed Computations." <em>Communications of the ACM</em>. <a href="https://doi.org/10.1145/365230.365252" target="_blank" rel="noopener noreferrer">doi:10.1145/365230.365252</a>
+            </li>
+            <li>
+              Saltzer, J. H., &amp; Schroeder, M. D. (1975). "The Protection of Information in Computer Systems." <em>Proceedings of the IEEE</em>. <a href="https://doi.org/10.1109/PROC.1975.9939" target="_blank" rel="noopener noreferrer">doi:10.1109/PROC.1975.9939</a>
+            </li>
+            <li>
+              Denning, D. E. (1976). "A Lattice Model of Secure Information Flow." <em>Communications of the ACM</em>. <a href="https://doi.org/10.1145/360051.360056" target="_blank" rel="noopener noreferrer">doi:10.1145/360051.360056</a>
+            </li>
+            <li>
+              Härder, T., &amp; Reuter, A. (1983). "Principles of Transaction-Oriented Database Recovery." <em>ACM Computing Surveys</em>. <a href="https://doi.org/10.1145/289.291" target="_blank" rel="noopener noreferrer">doi:10.1145/289.291</a>
+            </li>
+            <li>
+              Ramadge, P. J., &amp; Wonham, W. M. (1987). "Supervisory Control of a Class of Discrete Event Processes." <em>SIAM Journal on Control and Optimization</em>. <a href="https://doi.org/10.1137/0325013" target="_blank" rel="noopener noreferrer">doi:10.1137/0325013</a>
+            </li>
+            <li>
+              Lucassen, J. M., &amp; Gifford, D. K. (1988). "Polymorphic Effect Systems." <em>POPL '88</em>. <a href="https://doi.org/10.1145/73560.73564" target="_blank" rel="noopener noreferrer">doi:10.1145/73560.73564</a>
+            </li>
+            <li>
+              Debenedetti, E. et al. (2024). "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents." <em>NeurIPS 2024</em>. <a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/97091a5177d8dc64b1da8bf3e1f6fb54-Abstract-Datasets_and_Benchmarks_Track.html" target="_blank" rel="noopener noreferrer">NeurIPS proceedings</a>
+            </li>
+            <li>
+              Debenedetti, E. et al. (2025). "Defeating Prompt Injections by Design" (CaMeL). <a href="https://arxiv.org/abs/2503.18813" target="_blank" rel="noopener noreferrer">arXiv:2503.18813</a>
+            </li>
+            <li>
+              Shi, T. et al. (2025). "Progent: Programmable Privilege Control for LLM Agents." <a href="https://arxiv.org/abs/2504.11703" target="_blank" rel="noopener noreferrer">arXiv:2504.11703</a>
+            </li>
+            <li>
+              Costa, M. et al. (2025). "Securing AI Agents with Information-Flow Control" (Fides). <a href="https://arxiv.org/abs/2505.23643" target="_blank" rel="noopener noreferrer">arXiv:2505.23643</a>
+            </li>
+            <li>
+              Zhong, P. Y. et al. (2025). "RTBAS: Defending LLM Agents Against Prompt Injection and Privacy Leakage." <a href="https://arxiv.org/abs/2502.08966" target="_blank" rel="noopener noreferrer">arXiv:2502.08966</a>
+            </li>
+            <li>
+              Li, H. et al. (2025). "DRIFT: Dynamic Rule-Based Defense with Injection Isolation for Securing LLM Agents." <em>NeurIPS 2025</em>. <a href="https://papers.neurips.cc/paper_files/paper/2025/hash/77f3b26c7907aa27b207df9b9d43f29a-Abstract-Conference.html" target="_blank" rel="noopener noreferrer">NeurIPS proceedings</a>
+            </li>
+            <li>
+              Narisetty, P. et al. (2026). "Adaptive Evaluation of Out-of-Band Defenses Against Prompt Injection in LLM Agents." <a href="https://arxiv.org/abs/2606.26479" target="_blank" rel="noopener noreferrer">arXiv:2606.26479</a>
+            </li>
+          </ol>
+
+          <div class="contact-box" style="margin-top:28px;">
+            <strong>Working classification:</strong>
+            The central security principles are established. The current research contribution is best treated as an uncommon synthesis with a potentially distinctive formulation and implementation pattern: probabilistic proposal, explicit capability lifecycle, domain-state guards, deterministic transition mediation, and canonical commitment, with canonical-state authority as the object being confined.
+          </div>
+
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-nav">
+        <a href="/">Home</a>
+        <a href="/articles/">Articles</a>
+        <a href="/essays/">Essays</a>
+        <a href="/letters/">Letters</a>
+        <a href="/public-architecture/">Research</a>
+      </div>
+
+      <div class="footer-meta">
+        &copy; <span id="y"></span> Brendon R. Coleman
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

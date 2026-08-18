@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Music | Brendon R. Coleman</title>
+  <meta name="description" content="Music by Brendon R. Coleman, including Holler the Praise and its full album story." />
+  <link rel="canonical" href="https://brendonrcoleman.com/music/" />
+  <link rel="stylesheet" href="/assets/style.css" />
+  <style>
+    :root { --music-paper:#e7d7ba; --music-gold:#c99a52; --music-line:rgba(231,215,186,.16); }
+    body { background:radial-gradient(circle at 80% 8%,rgba(201,154,82,.13),transparent 24rem),#0b0907; }
+    .site-shell { max-width:980px; }
+    .music-hero { padding:72px 0 52px; border-bottom:1px solid var(--music-line); }
+    .music-hero h1 { color:var(--music-paper); font-family:Georgia,"Times New Roman",serif; font-size:clamp(3rem,8vw,6rem); font-weight:500; margin-bottom:14px; }
+    .music-hero p { color:#ad9f89; max-width:650px; font-family:Georgia,"Times New Roman",serif; font-size:1.1rem; line-height:1.8; }
+    .album-card { display:grid; grid-template-columns:minmax(220px,.8fr) minmax(0,1.2fr); margin:54px 0; border:1px solid var(--music-line); background:linear-gradient(145deg,#211a12,#100d09 70%); overflow:hidden; }
+    .album-card__art { min-height:360px; padding:30px; display:flex; align-items:end; position:relative; background:radial-gradient(circle at 70% 20%,rgba(218,169,91,.28),transparent 9rem),linear-gradient(150deg,#453520,#17120c 72%); }
+    .album-card__art::after { content:""; position:absolute; inset:auto 0 0; height:60%; background:#0a0806; opacity:.82; clip-path:polygon(0 70%,12% 50%,25% 62%,37% 35%,50% 58%,63% 40%,75% 64%,88% 45%,100% 60%,100% 100%,0 100%); }
+    .album-card__art span { position:relative; z-index:1; color:var(--music-paper); font:500 2.4rem/1 Georgia,"Times New Roman",serif; }
+    .album-card__copy { padding:clamp(28px,5vw,52px); align-self:center; }
+    .album-card__copy .kicker { color:var(--music-gold); font-size:.72rem; letter-spacing:.15em; text-transform:uppercase; font-weight:700; }
+    .album-card__copy h2 { color:var(--music-paper); font:500 clamp(2rem,5vw,3.6rem)/1.05 Georgia,"Times New Roman",serif; margin:10px 0 16px; }
+    .album-card__copy p { color:#ad9f89; line-height:1.8; }
+    .album-card__copy a { display:inline-block; margin-top:12px; padding:11px 15px; border:1px solid rgba(201,154,82,.42); color:#e6cfaa; font-size:.8rem; letter-spacing:.09em; text-transform:uppercase; }
+    .album-card__copy a:hover,.album-card__copy a:focus-visible { background:rgba(201,154,82,.12); border-color:var(--music-gold); }
+    @media (max-width:720px){ .album-card{grid-template-columns:1fr}.album-card__art{min-height:280px} }
+
+    /* HOLLER ALBUM CARD ART */
+
+    .album-card__art {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(8,6,4,.05) 20%,
+          rgba(8,6,4,.18) 55%,
+          rgba(8,6,4,.90) 100%
+        ),
+        url("/assets/images/holler-the-praise/holler-the-praise-cover.webp")
+          center 58% / cover no-repeat;
+    }
+
+    .album-card__art::after {
+      inset: 0;
+      height: auto;
+      opacity: 1;
+      clip-path: none;
+      background:
+        linear-gradient(
+          180deg,
+          transparent 35%,
+          rgba(8,6,4,.84) 100%
+        );
+    }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YY69T9F3G3"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YY69T9F3G3');</script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="brand"><a href="/">Brendon R. Coleman</a><span class="tag">music</span></div>
+      <nav class="nav" aria-label="Primary"><a href="/">Home</a><a href="/letters-of-light/">Letters</a><a href="/essays/">Essays</a><a href="/books/">Books</a><a href="/about/">About</a></nav>
+    </header>
+    <main>
+      <section class="music-hero">
+        <span class="section-kicker">BrendonRcoleman.com / Music</span>
+        <h1>Music</h1>
+        <p>Songs with a trail behind them. These pages preserve not only the recordings, but the images, prayers, transitions, and stories that make a group of songs become a whole work.</p>
+      </section>
+      <article class="album-card">
+        <div class="album-card__art"><span>Holler<br>the Praise</span></div>
+        <div class="album-card__copy">
+          <span class="kicker">Album · January 25, 2026</span>
+          <h2>Holler the Praise</h2>
+          <p>Ten songs moving from wandering and mercy through river, firelight, road, wind, storm, hunger, prayer, surrender, and finally hallelujah.</p>
+          <p>The album page is one continuous story in published order, with each track treated as another movement in the same journey.</p>
+          <a href="/music/holler-the-praise/">Enter the album story →</a>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer"><div class="footer-nav"><a href="/">Home</a><a href="/about/">About</a><a href="/privacy/">Privacy</a></div><div class="footer-meta">Brendon R. Coleman</div></footer>
+  </div>
+</body>
+</html>

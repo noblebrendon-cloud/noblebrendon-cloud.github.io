@@ -25,6 +25,33 @@
     .album-card__copy a { display:inline-block; margin-top:12px; padding:11px 15px; border:1px solid rgba(201,154,82,.42); color:#e6cfaa; font-size:.8rem; letter-spacing:.09em; text-transform:uppercase; }
     .album-card__copy a:hover,.album-card__copy a:focus-visible { background:rgba(201,154,82,.12); border-color:var(--music-gold); }
     @media (max-width:720px){ .album-card{grid-template-columns:1fr}.album-card__art{min-height:280px} }
+
+    /* HOLLER ALBUM CARD ART */
+
+    .album-card__art {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(8,6,4,.05) 20%,
+          rgba(8,6,4,.18) 55%,
+          rgba(8,6,4,.90) 100%
+        ),
+        url("/assets/images/holler-the-praise/holler-the-praise-cover.webp")
+          center 58% / cover no-repeat;
+    }
+
+    .album-card__art::after {
+      inset: 0;
+      height: auto;
+      opacity: 1;
+      clip-path: none;
+      background:
+        linear-gradient(
+          180deg,
+          transparent 35%,
+          rgba(8,6,4,.84) 100%
+        );
+    }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YY69T9F3G3"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-YY69T9F3G3');</script>

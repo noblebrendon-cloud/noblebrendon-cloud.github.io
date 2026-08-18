@@ -11,7 +11,9 @@
   <meta property="og:type" content="music.album" />
   <meta property="og:url" content="https://brendonrcoleman.com/music/holler-the-praise/" />
   <meta property="og:site_name" content="Brendon R. Coleman" />
+  <meta property="og:image" content="https://brendonrcoleman.com/assets/images/holler-the-praise/holler-the-praise-cover.webp" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://brendonrcoleman.com/assets/images/holler-the-praise/holler-the-praise-cover.webp" />
   <link rel="stylesheet" href="/assets/style.css" />
   <style>
     :root {
@@ -143,6 +145,165 @@
       .transition { align-items: flex-start; flex-direction: column; }
       .media-art { min-height: 240px; }
     }
+
+    /* ========================================================
+       HOLLER VISUAL ASSETS
+       ======================================================== */
+
+    .album-hero {
+      min-height: 680px;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(8, 6, 4, 0.14) 0%,
+          rgba(8, 6, 4, 0.34) 42%,
+          rgba(8, 6, 4, 0.88) 88%,
+          #0c0a07 100%
+        ),
+        url("/assets/images/holler-the-praise/holler-the-praise-cover.webp")
+          center 58% / cover no-repeat;
+    }
+
+    .album-hero::before,
+    .album-hero::after {
+      display: none;
+    }
+
+    .media-art {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .media-art::after {
+      inset: 0;
+      height: auto;
+      opacity: 1;
+      clip-path: none;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(8, 6, 4, 0.03) 22%,
+          rgba(8, 6, 4, 0.18) 54%,
+          rgba(8, 6, 4, 0.88) 100%
+        );
+    }
+
+    .art-hills {
+      background-image:
+        linear-gradient(rgba(12,9,6,.04), rgba(12,9,6,.10)),
+        url("/assets/images/holler-the-praise/holler-the-praise-cover.webp");
+    }
+
+    .art-river {
+      background-image:
+        linear-gradient(rgba(12,9,6,.03), rgba(12,9,6,.12)),
+        url("/assets/images/holler-the-praise/riverbed-redemption.webp");
+    }
+
+    .art-fire {
+      background-image:
+        linear-gradient(rgba(12,9,6,.02), rgba(12,9,6,.10)),
+        url("/assets/images/holler-the-praise/firelight-psalms.webp");
+    }
+
+    .art-road {
+      background-image:
+        linear-gradient(rgba(12,9,6,.03), rgba(12,9,6,.12)),
+        url("/assets/images/holler-the-praise/boots-on-the-old-road.webp");
+    }
+
+    .art-wind {
+      background-image:
+        linear-gradient(rgba(12,9,6,.03), rgba(12,9,6,.10)),
+        url("/assets/images/holler-the-praise/wind-through-the-pines.webp");
+    }
+
+    .art-storm {
+      background-image:
+        linear-gradient(rgba(12,9,6,.04), rgba(12,9,6,.14)),
+        url("/assets/images/holler-the-praise/stormlight-in-the-holler.webp");
+    }
+
+    .art-hunger {
+      background-image:
+        linear-gradient(rgba(12,9,6,.03), rgba(12,9,6,.12)),
+        url("/assets/images/holler-the-praise/hunger-of-the-hills.webp");
+    }
+
+    .art-ridge {
+      background-image:
+        linear-gradient(rgba(12,9,6,.03), rgba(12,9,6,.10)),
+        url("/assets/images/holler-the-praise/pine-ridge-praise.webp");
+    }
+
+    .art-embers {
+      background-image:
+        linear-gradient(rgba(12,9,6,.03), rgba(12,9,6,.12)),
+        url("/assets/images/holler-the-praise/ash-and-ember-prayer.webp");
+    }
+
+    .art-hallelujah {
+      background-image:
+        linear-gradient(rgba(12,9,6,.02), rgba(12,9,6,.10)),
+        url("/assets/images/holler-the-praise/holler-hallelujah.webp");
+    }
+
+    /* ========================================================
+       HOLLER VIDEO EMBEDS
+       ======================================================== */
+
+    .player-shell {
+      padding: 0;
+    }
+
+    .player-frame {
+      aspect-ratio: 16 / 9;
+      background: #000;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .player-frame iframe {
+      border: 0;
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    .player-actions {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+      padding: 16px 18px;
+    }
+
+    .player-actions span {
+      color: #918775;
+      font-size: .76rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 640px) {
+      .album-hero {
+        min-height: 560px;
+        background-position: center 52%;
+      }
+
+      .media-art {
+        min-height: 310px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .player-actions {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
   </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YY69T9F3G3"></script>
   <script>
@@ -226,7 +387,24 @@
         <div class="media-column">
           <div class="media-card">
             <div class="media-art art-hills"><span>Holler of the Hills</span></div>
-            <div class="player-shell"><p>Published audio player will be embedded here. Until then, the album is available through the YouTube Music profile.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div>
+            <div class="player-shell">
+              <div class="player-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/dZh_RqBNq8Y?rel=0"
+                  title="Holler of the Hills — Holler the Praise"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="player-actions">
+                <span>Published recording</span>
+                <a class="player-link"
+                   href="https://music.youtube.com/watch?v=dZh_RqBNq8Y"
+                   target="_blank"
+                   rel="noopener noreferrer">Open in YouTube Music ↗</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -245,7 +423,24 @@
           </div>
           <blockquote class="track-note">“From the river to the ridge,<br>Your grace is my bridge.”<cite>Riverbed Redemption</cite></blockquote>
         </div>
-        <div class="media-column"><div class="media-card"><div class="media-art art-river"><span>Riverbed Redemption</span></div><div class="player-shell"><p>Published audio player placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
+        <div class="media-column"><div class="media-card"><div class="media-art art-river"><span>Riverbed Redemption</span></div><div class="player-shell">
+              <div class="player-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/9k-hmWTuouc?rel=0"
+                  title="Riverbed Redemption — Holler the Praise"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="player-actions">
+                <span>Published recording</span>
+                <a class="player-link"
+                   href="https://music.youtube.com/watch?v=9k-hmWTuouc"
+                   target="_blank"
+                   rel="noopener noreferrer">Open in YouTube Music ↗</a>
+              </div>
+            </div></div></div>
       </section>
 
       <div class="transition"><p>Washed, the record does not rush into daylight. It sits beside a fire and learns to remain.</p><a href="#track-03">Continue to track 03 →</a></div>
@@ -262,7 +457,24 @@
           </div>
           <blockquote class="track-note">“Teach my heart to burn like this,<br>In worship, work, and song.”<cite>FIRELIGHT PSALMS</cite></blockquote>
         </div>
-        <div class="media-column"><div class="media-card"><div class="media-art art-fire"><span>FIRELIGHT PSALMS</span></div><div class="player-shell"><p>Published audio player placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
+        <div class="media-column"><div class="media-card"><div class="media-art art-fire"><span>FIRELIGHT PSALMS</span></div><div class="player-shell">
+              <div class="player-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/gGoSVOr_III?rel=0"
+                  title="FIRELIGHT PSALMS — Holler the Praise"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="player-actions">
+                <span>Published recording</span>
+                <a class="player-link"
+                   href="https://music.youtube.com/watch?v=gGoSVOr_III"
+                   target="_blank"
+                   rel="noopener noreferrer">Open in YouTube Music ↗</a>
+              </div>
+            </div></div></div>
       </section>
 
       <div class="transition"><p>The fire teaches steadiness. The next song puts that steadiness on its feet.</p><a href="#track-04">Continue to track 04 →</a></div>
@@ -279,7 +491,24 @@
           </div>
           <blockquote class="track-note">“I don’t know where the trail will turn,<br>But I trust Your steady pace.”<cite>Boots on the Old Road</cite></blockquote>
         </div>
-        <div class="media-column"><div class="media-card"><div class="media-art art-road"><span>Boots on the Old Road</span></div><div class="player-shell"><p>Published audio player placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
+        <div class="media-column"><div class="media-card"><div class="media-art art-road"><span>Boots on the Old Road</span></div><div class="player-shell">
+              <div class="player-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/Wm3D4Yx_pDc?rel=0"
+                  title="Boots on the Old Road — Holler the Praise"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="player-actions">
+                <span>Published recording</span>
+                <a class="player-link"
+                   href="https://music.youtube.com/watch?v=Wm3D4Yx_pDc"
+                   target="_blank"
+                   rel="noopener noreferrer">Open in YouTube Music ↗</a>
+              </div>
+            </div></div></div>
       </section>
 
       <div class="transition"><p>Walking creates a new problem: knowing what to listen for.</p><a href="#track-05">Continue to track 05 →</a></div>
@@ -296,7 +525,24 @@
           </div>
           <blockquote class="track-note">“Not in thunder, not in fire,<br>But in a voice my heart could hear.”<cite>Wind Through the Pines</cite></blockquote>
         </div>
-        <div class="media-column"><div class="media-card"><div class="media-art art-wind"><span>Wind Through the Pines</span></div><div class="player-shell"><p>Published audio player placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
+        <div class="media-column"><div class="media-card"><div class="media-art art-wind"><span>Wind Through the Pines</span></div><div class="player-shell">
+              <div class="player-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/qUQY8CnR2ek?rel=0"
+                  title="Wind Through the Pines — Holler the Praise"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="player-actions">
+                <span>Published recording</span>
+                <a class="player-link"
+                   href="https://music.youtube.com/watch?v=qUQY8CnR2ek"
+                   target="_blank"
+                   rel="noopener noreferrer">Open in YouTube Music ↗</a>
+              </div>
+            </div></div></div>
       </section>
 
       <div class="transition"><p>The whisper is learned in stillness. Then the weather changes, and the same trust is tested under pressure.</p><a href="#track-06">Continue to track 06 →</a></div>
@@ -313,7 +559,24 @@
           </div>
           <blockquote class="track-note">“You hold my heart when the night won’t end—<br>Jesus, You’re my stormlight in the holler.”<cite>Stormlight in the Holler</cite></blockquote>
         </div>
-        <div class="media-column"><div class="media-card"><div class="media-art art-storm"><span>Stormlight in the Holler</span></div><div class="player-shell"><p>Published audio player placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
+        <div class="media-column"><div class="media-card"><div class="media-art art-storm"><span>Stormlight in the Holler</span></div><div class="player-shell">
+              <div class="player-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/3I8Kos60ch8?rel=0"
+                  title="Stormlight in the Holler — Holler the Praise"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="player-actions">
+                <span>Published recording</span>
+                <a class="player-link"
+                   href="https://music.youtube.com/watch?v=3I8Kos60ch8"
+                   target="_blank"
+                   rel="noopener noreferrer">Open in YouTube Music ↗</a>
+              </div>
+            </div></div></div>
       </section>
 
       <div class="transition"><p>After endurance comes a more ordinary test: what remains when need is not dramatic, only persistent.</p><a href="#track-07">Continue to track 07 →</a></div>
@@ -330,7 +593,24 @@
           </div>
           <blockquote class="track-note">“When all I have is just a prayer,<br>Your mercy makes me whole.”<cite>Hunger of the Hills</cite></blockquote>
         </div>
-        <div class="media-column"><div class="media-card"><div class="media-art art-hunger"><span>Hunger of the Hills</span></div><div class="player-shell"><p>Published audio player placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
+        <div class="media-column"><div class="media-card"><div class="media-art art-hunger"><span>Hunger of the Hills</span></div><div class="player-shell">
+              <div class="player-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/88eklvJJ6g0?rel=0"
+                  title="Hunger of the Hills — Holler the Praise"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="player-actions">
+                <span>Published recording</span>
+                <a class="player-link"
+                   href="https://music.youtube.com/watch?v=88eklvJJ6g0"
+                   target="_blank"
+                   rel="noopener noreferrer">Open in YouTube Music ↗</a>
+              </div>
+            </div></div></div>
       </section>
 
       <div class="transition"><p>Dependence lifts the eyes. The landscape that carried struggle begins to read like witness.</p><a href="#track-08">Continue to track 08 →</a></div>
@@ -347,7 +627,24 @@
           </div>
           <blockquote class="track-note">“Your mercy echoes through it all—<br>So I sing my praise on Pine Ridge.”<cite>Pine Ridge Praise</cite></blockquote>
         </div>
-        <div class="media-column"><div class="media-card"><div class="media-art art-ridge"><span>Pine Ridge Praise</span></div><div class="player-shell"><p>Published audio player placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
+        <div class="media-column"><div class="media-card"><div class="media-art art-ridge"><span>Pine Ridge Praise</span></div><div class="player-shell">
+              <div class="player-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/uvSdexJJIek?rel=0"
+                  title="Pine Ridge Praise — Holler the Praise"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="player-actions">
+                <span>Published recording</span>
+                <a class="player-link"
+                   href="https://music.youtube.com/watch?v=uvSdexJJIek"
+                   target="_blank"
+                   rel="noopener noreferrer">Open in YouTube Music ↗</a>
+              </div>
+            </div></div></div>
       </section>
 
       <div class="transition"><p>Praise does not end the interior work. Before the final shout, the record returns to the fire — this time as offering.</p><a href="#track-09">Continue to track 09 →</a></div>
@@ -364,7 +661,24 @@
           </div>
           <blockquote class="track-note">“If all I have is a spark to give,<br>Lord, take it—teach my heart to live.”<cite>Ash and Ember Prayer</cite></blockquote>
         </div>
-        <div class="media-column"><div class="media-card"><div class="media-art art-embers"><span>Ash and Ember Prayer</span></div><div class="player-shell"><p>Published audio player placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
+        <div class="media-column"><div class="media-card"><div class="media-art art-embers"><span>Ash and Ember Prayer</span></div><div class="player-shell">
+              <div class="player-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/hehbzaztZJg?rel=0"
+                  title="Ash and Ember Prayer — Holler the Praise"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="player-actions">
+                <span>Published recording</span>
+                <a class="player-link"
+                   href="https://music.youtube.com/watch?v=hehbzaztZJg"
+                   target="_blank"
+                   rel="noopener noreferrer">Open in YouTube Music ↗</a>
+              </div>
+            </div></div></div>
       </section>
 
       <div class="transition"><p>What survives the fire becomes the breath for one last holler.</p><a href="#track-10">Continue to track 10 →</a></div>
@@ -381,7 +695,24 @@
           </div>
           <blockquote class="track-note">“After all the storms and nights I knew,<br>Lord, I stand reborn in You.”<cite>Holler Hallelujah</cite></blockquote>
         </div>
-        <div class="media-column"><div class="media-card"><div class="media-art art-hallelujah"><span>Holler Hallelujah</span></div><div class="player-shell"><p>Published audio player placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
+        <div class="media-column"><div class="media-card"><div class="media-art art-hallelujah"><span>Holler Hallelujah</span></div><div class="player-shell">
+              <div class="player-frame">
+                <iframe
+                  src="https://www.youtube.com/embed/QY3Nw0upVFM?rel=0"
+                  title="Holler Hallelujah — Holler the Praise"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
+              <div class="player-actions">
+                <span>Published recording</span>
+                <a class="player-link"
+                   href="https://music.youtube.com/watch?v=QY3Nw0upVFM"
+                   target="_blank"
+                   rel="noopener noreferrer">Open in YouTube Music ↗</a>
+              </div>
+            </div></div></div>
       </section>
 
       <section class="closing">

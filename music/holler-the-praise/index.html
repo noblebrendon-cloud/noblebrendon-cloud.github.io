@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Holler the Praise | Brendon R. Coleman</title>
-  <meta name="description" content="The story of Holler the Praise: a ten-song devotional folk, roots, and blues album by Brendon R. Coleman, told in recording order." />
+  <meta name="description" content="The story of Holler the Praise: a ten-song devotional Appalachian folk, roots, blues, and gospel album by Brendon R. Coleman, told in published order." />
   <link rel="canonical" href="https://brendonrcoleman.com/music/holler-the-praise/" />
   <meta property="og:title" content="Holler the Praise | Brendon R. Coleman" />
-  <meta property="og:description" content="The album story, track by track, in the order it was released." />
+  <meta property="og:description" content="A ten-song journey through wandering, mercy, firelight, road, wind, storm, hunger, prayer, and praise." />
   <meta property="og:type" content="music.album" />
   <meta property="og:url" content="https://brendonrcoleman.com/music/holler-the-praise/" />
   <meta property="og:site_name" content="Brendon R. Coleman" />
@@ -16,21 +16,15 @@
   <style>
     :root {
       --holler-ink: #17130e;
-      --holler-ink-soft: #2b241b;
-      --holler-paper: #e6d5b6;
+      --holler-paper: #ead9b8;
       --holler-paper-deep: #cbb589;
       --holler-gold: #b98a45;
       --holler-gold-soft: #d7b778;
-      --holler-smoke: #8d8375;
       --holler-line: rgba(231, 209, 166, 0.22);
       --holler-shadow: rgba(0, 0, 0, 0.38);
     }
 
-    html {
-      scroll-behavior: smooth;
-      background: #0b0907;
-    }
-
+    html { scroll-behavior: smooth; background: #0b0907; }
     body {
       background:
         radial-gradient(circle at 78% 2%, rgba(185, 138, 69, 0.18), transparent 28rem),
@@ -38,26 +32,10 @@
       color: var(--holler-paper);
     }
 
-    .site-shell {
-      max-width: 1180px;
-      padding-top: 20px;
-    }
-
-    .site-header {
-      border-bottom-color: var(--holler-line);
-      margin-bottom: 0;
-    }
-
-    .site-header .brand a,
-    .nav a:hover,
-    .nav a:focus-visible {
-      color: #f0dfbd;
-    }
-
-    .site-header .brand .tag,
-    .nav a {
-      color: #aa9b83;
-    }
+    .site-shell { max-width: 1180px; padding-top: 20px; }
+    .site-header { border-bottom-color: var(--holler-line); margin-bottom: 0; }
+    .site-header .brand a, .nav a:hover, .nav a:focus-visible { color: #f0dfbd; }
+    .site-header .brand .tag, .nav a { color: #aa9b83; }
 
     .album-hero {
       min-height: 620px;
@@ -74,389 +52,98 @@
         radial-gradient(circle at 72% 24%, rgba(226, 178, 99, 0.32), transparent 14rem),
         linear-gradient(155deg, #1a1712 0%, #41331f 46%, #15110c 100%);
     }
-
-    .album-hero::before,
-    .album-hero::after {
-      content: "";
-      position: absolute;
-      inset: auto -8% 0;
-      height: 55%;
-      z-index: -1;
-      pointer-events: none;
+    .album-hero::before, .album-hero::after {
+      content: ""; position: absolute; inset: auto -8% 0; pointer-events: none; z-index: -1;
     }
-
     .album-hero::before {
-      background: #17140f;
-      clip-path: polygon(0 62%, 10% 47%, 20% 56%, 30% 32%, 42% 48%, 52% 25%, 63% 45%, 74% 19%, 86% 40%, 100% 12%, 100% 100%, 0 100%);
-      opacity: 0.94;
+      height: 55%; background: #17140f; opacity: .94;
+      clip-path: polygon(0 62%,10% 47%,20% 56%,30% 32%,42% 48%,52% 25%,63% 45%,74% 19%,86% 40%,100% 12%,100% 100%,0 100%);
     }
-
     .album-hero::after {
-      height: 42%;
-      background: #0b0907;
-      clip-path: polygon(0 67%, 9% 55%, 20% 65%, 31% 49%, 40% 61%, 51% 41%, 62% 60%, 72% 45%, 82% 61%, 91% 48%, 100% 62%, 100% 100%, 0 100%);
+      height: 42%; background: #0b0907;
+      clip-path: polygon(0 67%,9% 55%,20% 65%,31% 49%,40% 61%,51% 41%,62% 60%,72% 45%,82% 61%,91% 48%,100% 62%,100% 100%,0 100%);
     }
-
-    .album-hero__inner {
-      width: min(100%, 930px);
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    .eyebrow,
-    .track-kicker {
-      color: var(--holler-gold-soft);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
+    .album-hero__inner { width: min(100%, 930px); margin: 0 auto; position: relative; z-index: 2; }
+    .eyebrow, .track-kicker { color: var(--holler-gold-soft); font-size: .75rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
     .album-title {
-      color: #f3e5c8;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.4rem, 11vw, 7.4rem);
-      font-weight: 500;
-      letter-spacing: 0.025em;
-      line-height: 0.82;
-      margin: 16px 0 22px;
-      text-transform: uppercase;
-      text-shadow: 0 10px 32px rgba(0,0,0,0.42);
+      color: #f3e5c8; font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.4rem, 11vw, 7.4rem); font-weight: 500; letter-spacing: .025em;
+      line-height: .82; margin: 16px 0 22px; text-transform: uppercase; text-shadow: 0 10px 32px rgba(0,0,0,.42);
     }
+    .album-title span { display: block; font-size: .43em; font-style: italic; font-weight: 400; margin: .18em 0; text-transform: none; }
+    .album-deck { color: #dcc8a3; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1rem,2vw,1.25rem); letter-spacing: .08em; max-width: 760px; text-transform: uppercase; }
+    .album-meta { display: flex; flex-wrap: wrap; gap: 10px 20px; color: #a99b83; font-size: .88rem; margin-top: 20px; }
+    .album-meta span + span::before { content: "·"; color: var(--holler-gold); margin-right: 20px; }
 
-    .album-title span {
-      display: block;
-      font-size: 0.43em;
-      font-style: italic;
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      margin: 0.18em 0;
-      text-transform: none;
-    }
+    .album-intro { display: grid; gap: 28px; grid-template-columns: minmax(0,.9fr) minmax(0,1.35fr); border-bottom: 1px solid var(--holler-line); padding: 58px 0 50px; }
+    .album-intro h2, .story-column h2, .closing h2 { color: #f0dfbd; font-family: Georgia, "Times New Roman", serif; font-weight: 500; }
+    .album-intro__lead { color: #cdbb99; font-family: Georgia, "Times New Roman", serif; font-size: 1.13rem; font-style: italic; line-height: 1.8; }
+    .album-intro p, .track-story p, .closing p { color: #b7aa94; line-height: 1.85; }
+    .album-arc { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--holler-line); color: #a99b83; font-size: .84rem; letter-spacing: .04em; line-height: 1.85; }
+    .album-arc strong { color: #d5bc8e; font-weight: 600; }
 
-    .album-deck {
-      color: #dcc8a3;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      letter-spacing: 0.08em;
-      margin-bottom: 20px;
-      max-width: 720px;
-      text-transform: uppercase;
-    }
+    .track-nav-wrap { margin: 0 -24px; border-bottom: 1px solid var(--holler-line); background: rgba(11,9,7,.88); position: sticky; top: 0; z-index: 10; backdrop-filter: blur(12px); }
+    .track-nav { display: grid; grid-template-columns: repeat(10,minmax(118px,1fr)); max-width: 1180px; margin: 0 auto; overflow-x: auto; scrollbar-width: thin; }
+    .track-nav a { min-height: 86px; padding: 15px 12px; border-right: 1px solid var(--holler-line); color: #9f9179; font-family: Georgia, "Times New Roman", serif; font-size: .78rem; line-height: 1.35; }
+    .track-nav a:first-child { border-left: 1px solid var(--holler-line); }
+    .track-nav a:hover, .track-nav a:focus-visible { background: rgba(185,138,69,.11); color: #f0dfbd; }
+    .track-nav strong { display: block; color: var(--holler-gold-soft); font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size: .66rem; letter-spacing: .12em; margin-bottom: 7px; }
 
-    .album-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 20px;
-      color: #a99b83;
-      font-size: 0.88rem;
-    }
+    .track { display: grid; gap: clamp(28px,6vw,64px); grid-template-columns: minmax(0,.92fr) minmax(340px,1.25fr); padding: clamp(68px,10vw,116px) 0; border-bottom: 1px solid var(--holler-line); scroll-margin-top: 106px; }
+    .track:nth-of-type(even) .story-column { order: 2; }
+    .track:nth-of-type(even) .media-column { order: 1; }
+    .track-number { color: var(--holler-gold); font-family: Georgia,"Times New Roman",serif; font-size: clamp(2.2rem,5vw,4.5rem); line-height: 1; margin-bottom: 16px; }
+    .track-title { color: #f1dfbd; font-family: Georgia,"Times New Roman",serif; font-size: clamp(1.7rem,4vw,3.3rem); font-weight: 500; line-height: 1.05; margin-bottom: 12px; }
+    .track-story { margin-top: 28px; }
+    .track-story p strong { color: #d6c3a1; font-weight: 600; }
+    .track-note { border-left: 2px solid var(--holler-gold); color: #d2bea0; font-family: Georgia,"Times New Roman",serif; font-size: 1.04rem; font-style: italic; line-height: 1.7; margin: 30px 0 0; padding-left: 20px; }
+    .track-note cite { display: block; color: #8f8371; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size: .72rem; font-style: normal; letter-spacing: .12em; margin-top: 12px; text-transform: uppercase; }
 
-    .album-meta span + span::before {
-      content: "·";
-      color: var(--holler-gold);
-      margin-right: 20px;
-    }
+    .media-card { border: 1px solid rgba(215,183,120,.24); background: linear-gradient(145deg,rgba(35,29,21,.92),rgba(14,12,9,.96)); box-shadow: 0 20px 54px var(--holler-shadow); overflow: hidden; }
+    .media-art { min-height: 300px; display: flex; align-items: end; padding: 28px; position: relative; border-bottom: 1px solid rgba(215,183,120,.2); overflow: hidden; }
+    .media-art::after { content: ""; position: absolute; inset: auto 0 0; height: 64%; background: #0d0b08; opacity: .74; clip-path: polygon(0 70%,12% 54%,22% 62%,35% 39%,48% 63%,59% 43%,72% 66%,86% 46%,100% 62%,100% 100%,0 100%); }
+    .media-art span { position: relative; z-index: 2; color: #e5cfaa; font-family: Georgia,"Times New Roman",serif; font-size: 1.5rem; max-width: 82%; text-shadow: 0 2px 12px #000; }
+    .art-hills { background: radial-gradient(circle at 74% 22%,rgba(222,164,79,.36),transparent 9rem),linear-gradient(150deg,#3b2c19,#17110c 74%); }
+    .art-river { background: radial-gradient(ellipse at 50% 78%,rgba(167,190,184,.25),transparent 16rem),linear-gradient(145deg,#2c322d,#121614 72%); }
+    .art-fire { background: radial-gradient(circle at 52% 72%,rgba(236,129,43,.48),transparent 9rem),linear-gradient(145deg,#382116,#100c09 74%); }
+    .art-road { background: linear-gradient(160deg,#4a3c2a 0%,#282317 44%,#12100c 100%); }
+    .art-wind { background: radial-gradient(circle at 30% 25%,rgba(164,188,174,.16),transparent 10rem),linear-gradient(145deg,#243129,#111712 74%); }
+    .art-storm { background: radial-gradient(circle at 78% 26%,rgba(198,183,133,.18),transparent 7rem),linear-gradient(145deg,#2a2d31,#111215 74%); }
+    .art-hunger { background: radial-gradient(circle at 72% 24%,rgba(190,146,76,.19),transparent 8rem),linear-gradient(145deg,#342b1f,#15120d 74%); }
+    .art-ridge { background: radial-gradient(circle at 74% 20%,rgba(229,173,86,.3),transparent 9rem),linear-gradient(145deg,#353325,#15150f 74%); }
+    .art-embers { background: radial-gradient(circle at 50% 72%,rgba(222,91,36,.42),transparent 8rem),linear-gradient(145deg,#321c16,#100b09 74%); }
+    .art-hallelujah { background: radial-gradient(circle at 70% 20%,rgba(237,192,102,.46),transparent 11rem),linear-gradient(145deg,#4a351c,#17110b 74%); }
 
-    .album-intro {
-      display: grid;
-      gap: 28px;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.35fr);
-      border-bottom: 1px solid var(--holler-line);
-      padding: 54px 0 46px;
-    }
+    .player-shell { padding: 20px; }
+    .player-shell p { color: #918775; font-size: .88rem; margin: 0 0 14px; }
+    .player-link { display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgba(215,183,120,.36); color: #e5cfaa; padding: 10px 14px; font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; }
+    .player-link:hover, .player-link:focus-visible { background: rgba(185,138,69,.13); border-color: var(--holler-gold-soft); }
 
-    .album-intro h2,
-    .story-column h2,
-    .closing h2 {
-      color: #f0dfbd;
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 500;
-    }
+    .transition { margin: 0 -24px; padding: 29px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: #0a0806; border-bottom: 1px solid var(--holler-line); }
+    .transition p { color: #9c8f7c; font-family: Georgia,"Times New Roman",serif; font-style: italic; margin: 0; }
+    .transition a { color: var(--holler-gold-soft); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
 
-    .album-intro__lead {
-      color: #c6b493;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.1rem;
-      font-style: italic;
-      line-height: 1.8;
-    }
-
-    .album-intro p,
-    .track-story p,
-    .closing p {
-      color: #b7aa94;
-      line-height: 1.85;
-    }
-
-    .track-nav-wrap {
-      margin: 0 -24px;
-      border-bottom: 1px solid var(--holler-line);
-      background: rgba(11, 9, 7, 0.88);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(12px);
-    }
-
-    .track-nav {
-      display: grid;
-      grid-template-columns: repeat(10, minmax(118px, 1fr));
-      gap: 0;
-      max-width: 1180px;
-      margin: 0 auto;
-      overflow-x: auto;
-      scrollbar-width: thin;
-    }
-
-    .track-nav a {
-      min-height: 86px;
-      padding: 15px 12px;
-      border-right: 1px solid var(--holler-line);
-      color: #9f9179;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 0.78rem;
-      line-height: 1.35;
-    }
-
-    .track-nav a:first-child {
-      border-left: 1px solid var(--holler-line);
-    }
-
-    .track-nav a:hover,
-    .track-nav a:focus-visible {
-      background: rgba(185, 138, 69, 0.11);
-      color: #f0dfbd;
-    }
-
-    .track-nav strong {
-      display: block;
-      color: var(--holler-gold-soft);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-size: 0.66rem;
-      letter-spacing: 0.12em;
-      margin-bottom: 7px;
-    }
-
-    .track {
-      display: grid;
-      gap: clamp(28px, 6vw, 64px);
-      grid-template-columns: minmax(0, 0.92fr) minmax(340px, 1.25fr);
-      padding: clamp(64px, 10vw, 112px) 0;
-      border-bottom: 1px solid var(--holler-line);
-      scroll-margin-top: 106px;
-    }
-
-    .track:nth-of-type(even) .story-column {
-      order: 2;
-    }
-
-    .track:nth-of-type(even) .media-column {
-      order: 1;
-    }
-
-    .track-number {
-      color: var(--holler-gold);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.2rem, 5vw, 4.5rem);
-      font-weight: 400;
-      line-height: 1;
-      margin-bottom: 16px;
-    }
-
-    .track-title {
-      color: #f1dfbd;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.7rem, 4vw, 3.3rem);
-      font-weight: 500;
-      line-height: 1.05;
-      margin-bottom: 12px;
-    }
-
-    .track-story {
-      margin-top: 28px;
-    }
-
-    .track-note {
-      border-left: 2px solid var(--holler-gold);
-      color: #d2bea0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-style: italic;
-      line-height: 1.7;
-      margin: 30px 0 0;
-      padding-left: 20px;
-    }
-
-    .media-card {
-      border: 1px solid rgba(215, 183, 120, 0.24);
-      background: linear-gradient(145deg, rgba(35, 29, 21, 0.92), rgba(14, 12, 9, 0.96));
-      box-shadow: 0 20px 54px var(--holler-shadow);
-      overflow: hidden;
-    }
-
-    .media-art {
-      min-height: 220px;
-      display: flex;
-      align-items: end;
-      padding: 28px;
-      position: relative;
-      background:
-        radial-gradient(circle at 72% 22%, rgba(219, 163, 82, 0.26), transparent 10rem),
-        linear-gradient(145deg, #302518, #14100c 74%);
-      border-bottom: 1px solid rgba(215, 183, 120, 0.2);
-    }
-
-    .media-art::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 64%;
-      background: #0d0b08;
-      opacity: 0.82;
-      clip-path: polygon(0 70%, 12% 54%, 22% 62%, 35% 39%, 48% 63%, 59% 43%, 72% 66%, 86% 46%, 100% 62%, 100% 100%, 0 100%);
-    }
-
-    .media-art span {
-      position: relative;
-      z-index: 1;
-      color: #e5cfaa;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.45rem;
-      max-width: 80%;
-    }
-
-    .player-shell {
-      padding: 20px;
-    }
-
-    .player-shell p {
-      color: #918775;
-      font-size: 0.88rem;
-      margin: 0 0 14px;
-    }
-
-    .player-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      border: 1px solid rgba(215, 183, 120, 0.36);
-      color: #e5cfaa;
-      padding: 10px 14px;
-      font-size: 0.85rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .player-link:hover,
-    .player-link:focus-visible {
-      background: rgba(185, 138, 69, 0.13);
-      border-color: var(--holler-gold-soft);
-    }
-
-    .transition {
-      margin: 0 -24px;
-      padding: 28px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      background: #0a0806;
-      border-bottom: 1px solid var(--holler-line);
-    }
-
-    .transition p {
-      color: #8f8474;
-      font-family: Georgia, "Times New Roman", serif;
-      font-style: italic;
-      margin: 0;
-    }
-
-    .transition a {
-      color: var(--holler-gold-soft);
-      font-size: 0.76rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .closing {
-      padding: 90px 0 44px;
-      max-width: 760px;
-    }
-
-    .draft-note {
-      border: 1px dashed rgba(215, 183, 120, 0.38);
-      background: rgba(185, 138, 69, 0.06);
-      color: #a99b83;
-      font-size: 0.83rem;
-      margin-top: 24px;
-      padding: 12px 14px;
-    }
-
-    .site-footer {
-      border-top-color: var(--holler-line);
-      color: #827766;
-    }
+    .closing { padding: 96px 0 58px; max-width: 780px; }
+    .closing .closing-line { color: #d7c29d; font-family: Georgia,"Times New Roman",serif; font-size: 1.18rem; font-style: italic; margin-top: 28px; }
+    .site-footer { border-top-color: var(--holler-line); color: #827766; }
 
     @media (max-width: 820px) {
-      .album-intro,
-      .track {
-        grid-template-columns: 1fr;
-      }
-
-      .track:nth-of-type(even) .story-column,
-      .track:nth-of-type(even) .media-column {
-        order: initial;
-      }
-
-      .album-hero {
-        min-height: 520px;
-      }
+      .album-intro, .track { grid-template-columns: 1fr; }
+      .track:nth-of-type(even) .story-column, .track:nth-of-type(even) .media-column { order: initial; }
+      .album-hero { min-height: 520px; }
     }
-
     @media (max-width: 640px) {
-      .site-shell {
-        padding-left: 16px;
-        padding-right: 16px;
-      }
-
-      .album-hero,
-      .track-nav-wrap,
-      .transition {
-        margin-left: -16px;
-        margin-right: -16px;
-      }
-
-      .album-hero {
-        padding-left: 18px;
-        padding-right: 18px;
-      }
-
-      .album-meta {
-        display: grid;
-        gap: 4px;
-      }
-
-      .album-meta span + span::before {
-        content: none;
-      }
-
-      .track-nav {
-        grid-template-columns: repeat(10, 132px);
-      }
-
-      .track {
-        padding: 64px 0;
-      }
-
-      .transition {
-        align-items: flex-start;
-        flex-direction: column;
-      }
+      .site-shell { padding-left: 16px; padding-right: 16px; }
+      .album-hero, .track-nav-wrap, .transition { margin-left: -16px; margin-right: -16px; }
+      .album-hero { padding-left: 18px; padding-right: 18px; }
+      .album-meta { display: grid; gap: 4px; }
+      .album-meta span + span::before { content: none; }
+      .track-nav { grid-template-columns: repeat(10,132px); }
+      .track { padding: 64px 0; }
+      .transition { align-items: flex-start; flex-direction: column; }
+      .media-art { min-height: 240px; }
     }
   </style>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YY69T9F3G3"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -486,7 +173,7 @@
         <div class="album-hero__inner">
           <div class="eyebrow">A ten-song devotional journey</div>
           <h1 class="album-title" id="album-title">Holler <span>the</span> Praise</h1>
-          <p class="album-deck">Worship shaped by the hills, the road, firelight, storms, hunger, prayer, and praise.</p>
+          <p class="album-deck">A cry becomes cleansing. Cleansing becomes a road. The road learns to listen, endure, depend, surrender — and finally praise.</p>
           <div class="album-meta" aria-label="Album information">
             <span>January 25, 2026</span>
             <span>10 tracks</span>
@@ -501,10 +188,11 @@
           <h2 id="album-story-title">Before it was a release, it was a place I kept returning to.</h2>
         </div>
         <div>
-          <p class="album-intro__lead">Holler the Praise grew out of a simple posture: make worship from the world as it was actually being lived.</p>
-          <p>The project first took shape under the working language “Holler Gospel.” The word carried two meanings at once: the Appalachian hollow, and the act of crying something out. The sound followed that same tension—Christian worship at the center, carried through folk, roots, and blues rather than polished contemporary worship conventions.</p>
-          <p>The songs moved through roads, hills, water, fire, wind, storms, hunger, ash, prayer, and finally hallelujah. This page follows them in their published order, not to flatten them into one explanation, but to preserve the path they made together.</p>
-          <div class="draft-note">Working page: the design and album-level story are in place. Song-specific narrative and lyric excerpts will be completed from the original lyrics and creation conversations.</div>
+          <p class="album-intro__lead">Holler the Praise grew from a simple posture: make worship from the world as it was actually being lived.</p>
+          <p>The project first took shape under the working language <em>Holler Gospel</em>. The word carried two meanings at once: the Appalachian hollow, and the act of crying something out. I wanted Christian worship at the center, but carried through folk, roots, country-blues, fiddle, stomp, wind, river, timber and fire instead of polished contemporary-worship conventions.</p>
+          <p>Once the ten songs are read together, another shape becomes visible. The album does not stay in one spiritual posture. It moves. A wanderer cries out. He goes down to the water. He keeps watch by a fire. He puts his boots back on the road. He learns to hear God in quietness, then to trust Him when quietness becomes storm. Hunger exposes dependence. Creation becomes praise. What remains is offered like ash and ember. Only then does the record arrive at its final hallelujah.</p>
+          <p>This page follows that movement in the album’s published order. The writing below separates the story <em>inside</em> each song from the wider story the ten songs tell together.</p>
+          <div class="album-arc"><strong>The movement:</strong> cry → cleansing → watchfulness → walking → listening → endurance → dependence → praise → surrender → hallelujah.</div>
         </div>
       </section>
 
@@ -526,104 +214,182 @@
       <section class="track" id="track-01">
         <div class="story-column">
           <div class="track-number">01</div>
-          <div class="track-kicker">Opening the hollow</div>
+          <div class="track-kicker">The cry</div>
           <h2 class="track-title">Holler of the Hills</h2>
           <div class="track-story">
-            <p>This is where the page’s track-by-track story begins. The recovered creation history points to this song as the first strong expression of the album’s Appalachian devotional language and the emotional movement that would carry the record forward.</p>
-            <p>The final version here will combine the original making-of conversation, the published lyrics, and a present-day reflection without pretending those three perspectives are the same thing.</p>
+            <p>The album opens already in motion: a man has been walking through shadows, carrying burdens, weathering storms, and remembering mercy. The important thing is that the first act is not explanation. It is <strong>voice</strong>. He hollers.</p>
+            <p>The landscape immediately becomes part of the worship. Ridge, river, cedar trees, valley and highlands do not sit behind the song as scenery; they answer it. The holler is both the place he stands and the form his praise takes. Sorrow is not erased before praise begins. It is converted into praise while still carrying its grit.</p>
+            <p>That establishes the album’s grammar: darkness can speak, but mercy speaks louder; the valley is not outside worship; and a wandering heart can still lift its voice toward home.</p>
           </div>
-          <blockquote class="track-note">Creation story + lyric passage to be inserted from the source record.</blockquote>
+          <blockquote class="track-note">“Now my sorrow’s turned to singin’,<br>and my singin’s turned to praise You, Lord.”<cite>Holler of the Hills</cite></blockquote>
         </div>
         <div class="media-column">
           <div class="media-card">
-            <div class="media-art"><span>Holler of the Hills</span></div>
-            <div class="player-shell">
-              <p>YouTube Art Track embed will live here until a dedicated video replaces it.</p>
-              <a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a>
-            </div>
+            <div class="media-art art-hills"><span>Holler of the Hills</span></div>
+            <div class="player-shell"><p>Published audio player will be embedded here. Until then, the album is available through the YouTube Music profile.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div>
           </div>
         </div>
       </section>
 
-      <div class="transition"><p>The first cry gives way to water.</p><a href="#track-02">Continue to track 02 →</a></div>
+      <div class="transition"><p>The first song finds a voice. The second asks what that voice must lay down.</p><a href="#track-02">Continue to track 02 →</a></div>
 
       <section class="track" id="track-02">
         <div class="story-column">
           <div class="track-number">02</div>
-          <div class="track-kicker">The story continues</div>
+          <div class="track-kicker">The washing</div>
           <h2 class="track-title">Riverbed Redemption</h2>
-          <div class="track-story"><p>Track story, lyric reading, and creation notes will be reconstructed here from the source material.</p></div>
-          <blockquote class="track-note">Published lyrics + contemporaneous notes pending.</blockquote>
+          <div class="track-story">
+            <p>The cry from the hills descends to water. The imagery becomes physical: mud on the soul, sins like stones, cracked hands, cold water. Redemption here is not abstract. It is something the song imagines being carried to a river and washed.</p>
+            <p>But the river does more than clean. It redirects. A drifting heart becomes a path. Hunger becomes bread. Yesterday’s chains are laid down. Grace becomes the bridge between river and ridge.</p>
+            <p>The record has moved from <strong>being heard</strong> to <strong>being changed</strong>. The voice that shouted across the hills now asks to be made clean enough to keep walking.</p>
+          </div>
+          <blockquote class="track-note">“From the river to the ridge,<br>Your grace is my bridge.”<cite>Riverbed Redemption</cite></blockquote>
         </div>
-        <div class="media-column"><div class="media-card"><div class="media-art"><span>Riverbed Redemption</span></div><div class="player-shell"><p>YouTube Art Track embed placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
+        <div class="media-column"><div class="media-card"><div class="media-art art-river"><span>Riverbed Redemption</span></div><div class="player-shell"><p>Published audio player placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
       </section>
 
-      <div class="transition"><p>From the riverbed, the record turns toward firelight.</p><a href="#track-03">Continue to track 03 →</a></div>
+      <div class="transition"><p>Washed, the record does not rush into daylight. It sits beside a fire and learns to remain.</p><a href="#track-03">Continue to track 03 →</a></div>
 
       <section class="track" id="track-03">
         <div class="story-column">
           <div class="track-number">03</div>
-          <div class="track-kicker">The story continues</div>
+          <div class="track-kicker">The watch</div>
           <h2 class="track-title">FIRELIGHT PSALMS</h2>
-          <div class="track-story"><p>Track story, lyric reading, and creation notes will be reconstructed here from the source material.</p></div>
-          <blockquote class="track-note">Published lyrics + contemporaneous notes pending.</blockquote>
+          <div class="track-story">
+            <p>Night returns, but now there is a fire inside it. The song was shaped around weary watchfulness: wind through the pines, shadows on cedar bark, wolves in the valley, embers holding against the dark.</p>
+            <p>The fire becomes a small theology of endurance. Each spark is a prayer. The flame is steady rather than spectacular. Fear is not denied; it is placed beside the flame while trust grows warm enough to sing.</p>
+            <p>The song also widens worship beyond the song itself: “worship, work, and song.” That line matters to the album’s world. Praise is beginning to move from an isolated cry toward a way of inhabiting ordinary life.</p>
+          </div>
+          <blockquote class="track-note">“Teach my heart to burn like this,<br>In worship, work, and song.”<cite>FIRELIGHT PSALMS</cite></blockquote>
         </div>
-        <div class="media-column"><div class="media-card"><div class="media-art"><span>FIRELIGHT PSALMS</span></div><div class="player-shell"><p>YouTube Art Track embed placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
+        <div class="media-column"><div class="media-card"><div class="media-art art-fire"><span>FIRELIGHT PSALMS</span></div><div class="player-shell"><p>Published audio player placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
       </section>
 
-      <div class="transition"><p>The fire does not stay still. The next movement is a road.</p><a href="#track-04">Continue to track 04 →</a></div>
+      <div class="transition"><p>The fire teaches steadiness. The next song puts that steadiness on its feet.</p><a href="#track-04">Continue to track 04 →</a></div>
 
       <section class="track" id="track-04">
-        <div class="story-column"><div class="track-number">04</div><div class="track-kicker">The story continues</div><h2 class="track-title">Boots on the Old Road</h2><div class="track-story"><p>Track story, lyric reading, and creation notes will be reconstructed here from the source material.</p></div><blockquote class="track-note">Published lyrics + contemporaneous notes pending.</blockquote></div>
-        <div class="media-column"><div class="media-card"><div class="media-art"><span>Boots on the Old Road</span></div><div class="player-shell"><p>YouTube Art Track embed placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
+        <div class="story-column">
+          <div class="track-number">04</div>
+          <div class="track-kicker">The road</div>
+          <h2 class="track-title">Boots on the Old Road</h2>
+          <div class="track-story">
+            <p>Now the album starts walking. The boots are already worn from wandering; the road is not a fantasy of a clean beginning. It is the same pair of feet, carrying their history, choosing a different direction.</p>
+            <p>The song’s faith is deliberately modest: “I ain’t got much but this old faith.” It does not claim to know where the trail turns. It claims something smaller and harder — willingness to keep pace with God.</p>
+            <p>The old road also introduces company. Saints and sinners have walked it before. Their echoes join the hills. What began as one man’s holler is slowly discovering a lineage, a path, and a homeward direction.</p>
+          </div>
+          <blockquote class="track-note">“I don’t know where the trail will turn,<br>But I trust Your steady pace.”<cite>Boots on the Old Road</cite></blockquote>
+        </div>
+        <div class="media-column"><div class="media-card"><div class="media-art art-road"><span>Boots on the Old Road</span></div><div class="player-shell"><p>Published audio player placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
       </section>
 
-      <div class="transition"><p>The road opens into the trees.</p><a href="#track-05">Continue to track 05 →</a></div>
+      <div class="transition"><p>Walking creates a new problem: knowing what to listen for.</p><a href="#track-05">Continue to track 05 →</a></div>
 
       <section class="track" id="track-05">
-        <div class="story-column"><div class="track-number">05</div><div class="track-kicker">The story continues</div><h2 class="track-title">Wind Through the Pines</h2><div class="track-story"><p>Track story, lyric reading, and creation notes will be reconstructed here from the source material.</p></div><blockquote class="track-note">Published lyrics + contemporaneous notes pending.</blockquote></div>
-        <div class="media-column"><div class="media-card"><div class="media-art"><span>Wind Through the Pines</span></div><div class="player-shell"><p>YouTube Art Track embed placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
+        <div class="story-column">
+          <div class="track-number">05</div>
+          <div class="track-kicker">The whisper</div>
+          <h2 class="track-title">Wind Through the Pines</h2>
+          <div class="track-story">
+            <p>The album quiets down. God is not encountered here in thunder or fire, but in a voice the heart can hear. Branches bow like prayer. Every sway becomes a sermon. Solitude becomes a place where faith learns how to bend without breaking.</p>
+            <p>This is an important turn in the record. Earlier songs needed a holler loud enough to cross a valley. This one learns that presence does not always arrive loudly. Discernment becomes part of discipleship.</p>
+            <p>The repeated request is not for certainty but for nearness: steady my fears, guide my feet, remind me who You are. The road is now being navigated by attention.</p>
+          </div>
+          <blockquote class="track-note">“Not in thunder, not in fire,<br>But in a voice my heart could hear.”<cite>Wind Through the Pines</cite></blockquote>
+        </div>
+        <div class="media-column"><div class="media-card"><div class="media-art art-wind"><span>Wind Through the Pines</span></div><div class="player-shell"><p>Published audio player placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
       </section>
 
-      <div class="transition"><p>Then the weather changes.</p><a href="#track-06">Continue to track 06 →</a></div>
+      <div class="transition"><p>The whisper is learned in stillness. Then the weather changes, and the same trust is tested under pressure.</p><a href="#track-06">Continue to track 06 →</a></div>
 
       <section class="track" id="track-06">
-        <div class="story-column"><div class="track-number">06</div><div class="track-kicker">The story continues</div><h2 class="track-title">Stormlight in the Holler</h2><div class="track-story"><p>Track story, lyric reading, and creation notes will be reconstructed here from the source material.</p></div><blockquote class="track-note">Published lyrics + contemporaneous notes pending.</blockquote></div>
-        <div class="media-column"><div class="media-card"><div class="media-art"><span>Stormlight in the Holler</span></div><div class="player-shell"><p>YouTube Art Track embed placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
+        <div class="story-column">
+          <div class="track-number">06</div>
+          <div class="track-kicker">The storm</div>
+          <h2 class="track-title">Stormlight in the Holler</h2>
+          <div class="track-story">
+            <p>Clouds roll in, thunder groans, rain hits the tin roof, and fear runs like a river. The song does not escape the storm; it looks for light <em>inside</em> it.</p>
+            <p>That is what “stormlight” names. Grace does not wait for the weather to clear. Jesus is described as the light that holds the heart while the night is still happening — steady when the singer cannot stand, guiding without pretending the storm is unreal.</p>
+            <p>Placed after <em>Wind Through the Pines</em>, the contrast is sharp: the God heard in a whisper is the same God trusted in thunder. Quietness and crisis become two conditions of the same relationship.</p>
+          </div>
+          <blockquote class="track-note">“You hold my heart when the night won’t end—<br>Jesus, You’re my stormlight in the holler.”<cite>Stormlight in the Holler</cite></blockquote>
+        </div>
+        <div class="media-column"><div class="media-card"><div class="media-art art-storm"><span>Stormlight in the Holler</span></div><div class="player-shell"><p>Published audio player placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
       </section>
 
-      <div class="transition"><p>After the storm comes the question of hunger.</p><a href="#track-07">Continue to track 07 →</a></div>
+      <div class="transition"><p>After endurance comes a more ordinary test: what remains when need is not dramatic, only persistent.</p><a href="#track-07">Continue to track 07 →</a></div>
 
       <section class="track" id="track-07">
-        <div class="story-column"><div class="track-number">07</div><div class="track-kicker">The story continues</div><h2 class="track-title">Hunger of the Hills</h2><div class="track-story"><p>Track story, lyric reading, and creation notes will be reconstructed here from the source material.</p></div><blockquote class="track-note">Published lyrics + contemporaneous notes pending.</blockquote></div>
-        <div class="media-column"><div class="media-card"><div class="media-art"><span>Hunger of the Hills</span></div><div class="player-shell"><p>YouTube Art Track embed placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
+        <div class="story-column">
+          <div class="track-number">07</div>
+          <div class="track-kicker">The hunger</div>
+          <h2 class="track-title">Hunger of the Hills</h2>
+          <div class="track-story">
+            <p>The imagery becomes materially plain: a bare pantry, hands worked to the bone, empty fields, toil, want. Physical hunger and spiritual hunger are allowed to occupy the same song.</p>
+            <p>The central discovery is that emptiness can reveal what appetite cannot satisfy. The world’s promise is called thin; grace is pictured as bread and rain. The prayer changes from “give me what I want” toward “let Your presence be my portion.”</p>
+            <p>This makes hunger a school of dependence. Scarcity does not become romantic. It becomes a place where the singer learns what he is actually asking to be filled with.</p>
+          </div>
+          <blockquote class="track-note">“When all I have is just a prayer,<br>Your mercy makes me whole.”<cite>Hunger of the Hills</cite></blockquote>
+        </div>
+        <div class="media-column"><div class="media-card"><div class="media-art art-hunger"><span>Hunger of the Hills</span></div><div class="player-shell"><p>Published audio player placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
       </section>
 
-      <div class="transition"><p>The album keeps climbing.</p><a href="#track-08">Continue to track 08 →</a></div>
+      <div class="transition"><p>Dependence lifts the eyes. The landscape that carried struggle begins to read like witness.</p><a href="#track-08">Continue to track 08 →</a></div>
 
       <section class="track" id="track-08">
-        <div class="story-column"><div class="track-number">08</div><div class="track-kicker">The story continues</div><h2 class="track-title">Pine Ridge Praise</h2><div class="track-story"><p>Track story, lyric reading, and creation notes will be reconstructed here from the source material.</p></div><blockquote class="track-note">Published lyrics + contemporaneous notes pending.</blockquote></div>
-        <div class="media-column"><div class="media-card"><div class="media-art"><span>Pine Ridge Praise</span></div><div class="player-shell"><p>YouTube Art Track embed placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
+        <div class="story-column">
+          <div class="track-number">08</div>
+          <div class="track-kicker">The ridge</div>
+          <h2 class="track-title">Pine Ridge Praise</h2>
+          <div class="track-story">
+            <p>By the eighth track, the landscape has changed function. Wind, creek, hills, thunder, fading light and dawn are no longer primarily threats or conditions to endure. They become signs through which praise keeps rising.</p>
+            <p>The repeated confession is simple: You hear me, You catch me, Your mercy echoes. Help comes from God’s hand. Hope comes around the bend.</p>
+            <p>The album is beginning to answer its opening holler. The same hills that received the first cry now return an echo of mercy.</p>
+          </div>
+          <blockquote class="track-note">“Your mercy echoes through it all—<br>So I sing my praise on Pine Ridge.”<cite>Pine Ridge Praise</cite></blockquote>
+        </div>
+        <div class="media-column"><div class="media-card"><div class="media-art art-ridge"><span>Pine Ridge Praise</span></div><div class="player-shell"><p>Published audio player placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
       </section>
 
-      <div class="transition"><p>Praise moves into the quieter work of ash, ember, and prayer.</p><a href="#track-09">Continue to track 09 →</a></div>
+      <div class="transition"><p>Praise does not end the interior work. Before the final shout, the record returns to the fire — this time as offering.</p><a href="#track-09">Continue to track 09 →</a></div>
 
       <section class="track" id="track-09">
-        <div class="story-column"><div class="track-number">09</div><div class="track-kicker">The story continues</div><h2 class="track-title">Ash and Ember Prayer</h2><div class="track-story"><p>Track story, lyric reading, and creation notes will be reconstructed here from the source material.</p></div><blockquote class="track-note">Published lyrics + contemporaneous notes pending.</blockquote></div>
-        <div class="media-column"><div class="media-card"><div class="media-art"><span>Ash and Ember Prayer</span></div><div class="player-shell"><p>YouTube Art Track embed placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
+        <div class="story-column">
+          <div class="track-number">09</div>
+          <div class="track-kicker">The offering</div>
+          <h2 class="track-title">Ash and Ember Prayer</h2>
+          <div class="track-story">
+            <p>The fire imagery from track three returns, but it has changed. Earlier, the fire gave warmth and watchfulness. Here the singer brings himself to it as ash and ember — what remains after burning.</p>
+            <p>The prayer is one of surrender and purification: take what is left, make it true, shape this soul, breathe new fire. Old fears still howl in the night, and the singer remembers roads where hope felt friendless, but the posture is no longer mainly defensive. It is offering.</p>
+            <p>The song’s most important claim may be its smallest: even a spark can be given. Weakness is not disqualified from worship. It becomes the material of the prayer.</p>
+          </div>
+          <blockquote class="track-note">“If all I have is a spark to give,<br>Lord, take it—teach my heart to live.”<cite>Ash and Ember Prayer</cite></blockquote>
+        </div>
+        <div class="media-column"><div class="media-card"><div class="media-art art-embers"><span>Ash and Ember Prayer</span></div><div class="player-shell"><p>Published audio player placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
       </section>
 
-      <div class="transition"><p>The last movement is not an explanation. It is a hallelujah.</p><a href="#track-10">Continue to track 10 →</a></div>
+      <div class="transition"><p>What survives the fire becomes the breath for one last holler.</p><a href="#track-10">Continue to track 10 →</a></div>
 
       <section class="track" id="track-10">
-        <div class="story-column"><div class="track-number">10</div><div class="track-kicker">The final track</div><h2 class="track-title">Holler Hallelujah</h2><div class="track-story"><p>Track story, lyric reading, and creation notes will be reconstructed here from the source material.</p></div><blockquote class="track-note">Published lyrics + contemporaneous notes pending.</blockquote></div>
-        <div class="media-column"><div class="media-card"><div class="media-art"><span>Holler Hallelujah</span></div><div class="player-shell"><p>YouTube Art Track embed placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
+        <div class="story-column">
+          <div class="track-number">10</div>
+          <div class="track-kicker">The hallelujah</div>
+          <h2 class="track-title">Holler Hallelujah</h2>
+          <div class="track-story">
+            <p>The finale opens at sunrise. After storms and nights, the voice that began the album alone in the shadows now stands in daylight and calls itself reborn.</p>
+            <p>The scale expands with every verse. Ridge and river join the song. The valley echoes the name of Jesus. Mountains answer. Heaven joins. The private holler becomes something almost congregational — a front-porch revival carried across the ridges.</p>
+            <p>But the ending is not triumph detached from the earlier tracks. The hallelujah carries all of them inside it: the mud, cold water, firelight, worn boots, whispering pines, storm, hunger, mercy, ash and ember. The praise has weight because the album let the path remain visible.</p>
+          </div>
+          <blockquote class="track-note">“After all the storms and nights I knew,<br>Lord, I stand reborn in You.”<cite>Holler Hallelujah</cite></blockquote>
+        </div>
+        <div class="media-column"><div class="media-card"><div class="media-art art-hallelujah"><span>Holler Hallelujah</span></div><div class="player-shell"><p>Published audio player placeholder.</p><a class="player-link" href="https://music.youtube.com/@BrendonRColeman" target="_blank" rel="noopener noreferrer">Open YouTube Music ↗</a></div></div></div>
       </section>
 
       <section class="closing">
         <span class="eyebrow">After the holler</span>
-        <h2>The record ended. The path did not.</h2>
-        <p>This closing reflection will be written after the ten song narratives are reconstructed, so it can answer what the album actually became rather than imposing a conclusion before the evidence is back in view.</p>
+        <h2>The record ends where it was always trying to go: not out of the hollow, but into praise inside it.</h2>
+        <p>Looking across the ten songs, the recurring landscape never disappears. Hills, rivers, roads, pines, storms, hunger, fire and night remain present all the way through. What changes is the relationship to them. At first they hold the pressure of wandering and fear. By the end they have become places of encounter, dependence, offering and witness.</p>
+        <p>That is why the album’s final movement does not feel like leaving the holler behind. The holler itself has been transformed. The place that first received a weary cry becomes the place from which hallelujah can finally ring.</p>
+        <p class="closing-line">The path was never erased. It became part of the praise.</p>
       </section>
     </main>
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brendonrcoleman.com/sitemap.xml

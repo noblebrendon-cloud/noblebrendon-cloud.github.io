@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Independent Open-Source Contribution | Brendon R. Coleman</title>
+  <meta name="description" content="Evidence record for Brendon R. Coleman's merged contribution to overkillkulture/builder-revolution: WO-one-click-video-room, authored commit, validation, merge, owner recognition, and persistent code on main." />
+  <link rel="canonical" href="https://brendonrcoleman.com/external-evidence/build-guild-video-room/" />
+  <meta property="og:title" content="Independent Open-Source Contribution | Brendon R. Coleman" />
+  <meta property="og:description" content="Inspectable evidence for a merged Builder Revolution / Build Guild contribution by Brendon R. Coleman." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://brendonrcoleman.com/external-evidence/build-guild-video-room/" />
+  <meta property="og:site_name" content="Brendon R. Coleman" />
+  <meta name="twitter:card" content="summary" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://brendonrcoleman.com/#person",
+      "name": "Brendon R. Coleman",
+      "url": "https://brendonrcoleman.com/",
+      "sameAs": ["https://github.com/noblebrendon-cloud"]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://github.com/overkillkulture/builder-revolution#repository",
+      "name": "builder-revolution",
+      "codeRepository": "https://github.com/overkillkulture/builder-revolution",
+      "programmingLanguage": ["TypeScript", "TSX"]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://brendonrcoleman.com/external-evidence/build-guild-video-room/#page",
+      "url": "https://brendonrcoleman.com/external-evidence/build-guild-video-room/",
+      "name": "Independent Open-Source Contribution — Builder Revolution / Build Guild",
+      "datePublished": "2026-08-19",
+      "about": {"@id": "https://brendonrcoleman.com/#person"},
+      "mentions": {"@id": "https://github.com/overkillkulture/builder-revolution#repository"},
+      "description": "Evidence record for Brendon R. Coleman's merged implementation of WO-one-click-video-room in the Builder Revolution repository.",
+      "citation": [
+        {
+          "@type": "CreativeWork",
+          "name": "Work-order specification",
+          "url": "https://github.com/overkillkulture/builder-revolution/pull/2"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Authored implementation commit",
+          "url": "https://github.com/overkillkulture/builder-revolution/commit/c004d3e44cf36381ac1abdd955bc8bfce5fc9722"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Merged pull request #5",
+          "url": "https://github.com/overkillkulture/builder-revolution/pull/5"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Repository-owner recognition",
+          "url": "https://github.com/overkillkulture/builder-revolution/pull/5#issuecomment-5288543158"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <link rel="stylesheet" href="/assets/style.css?v=external-evidence-1" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YY69T9F3G3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YY69T9F3G3');
+</script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="brand">
+        <a href="/">Brendon R. Coleman</a>
+        <span class="tag">external evidence</span>
+      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/letters-of-light/">Letters</a>
+        <a href="/essays/">Essays</a>
+        <a href="/books/">Books</a>
+        <a href="/music/">Music</a>
+        <a href="/about/">About</a>
+        <a href="/speaking/">Speaking</a>
+        <a href="/mini-sites/">Projects</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <span class="section-kicker">External Technical Contribution</span>
+          <h1 class="hero-title">Builder Revolution / Build Guild</h1>
+          <p class="hero-subtitle">
+            In August 2026, Brendon R. Coleman completed the predefined <code>WO-one-click-video-room</code> work order in <code>overkillkulture/builder-revolution</code>, adding a room-aware invite-link workflow to the project's public video meeting interface. The contribution passed the repository's required validation and was merged into <code>main</code>.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <header class="section-header">
+          <span class="section-kicker">Record</span>
+          <h2 class="section-title">What was implemented</h2>
+        </header>
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-content">
+              <h3 class="card-title">Work Order</h3>
+              <p class="card-text"><code>WO-one-click-video-room</code>: make the public <code>/meet</code> room shareable with a copy-invite action while preserving the active room parameter.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-content">
+              <h3 class="card-title">Implementation</h3>
+              <p class="card-text">Constructs the invite from the current browser origin, preserves <code>?room=&lt;room&gt;</code>, writes the URL to the clipboard, and shows a two-second <code>Copied!</code> success state.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-content">
+              <h3 class="card-title">Scope</h3>
+              <p class="card-text">One changed file: <code>src/app/meet/page.tsx</code>. The merged PR recorded 30 additions and 7 deletions, with no dependency, backend, database, authentication, or Jitsi changes.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-content">
+              <h3 class="card-title">Validation</h3>
+              <p class="card-text"><code>npm run typecheck</code> passed and <code>git diff --check</code> passed. The pull request was merged into <code>main</code> on August 13, 2026 local time / August 14 UTC.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <header class="section-header">
+          <span class="section-kicker">Independent Recognition</span>
+          <h2 class="section-title">Repository-owner statement</h2>
+        </header>
+        <div class="bio-copy">
+          <p>
+            After the contribution was accepted, repository owner <code>overkillkulture</code> described it as the <strong>“First outside-builder WO delivery in Build Guild history.”</strong> The same public comment stated that two automated fleet seats had previously claimed the work order and failed to complete it.
+          </p>
+          <p>
+            This record preserves that statement as supporting context rather than as the primary claim. The stronger evidence is the inspectable chain: predefined task, attributable implementation, repository validation, merged pull request, owner recognition, and code that remains present upstream.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <header class="section-header">
+          <span class="section-kicker">Primary Evidence</span>
+          <h2 class="section-title">Inspect the source record</h2>
+        </header>
+        <div class="artifact-list">
+          <a href="https://github.com/overkillkulture/builder-revolution/pull/2" class="artifact-link" target="_blank" rel="noopener noreferrer">
+            <div class="artifact-item">
+              <div class="artifact-meta">
+                <span class="artifact-title">Work-order specification</span>
+                <span class="artifact-desc">The repository change that placed <code>WO-one-click-video-room</code> into the Build Guild newcomer path and specified the required behavior.</span>
+              </div>
+              <div class="artifact-action muted">GitHub &rarr;</div>
+            </div>
+          </a>
+          <a href="https://github.com/overkillkulture/builder-revolution/commit/c004d3e44cf36381ac1abdd955bc8bfce5fc9722" class="artifact-link" target="_blank" rel="noopener noreferrer">
+            <div class="artifact-item">
+              <div class="artifact-meta">
+                <span class="artifact-title">Authored implementation commit</span>
+                <span class="artifact-desc"><code>c004d3e44cf36381ac1abdd955bc8bfce5fc9722</code>, authored and committed by <code>noblebrendon-cloud</code>.</span>
+              </div>
+              <div class="artifact-action muted">GitHub &rarr;</div>
+            </div>
+          </a>
+          <a href="https://github.com/overkillkulture/builder-revolution/pull/5" class="artifact-link" target="_blank" rel="noopener noreferrer">
+            <div class="artifact-item">
+              <div class="artifact-meta">
+                <span class="artifact-title">Merged pull request #5</span>
+                <span class="artifact-desc">Accepted contribution, validation record, merge metadata, and public discussion.</span>
+              </div>
+              <div class="artifact-action muted">GitHub &rarr;</div>
+            </div>
+          </a>
+          <a href="https://github.com/overkillkulture/builder-revolution/pull/5#issuecomment-5288543158" class="artifact-link" target="_blank" rel="noopener noreferrer">
+            <div class="artifact-item">
+              <div class="artifact-meta">
+                <span class="artifact-title">Repository-owner recognition</span>
+                <span class="artifact-desc">Public statement identifying the contribution as the first outside-builder work-order delivery in Build Guild history.</span>
+              </div>
+              <div class="artifact-action muted">GitHub &rarr;</div>
+            </div>
+          </a>
+          <a href="https://github.com/overkillkulture/builder-revolution/blob/main/src/app/meet/page.tsx" class="artifact-link" target="_blank" rel="noopener noreferrer">
+            <div class="artifact-item">
+              <div class="artifact-meta">
+                <span class="artifact-title">Current implementation on main</span>
+                <span class="artifact-desc">The upstream file still contains the room-aware copy-invite implementation.</span>
+              </div>
+              <div class="artifact-action muted">GitHub &rarr;</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="contact-box">
+          <h2 class="section-title">Evidence boundary</h2>
+          <p class="muted">
+            This page records a specific accepted external contribution. It does not treat one merged task as a general credential or broad performance claim. Each statement above is tied to an inspectable public source.
+          </p>
+          <div class="contact-actions">
+            <a href="/external-evidence/" class="btn btn-secondary">All External Evidence</a>
+            <a href="https://github.com/noblebrendon-cloud" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Brendon's GitHub</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-nav">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/external-evidence/">External Evidence</a>
+        <a href="/essays/">Essays</a>
+        <a href="/books/">Books</a>
+        <a href="/music/">Music</a>
+      </div>
+      <div class="footer-meta">&copy; <span id="y"></span> Brendon R. Coleman. All rights reserved.</div>
+    </footer>
+  </div>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>

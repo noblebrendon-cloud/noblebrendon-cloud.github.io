@@ -8649,6 +8649,65 @@
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    (() => {
+      const nav = document.querySelector(".aum-part-nav");
+      const links = Array.from(nav.querySelectorAll('a[href^="#part-"]'));
+      const parts = links.map((link) => document.querySelector(link.hash));
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      let activeIndex = -1;
+      let framePending = false;
+
+      const centerLink = (link) => {
+        const desiredLeft = link.offsetLeft - ((nav.clientWidth - link.offsetWidth) / 2);
+        const maxLeft = Math.max(0, nav.scrollWidth - nav.clientWidth);
+        nav.scrollTo({
+          left: Math.max(0, Math.min(maxLeft, desiredLeft)),
+          behavior: reducedMotion.matches ? "auto" : "smooth"
+        });
+      };
+
+      const setActive = (nextIndex) => {
+        if (nextIndex === activeIndex) return;
+        if (activeIndex >= 0) links[activeIndex].removeAttribute("aria-current");
+        activeIndex = nextIndex;
+        links[activeIndex].setAttribute("aria-current", "location");
+        centerLink(links[activeIndex]);
+      };
+
+      const synchronize = () => {
+        framePending = false;
+        const marker = nav.getBoundingClientRect().height + 24;
+        let nextIndex = 0;
+
+        parts.forEach((part, index) => {
+          if (part.getBoundingClientRect().top <= marker) nextIndex = index;
+        });
+
+        setActive(nextIndex);
+      };
+
+      const scheduleSynchronization = () => {
+        if (framePending) return;
+        framePending = true;
+        window.requestAnimationFrame(synchronize);
+      };
+
+      const synchronizeFromLocation = () => {
+        const hashIndex = links.findIndex((link) => link.hash === window.location.hash);
+        if (hashIndex >= 0) setActive(hashIndex);
+        scheduleSynchronization();
+      };
+
+      window.addEventListener("scroll", scheduleSynchronization, { passive: true });
+      window.addEventListener("resize", scheduleSynchronization, { passive: true });
+      window.addEventListener("hashchange", synchronizeFromLocation);
+      window.addEventListener("popstate", synchronizeFromLocation);
+      reducedMotion.addEventListener?.("change", scheduleSynchronization);
+
+      synchronizeFromLocation();
+      window.addEventListener("load", scheduleSynchronization, { once: true });
+    })();
   </script>
 </body>
 </html>

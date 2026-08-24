@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://brendonrcoleman.com/</loc></url>
+  <url>
+    <loc>https://brendonrcoleman.com/</loc>
+    <lastmod>2026-08-24</lastmod>
+  </url>
   <url><loc>https://brendonrcoleman.com/about/</loc></url>
   <url><loc>https://brendonrcoleman.com/letters-of-light/</loc></url>
   <url><loc>https://brendonrcoleman.com/letters/</loc></url>
   <url><loc>https://brendonrcoleman.com/essays/</loc></url>
   <url>
     <loc>https://brendonrcoleman.com/articles/</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-08-24</lastmod>
+  </url>
+  <url>
+    <loc>https://brendonrcoleman.com/articles/agency-under-mediation/</loc>
+    <lastmod>2026-08-24</lastmod>
   </url>
   <url>
     <loc>https://brendonrcoleman.com/articles/when-help-becomes-control/</loc>

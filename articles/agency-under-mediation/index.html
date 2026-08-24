@@ -67,8 +67,6 @@
 
   <link rel="stylesheet" href="/assets/style.css" />
   <style>
-    html { scroll-behavior: smooth; }
-
     body.aum-page {
       --aum-ink: #f2eadb;
       --aum-muted: #b7ac99;
@@ -191,6 +189,8 @@
       width: 100%;
     }
 
+    .aum-cover { height: auto; }
+
     .aum-cover-placeholder {
       align-items: center;
       color: var(--aum-faint);
@@ -217,6 +217,7 @@
     .aum-introduction__body {
       font-size: 1.06rem;
       max-width: 72ch;
+      min-width: 0;
     }
 
     .aum-introduction__body p { color: var(--aum-muted); }
@@ -234,6 +235,7 @@
       font-family: Georgia, "Times New Roman", serif;
       font-size: clamp(1.05rem, 2.1vw, 1.4rem);
       margin: 30px 0;
+      max-width: 100%;
       overflow-x: auto;
       padding: 18px 0;
       white-space: nowrap;
@@ -273,6 +275,7 @@
 
     .aum-arc strong { color: var(--aum-ink); }
     .aum-arc span { color: var(--aum-muted); }
+    .aum-arc li > * { min-width: 0; }
 
     .aum-nav-wrap {
       background: rgba(10, 11, 10, 0.96);
@@ -344,6 +347,8 @@
       margin-bottom: clamp(48px, 7vw, 84px);
     }
 
+    .aum-part-opener > * { min-width: 0; }
+
     .aum-part-heading h2 {
       font-family: Georgia, "Times New Roman", serif;
       font-size: clamp(2.35rem, 5vw, 5rem);
@@ -403,7 +408,10 @@
     }
 
     .aum-prose p,
-    .aum-prose li { color: #c8bead; }
+    .aum-prose li {
+      color: #c8bead;
+      overflow-wrap: anywhere;
+    }
 
     .aum-prose a {
       color: #e2bd74;
@@ -457,10 +465,17 @@
     .aum-prose strong { color: var(--aum-ink); }
 
     .aum-prose pre,
-    .aum-prose table,
-    .aum-prose math[display="block"] {
+    .aum-prose table {
       max-width: 100%;
       overflow-x: auto;
+    }
+
+    .aum-prose math[display="block"] {
+      display: block;
+      max-width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-block: 0.35rem;
     }
 
     .aum-prose pre {
@@ -500,7 +515,7 @@
       padding: clamp(64px, 9vw, 118px) 0;
     }
 
-    .aum-afterword__body { max-width: 72ch; }
+    .aum-afterword__body { max-width: 72ch; min-width: 0; }
     .aum-afterword__body > p { color: var(--aum-muted); font-size: 1.06rem; }
 
     .aum-diagnostic {
@@ -528,6 +543,10 @@
       .aum-cover-placeholder,
       .aum-cover { max-width: 720px; }
       .aum-part-opener { gap: 32px; }
+      .aum-part,
+      .aum-prose h3,
+      .aum-prose h4,
+      .aum-prose h5 { scroll-margin-top: calc(var(--aum-nav-height) + 28px); }
     }
 
     @media (max-width: 640px) {
@@ -542,11 +561,7 @@
       .aum-nav-wrap { margin-inline: -16px; }
       .aum-part-nav { grid-auto-columns: 132px; }
       .aum-part-nav a { padding-inline: 14px; }
-      .aum-part { scroll-margin-top: calc(var(--aum-nav-height) + 18px); }
       .aum-part-heading h2 { font-size: clamp(2.35rem, 12.5vw, 3.9rem); }
-      .aum-prose h3,
-      .aum-prose h4,
-      .aum-prose h5 { scroll-margin-top: calc(var(--aum-nav-height) + 18px); }
     }
 
     @media (prefers-reduced-motion: reduce) {

@@ -4,10 +4,20 @@
     <loc>https://brendonrcoleman.com/</loc>
     <lastmod>2026-08-24</lastmod>
   </url>
-  <url><loc>https://brendonrcoleman.com/about/</loc></url>
+  <url>
+    <loc>https://brendonrcoleman.com/about/</loc>
+    <lastmod>2026-08-27</lastmod>
+  </url>
   <url><loc>https://brendonrcoleman.com/letters-of-light/</loc></url>
   <url><loc>https://brendonrcoleman.com/letters/</loc></url>
-  <url><loc>https://brendonrcoleman.com/essays/</loc></url>
+  <url>
+    <loc>https://brendonrcoleman.com/essays/</loc>
+    <lastmod>2026-08-27</lastmod>
+  </url>
+  <url>
+    <loc>https://brendonrcoleman.com/essays/non-allegiance-to-outcome/</loc>
+    <lastmod>2026-08-27</lastmod>
+  </url>
   <url>
     <loc>https://brendonrcoleman.com/articles/</loc>
     <lastmod>2026-08-24</lastmod>

@@ -25,14 +25,6 @@
       "featured": false
     },
     {
-      "slug": "scooters",
-      "title": "Scooters",
-      "url": "/services/scooters/",
-      "summary": "Diagnostic direction and repair planning for small electric equipment.",
-      "category": "Equipment",
-      "featured": false
-    },
-    {
       "slug": "handyman",
       "title": "Handyman",
       "url": "/services/handyman/",

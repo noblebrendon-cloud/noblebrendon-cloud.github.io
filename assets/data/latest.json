@@ -1,9 +1,4 @@
 {
-  "latest_project": {
-    "title": "Scooter Diagnostics",
-    "url": "/services/scooters/",
-    "description": "Field diagnostics, repair direction, and practical service routing."
-  },
   "latest_whitepaper": {
     "title": "The Value of Deterministic Publishing",
     "url": "/whitepapers/deterministic-publishing/",

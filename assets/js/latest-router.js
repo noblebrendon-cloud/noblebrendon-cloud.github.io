@@ -25,6 +25,20 @@
     insertAfter(researchPill, methodsPill);
   }
 
+  // Use the site's existing navigation augmentation, independently of the manifest.
+  // This adds the Merch route wherever this script is already loaded; it does not
+  // load Shopify on the home page or alter the existing Methods/latest behavior.
+  [primaryNav, routePills, document.querySelector('.footer-nav')].forEach((nav) => {
+    if (!nav || nav.querySelector('a[href="/merch/"]')) return;
+    const link = document.createElement('a');
+    link.href = '/merch/';
+    link.textContent = 'Merch';
+    if (nav === routePills) link.className = 'route-pill';
+    const anchor = nav.querySelector('a[href="/music/"]') || nav.querySelector('a[href="/books/"]');
+    if (anchor) insertAfter(anchor, link);
+    else nav.appendChild(link);
+  });
+
   try {
     const res = await fetch('/assets/data/latest.json', { cache: 'no-store' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);

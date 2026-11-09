@@ -1,0 +1,54 @@
+/* Scoped presentation for the We the People United Flock collection. */
+.flock-page { --accent-base: #e86068; --accent-hover: #ff9298; }
+.flock-page .site-shell { max-width: 900px; }
+.flock-page .btn-primary { background: #b72e3b; border-color: #b72e3b; color: #fff; }
+.flock-page .btn-primary:hover { background: #942633; border-color: #942633; }
+.flock-page .section-kicker { color: #ff9298; }
+.flock-page .hero-title { max-width: 16ch; font-size: clamp(2.3rem, 6vw, 3.8rem); line-height: 1.09; letter-spacing: -.035em; }
+.flock-page .hero-subtitle { max-width: 64ch; }
+.flock-page .hero { padding-top: 24px; }
+.flock-page .collection-note { color: #b7b7bf; font-size: .9rem; }
+.flock-page .reading-link { color: #ff9298; text-decoration: underline; text-underline-offset: .2em; }
+.flock-page a:focus-visible, .flock-page summary:focus-visible { outline: 3px solid #ff9298; outline-offset: 5px; }
+.flock-page .skip-link { position: absolute; left: 16px; top: -100px; padding: .7rem 1rem; background: #fff; color: #111; z-index: 10; }
+.flock-page .skip-link:focus { top: 12px; }
+.flock-feature { border-top: 3px solid #e86068; padding: clamp(1.2rem, 4vw, 2rem); background: #151518; border-radius: 0 0 12px 12px; }
+.flock-feature h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1.2; margin: .65rem 0 1rem; }
+.flock-feature p { max-width: 65ch; }
+.flock-topics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem; }
+.flock-topics h3 { font-size: 1.1rem; }
+.flock-topics p { font-size: .95rem; }
+.flock-record { margin: 1.5rem 0; padding: 0; list-style: none; }
+.flock-record li { border-left: 2px solid #664046; padding: .2rem 0 1.4rem 1.25rem; }
+.flock-record li:last-child { padding-bottom: .2rem; }
+.flock-record time { display: block; color: #ff9298; font-size: .88rem; margin-bottom: .4rem; }
+.flock-record p { margin-bottom: .4rem; }
+.flock-page .essay-body { text-align: left; padding: clamp(1.1rem, 4vw, 2.4rem); }
+.flock-page .essay-body p, .flock-page .essay-body li { color: #d1d1d7; }
+.flock-page .essay-body h2 { font-size: clamp(1.4rem, 3.5vw, 1.8rem); margin-top: 2.25rem; line-height: 1.3; }
+.flock-page .essay-body h2:first-child { margin-top: 0; }
+.flock-page .essay-body a { overflow-wrap: anywhere; }
+.flock-page .essay-body :target, .flock-page section:target { scroll-margin-top: 1.5rem; }
+.flock-page .source-link { white-space: nowrap; font-size: .86em; }
+.flock-page .article-toc { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; padding: 1rem 0; border-block: 1px solid var(--border); margin-top: .5rem; }
+.flock-page .article-toc a { font-size: .9rem; text-decoration: underline; text-underline-offset: .2em; }
+.flock-page .record-facts { margin: 1.5rem 0; }
+.flock-page .record-facts dt { font-weight: 700; color: #f4f4f5; margin-top: 1rem; }
+.flock-page .record-facts dd { margin: .3rem 0 0; color: #d1d1d7; }
+.flock-page .editorial-principle { margin: 1.75rem 0; padding: 1rem 1.25rem; border-left: 3px solid #e86068; background: #1d171a; }
+.flock-page .editorial-principle p { color: #f4f4f5; margin: 0; font-size: 1.1rem; }
+.flock-page .sources { padding-left: 1.4rem; }
+.flock-page .sources li { margin: 1rem 0; padding-left: .3rem; }
+.flock-page .sources small { display: block; color: #b7b7bf; line-height: 1.6; }
+.flock-page .scope-note { font-size: .9rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+@media (max-width: 600px) { .flock-topics { grid-template-columns: 1fr; gap: .6rem; } .flock-page .hero { padding-top: 8px; } }
+@media (prefers-reduced-motion: reduce) { .flock-page a { transition: none; } }
+@media print {
+  .flock-page, .flock-page .essay-body, .flock-page .flock-feature { background: #fff; color: #111; }
+  .flock-page .site-header, .flock-page .site-footer, .flock-page .cta-row, .flock-page .article-toc, .flock-page .skip-link { display: none; }
+  .flock-page .site-shell { max-width: none; padding: 0; }
+  .flock-page p, .flock-page h1, .flock-page h2, .flock-page h3, .flock-page li, .flock-page dd, .flock-page dt, .flock-page a, .flock-page small { color: #111 !important; }
+  .flock-page .essay-body { padding: 0; border: 0; }
+  .flock-page .editorial-principle { background: #fff; }
+  .flock-page .sources a::after { content: " (" attr(href) ")"; overflow-wrap: anywhere; font-size: .8em; }
+}

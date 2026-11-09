@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beyond the Publish Button | Brendon R. Coleman</title>
+  <meta name="description" content="How Signal Agent’s social campaign architecture connects source material, approvals, publishing, and verified results without losing the thread." />
+  <meta name="author" content="Brendon R. Coleman" />
+  <link rel="canonical" href="https://brendonrcoleman.com/articles/beyond-the-publish-button/" />
+  <meta property="og:title" content="Beyond the Publish Button" />
+  <meta property="og:description" content="Building Signal Agent’s social campaign architecture: source material, approvals, publishing, and verified results without losing the thread." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://brendonrcoleman.com/articles/beyond-the-publish-button/" />
+  <meta property="og:site_name" content="Brendon R. Coleman" />
+  <meta property="article:published_time" content="2026-11-09" />
+  <meta property="article:author" content="Brendon R. Coleman" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Beyond the Publish Button" />
+  <meta name="twitter:description" content="Building Signal Agent’s social campaign architecture. The diagram shows the design. The implementation has to earn it." />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Beyond the Publish Button","alternativeHeadline":"Building Signal Agent’s social campaign architecture","description":"How Signal Agent’s social campaign architecture connects source material, approvals, publishing, and verified results without losing the thread.","datePublished":"2026-11-09","dateModified":"2026-11-09","author":{"@type":"Person","name":"Brendon R. Coleman","url":"https://brendonrcoleman.com/"},"publisher":{"@type":"Person","name":"Brendon R. Coleman"},"mainEntityOfPage":"https://brendonrcoleman.com/articles/beyond-the-publish-button/","articleSection":"Architecture and Development","inLanguage":"en-US"}
+  </script>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <style>
+    .architecture-flow { margin:2rem 0; padding:clamp(1rem,3vw,2rem); border:1px solid #e63c45; border-radius:1rem; color:#f5f5f5; background-color:#10151a; background-image:linear-gradient(#ffffff05 1px,transparent 1px),linear-gradient(90deg,#ffffff05 1px,transparent 1px); background-size:20px 20px; font-family:system-ui,-apple-system,"Segoe UI",sans-serif; }
+    .architecture-flow .flow-header { text-align:center; margin-bottom:1.5rem; }
+    .architecture-flow .flow-header h3 { color:#fff; font-size:clamp(1.25rem,3vw,1.75rem); line-height:1.25; margin:0 0 .5rem; }
+    .architecture-flow .flow-header p { color:#c5cbd2; font-size:.95rem; line-height:1.5; margin:0; }
+    .architecture-flow .flow-card { display:grid; grid-template-columns:2.5rem minmax(0,1fr); align-items:center; gap:1rem; border:1px solid #ef4444; border-radius:.8rem; padding:1rem; background:#192027; }
+    .architecture-flow .flow-number { display:grid; place-items:center; width:2.5rem; height:2.5rem; border-radius:.55rem; background:#be202b; color:#fff; font-weight:800; }
+    .architecture-flow .flow-card strong { display:block; color:#fff; font-size:clamp(1rem,2.4vw,1.3rem); line-height:1.3; }
+    .architecture-flow .flow-card p { color:#d3d7dd; margin:.3rem 0 0; font-size:.95rem; line-height:1.5; }
+    .architecture-flow .flow-arrow { color:#ff525a; font-size:2rem; font-weight:800; line-height:1.2; text-align:center; padding:.3rem 0; }
+    .architecture-flow .flow-platforms { display:flex; justify-content:center; flex-wrap:wrap; gap:.5rem; padding:0; margin:0; list-style:none; }
+    .architecture-flow .flow-platforms li { border:1px solid #939ca6; border-radius:.5rem; padding:.5rem .75rem; background:#1c232b; color:#fff; font-size:.9rem; line-height:1.4; margin:0; }
+    .architecture-flow figcaption { margin:1.5rem 0 0; padding-top:1rem; border-top:1px solid #49525d; color:#c5cbd2; font-size:.85rem; line-height:1.6; }
+    @media(max-width:480px) { .architecture-flow .flow-card { grid-template-columns:minmax(0,1fr); gap:.65rem; padding:.85rem; } .architecture-flow .flow-number { width:2rem; height:2rem; font-size:.85rem; } }
+    @media print { .architecture-flow { break-inside:avoid; print-color-adjust:exact; -webkit-print-color-adjust:exact; } }
+  </style>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YY69T9F3G3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YY69T9F3G3');
+  </script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="brand"><a href="/">Brendon R. Coleman</a><span class="tag">article</span></div>
+      <nav class="nav" aria-label="Primary"><a href="/">Home</a><a href="/articles/">Articles</a><a href="/essays/">Essays</a><a href="/letters/">Letters</a><a href="/public-architecture/">Research</a><a href="/methods/">Methods</a><a href="/books/">Books</a></nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <span class="section-kicker">Architecture &amp; Development Note</span>
+          <h1 class="hero-title">Beyond the Publish Button</h1>
+          <p class="hero-subtitle">Building Signal Agent’s social campaign architecture</p>
+          <div class="essay-meta" aria-label="Article metadata"><time datetime="2026-11-09">November 9, 2026</time><span>Brendon R. Coleman</span><span>Signal Agent, campaign governance, and verified publishing</span></div>
+          <div class="cta-row"><a class="btn btn-secondary" href="/articles/">Back to articles</a></div>
+        </div>
+      </section>
+      <section class="section">
+        <article class="contact-box essay-body">
+<p>An idea should be able to travel into the world without losing its source, its boundaries, or the evidence of what happened to it. That is the problem I am working on with Signal Agent.</p>
+<p>One of the clearest expressions of that problem emerged while I was making clothing advertisements.</p>
+<p>I was creating content for REVOLUTION: product images, short videos, spoken reflections, and different ways of presenting the ideas behind the clothing. Some pieces were humorous. Others were about love, conviction, resilience, and refusing to pass pain on to somebody else.</p>
+<p>The immediate questions were practical. Did the shirt look right? Was the message clear? Were the captions accurate? Could the same idea work in more than one format?</p>
+<p>Then the work reached distribution.</p>
+<p>Which account should publish each piece? Which version was approved? Was the approval for the creative itself, or for releasing it publicly? How would I know whether a scheduled post actually appeared? Where would the results go afterward?</p>
+<p>This was not the beginning of Signal Agent. It was a situation that made part of its architecture much easier to see.</p>
+<p><strong>Making content, authorizing its release, and verifying what happened are different jobs. I want the system to preserve those differences.</strong></p>
+<h2>Production is only part of the work</h2>
+<p>A finished-looking creative is not necessarily a release-ready creative.</p>
+<p>During these experiments, generated assets needed checks for misspelled captions, altered product lettering, and promotional claims that had not been established. An image could look convincing while containing a discount I had not authorized. A garment could look plausible while failing to preserve the actual design.</p>
+<p>Those are not reasons to abandon the tools. They are reasons to stop treating generation as the final decision.</p>
+<p>There is a difference between an asset existing, an asset being reviewed, and an asset being approved for a particular public use.</p>
+<p>That distinction matters beyond clothing. An essay can become a short video, but the shorter version can lose a qualification that made the original argument accurate. A quotation can be copied correctly while being presented in a context that changes its meaning. A civic post can be well written and still be sent to the wrong account.</p>
+<p>The question is not simply whether a tool can produce an output. It is whether the work remains connected to its purpose as it moves between tools.</p>
+<h2>A brand is not a campaign, and a campaign is not an account</h2>
+<p>The distinction became especially clear as I considered using We the People United alongside my other projects.</p>
+<p>REVOLUTION is a clothing identity. We the People United is a civic identity. A specific series of LOVE videos is a campaign. A Facebook Page or an Instagram profile is a publishing destination.</p>
+<p>These things are related, but they are not interchangeable.</p>
+<p>A brand can contain multiple campaigns. A campaign can have multiple releases. A release can have versions adapted for different destinations. None of that means every connected account should receive every piece of content.</p>
+<p>Connecting an account establishes a technical capability. It does not, by itself, establish permission to use that account for a particular message.</p>
+<p>If a clothing campaign belongs on a civic Page, that should be an intentional editorial decision—not an accident caused by both accounts appearing in the same dashboard.</p>
+<p><strong>Access answers, “Can this action be performed?” Authorization answers, “Should this particular action be performed here?”</strong></p>
+<p>I want Signal Agent’s design to keep those questions separate.</p>
+<h2>The architecture taking shape</h2>
+<p>The social campaign architecture has a simple overall flow:</p>
+<p><strong>Campaign context → approved release packet → publishing adapter → authorized destination → verified results → campaign evidence.</strong></p>
+<figure aria-labelledby="architecture-title" class="architecture-flow">
+<header class="flow-header">
+<h3 id="architecture-title">Signal Agent Social Campaign Architecture</h3>
+<p>Campaign governance, publishing, and feedback flow</p>
+</header>
+<div class="flow-card"><span aria-hidden="true" class="flow-number">01</span><div><strong>Signal Agent</strong><p>Campaign identity, source material, assets, approvals</p></div></div>
+<div aria-hidden="true" class="flow-arrow">↓</div>
+<div class="flow-card"><span aria-hidden="true" class="flow-number">02</span><div><strong>Campaign Release Packet</strong><p>Approved content, captions, media, destination rules</p></div></div>
+<div aria-hidden="true" class="flow-arrow">↓</div>
+<div class="flow-card"><span aria-hidden="true" class="flow-number">03</span><div><strong>Metricool / Publishing Adapters</strong><p>Schedule, publish, retrieve platform results</p></div></div>
+<div aria-hidden="true" class="flow-arrow">↓</div>
+<ul aria-label="Intended publishing destinations" class="flow-platforms"><li>Facebook</li><li>Instagram</li><li>TikTok</li><li>X</li><li>LinkedIn</li></ul>
+<div aria-hidden="true" class="flow-arrow">↓</div>
+<div class="flow-card"><span aria-hidden="true" class="flow-number">04</span><div><strong>Performance &amp; Feedback</strong><p>Publication receipts, views, engagement, clicks, conversions</p></div></div>
+<div aria-hidden="true" class="flow-arrow">↓</div>
+<div class="flow-card"><span aria-hidden="true" class="flow-number">05</span><div><strong>Permanent Evidence Record</strong><p>Results return to the campaign’s permanent evidence record</p></div></div>
+<figcaption>Conceptual architecture, not a declaration that every depicted integration is implemented. Platform labels represent intended destinations; support and permissions must be checked for each release.</figcaption>
+</figure>
+<h3>Signal Agent preserves campaign context</h3>
+<p>Within the broader system I am designing, Signal Agent connects the campaign’s purpose, source material, related assets, decisions, and next-action proposals.</p>
+<p>That context should explain why the work exists, not merely where the files are stored.</p>
+<p>A video should remain connected to the idea or source that produced it. A revised caption should remain connected to the version it replaced. A campaign should retain the difference between a proposed experiment and an authorized release.</p>
+<p>Coordination does not mean the agent grants itself permission. Human decisions and explicit policies still determine what may proceed.</p>
+<h3>The release packet defines the specific action</h3>
+<p>The campaign release packet is the boundary between creative work and public execution.</p>
+<p>It should identify the exact media and caption versions, the intended account, the publishing format, the authorized timing, and the relevant approval. It should also carry constraints: organic publication only, for example, with no paid promotion authorized.</p>
+<p>A broad instruction such as “promote the brand” leaves too much unresolved. A release packet should say what is allowed to happen with this material, at this destination, under these conditions.</p>
+<p>The packet can reference existing source files rather than create competing copies of the campaign’s history. Its job is to make the authorized release precise.</p>
+<h3>Publishing adapters carry out the release</h3>
+<p>Metricool is the publishing interface I am using as a practical reference for this layer. But I do not want the identity or history of a campaign to depend on one provider.</p>
+<p>The adapter should translate an approved release into the instructions a particular publishing tool accepts. It should report what it submitted and return whatever identifiers or status information are actually available.</p>
+<p>It should not silently rewrite the message, switch accounts, substitute an asset, or treat a rejected request as successful.</p>
+<p>The same architecture should accommodate a manual publishing step. A person can publish through a platform’s native interface and return the resulting URL and verification record to the campaign.</p>
+<p><strong>Automation is a method of execution, not the definition of completion.</strong></p>
+<h3>Results return to the campaign</h3>
+<p>Publication should not be the point where the campaign loses its memory.</p>
+<p>The result needs to return to the source record: what was submitted, what the provider reported, what could be independently checked, and what remains uncertain.</p>
+<p>Performance data belongs there too, associated with the correct release and the period in which it was collected.</p>
+<p>That gives the next decision something more reliable than a vague recollection that a certain video “did well.”</p>
+<h2>Approval has to remain attached to the approved work</h2>
+<p>One detail matters enough to state plainly: approving a creative is not necessarily approving its publication everywhere.</p>
+<p>A reviewer might approve a video’s wording and imagery while leaving its destinations or timing undecided. An owner might approve publication to one account but not another. Authorization to post organically is not authorization to spend advertising money.</p>
+<p>Likewise, approval should not float forward automatically after a material change. If the caption, asset, destination, or promotional claim changes, the system needs to determine whether the existing approval still applies.</p>
+<p>This does not require every minor action to become a ceremony. It requires the scope of permission to be clear.</p>
+<p>The purpose is not to make creativity subordinate to paperwork. It is to prevent the machinery from making decisions I never meant to delegate.</p>
+<h2>Scheduled is not published. Published is not yet verified.</h2>
+<p>A publishing workflow needs more than a success message.</p>
+<p>A provider may accept a request before a post becomes publicly available. A multi-platform release may succeed at one destination and fail at another. A timeout may leave the outcome unknown rather than prove that nothing happened.</p>
+<p>I want those distinctions represented explicitly.</p>
+<p>A scheduled-post identifier is evidence of scheduling. A reported publication status is evidence of what the provider reported. A checked public post is evidence of an observable result. Each supports a different claim.</p>
+<p>Where possible, verification should confirm that the intended account published the intended media and caption—not merely that some URL exists.</p>
+<p>An uncertain outcome also changes what should happen next. Automatically trying again could produce a duplicate. The next step should be to check the existing submission before creating another one.</p>
+<p>The record should preserve corrections and failed attempts rather than overwrite them with a cleaner-looking history. It should also record outcomes separately for each destination, instead of declaring the whole campaign published because one platform succeeded.</p>
+<p>This is the difference between a dashboard that looks complete and a process whose results can be explained.</p>
+<h2>Feedback should inform the next decision—not become the authority</h2>
+<p>I want the evidence loop to include views, engagement, clicks, and conversions where those measurements are available and appropriately attributable.</p>
+<p>But those numbers answer different questions.</p>
+<p>Attention is not the same as agreement. A reaction is not the same as a product visit. A product visit is not the same as a purchase. A purchase recorded during a campaign is not automatically proof that one particular post caused it.</p>
+<p>For civic commentary, popularity is not evidence that a claim is true. For faith-centered work, reach is not a substitute for faithfulness to the message.</p>
+<p>The system should help me notice consequences without letting the most attention-grabbing consequence become the whole purpose of the work.</p>
+<p>That also means preserving the conditions of an experiment. If I change the presenter, setting, opening line, garment, and caption simultaneously, I may learn that one complete creative performed differently from another. I cannot honestly claim that I isolated the effect of the opening line.</p>
+<p>Missing data should remain missing, not become a zero. Limited observations should remain limited, not become confident predictions. Collection dates, metric definitions, and attribution limits matter because they determine what an observation can reasonably support.</p>
+<p>The feedback loop should produce better questions and better-informed decisions—not an automatic instruction to repeat whatever attracted the most attention.</p>
+<h2>How this connects to Source to Series</h2>
+<p>This architecture fits alongside the broader methods I have been developing.</p>
+<p>Source to Series is about giving one substantial idea several purposeful expressions: an article, a short video, a visual, a reading, or a teaching piece. The signal-to-lane method is about testing an emerging direction and deciding, from evidence, whether it deserves a lasting place in the content library.</p>
+<p>Social distribution belongs between those activities and their observed consequences.</p>
+<p>It should not sever the work from its source. It should carry the work outward while preserving enough context for the response to return meaningfully.</p>
+<p>An essay does not stop being the source because it becomes a short video. A campaign does not become permanent merely because it produced several assets. A successful release does not authorize the next one automatically.</p>
+<p>Each transition deserves an appropriate decision and a record of why that decision was made.</p>
+<h2>The next proof is deliberately small</h2>
+<p>This is a working architecture, not a claim that every integration is operational or that an autonomous campaign system has been verified end to end.</p>
+<p>There are real products, generated creative assets, and publishing connections being established. Those are concrete components. They are not yet the same thing as a complete governed release loop.</p>
+<p>The next test does not need to involve every platform or every campaign.</p>
+<p>It needs one source-linked asset, one approved version, one explicitly authorized account, one publication, and one verified receipt returned to the campaign’s record.</p>
+<p>Then the record should make it possible to answer straightforward questions: Who authorized the release? What exact material went out? Where did it appear? What was verified? What remains unknown?</p>
+<p>Performance measurements can be added when they become available. Their absence should not erase the publication record or tempt the system to invent results.</p>
+<p>A small release that can answer those questions is a more useful foundation than a large demonstration that cannot.</p>
+<h2>The point is continuity</h2>
+<p>When I say that things are coming together, I do not mean every problem is solved.</p>
+<p>I mean the relationships between the things I have been building are becoming clearer. Writing, visual production, campaign planning, publishing, and analysis are beginning to form a connected process.</p>
+<p>The ambition is not simply to produce more material. It is to let creative work travel farther without leaving its meaning and accountability behind.</p>
+<p>People encountering that work are not merely endpoints in a distribution diagram. They are the reason the work has consequences. The internal structure should help me remain responsible for those consequences, not hide behind the tools that delivered them.</p>
+<p>That is what I want Signal Agent to support: a process in which ideas can be developed, reviewed, released, encountered, and reconsidered without losing the thread.</p>
+<p><strong>The diagram shows the design. The implementation has to earn it.</strong></p>
+        </article>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-nav"><a href="/">Home</a><a href="/articles/">Articles</a><a href="/essays/">Essays</a><a href="/letters/">Letters</a><a href="/public-architecture/">Research</a><a href="/methods/">Methods</a></div>
+      <div class="footer-meta">&copy; <span id="y"></span> Brendon R. Coleman</div>
+    </footer>
+  </div>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>

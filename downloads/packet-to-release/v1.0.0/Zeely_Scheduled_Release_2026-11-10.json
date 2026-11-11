@@ -1,0 +1,246 @@
+{
+  "method": "Packet to Release",
+  "method_version": "1.0.0",
+  "record_type": "public_worked_example",
+  "example_name": "Five-video campaign across four networks",
+  "evidence_as_of_utc": "2026-11-10T23:24:27.571Z",
+  "evidence_basis": "A private provider read-back record; private identifiers, access links, media links, captions, and media assets are omitted here.",
+  "counts": {
+    "unique_assets": 5,
+    "destinations": 4,
+    "expected_schedules": 20,
+    "verified_schedules": 20,
+    "unexpected_schedules": 0,
+    "by_platform": {
+      "facebook": 5,
+      "instagram": 5,
+      "tiktok": 5,
+      "youtube": 5
+    },
+    "prepared_manual_handoffs": 5
+  },
+  "window": {
+    "first_date": "2026-11-11",
+    "last_date": "2026-11-24",
+    "calendar_days_inclusive": 14,
+    "timezone": "America/Indianapolis"
+  },
+  "independent_states": {
+    "readiness": "checked_for_selected_items",
+    "approval": "granted_within_recorded_scope",
+    "scheduling": "verified",
+    "publication": "not_observed",
+    "performance": "not_collected"
+  },
+  "approval_summary": {
+    "source": "Explicit owner instruction to schedule the twenty mapped posts across roughly two weeks.",
+    "scope": "Five selected video revisions across four confirmed destinations; personal Facebook posting handled manually.",
+    "timing_discretion_delegated": true,
+    "canonical_designation": null
+  },
+  "verification_summary": {
+    "all_twenty_item_checks_passed": true,
+    "provider_state": "PENDING",
+    "draft": false,
+    "auto_publish": true,
+    "publication_evidence": null,
+    "performance_results": null
+  },
+  "preparation_summary": {
+    "duplicate_uploads_excluded": 1,
+    "subtitle_corrections": 2,
+    "audio_preserved_in_corrected_versions": true,
+    "source_media_included_in_example": false
+  },
+  "timing_basis": "Metricool best-time scores requested for November 11–17, 2026; weekday patterns reused for the second week. Posts spaced over two weeks. Timing scores guide placement and do not guarantee results.",
+  "schedule": [
+    {
+      "asset_ref": "A01",
+      "platform": "instagram",
+      "scheduled_at": "2026-11-11T10:15:00-05:00"
+    },
+    {
+      "asset_ref": "A01",
+      "platform": "facebook",
+      "scheduled_at": "2026-11-11T12:00:00-05:00"
+    },
+    {
+      "asset_ref": "A01",
+      "platform": "tiktok",
+      "scheduled_at": "2026-11-12T10:00:00-05:00"
+    },
+    {
+      "asset_ref": "A01",
+      "platform": "youtube",
+      "scheduled_at": "2026-11-12T16:00:00-05:00"
+    },
+    {
+      "asset_ref": "A02",
+      "platform": "facebook",
+      "scheduled_at": "2026-11-13T10:00:00-05:00"
+    },
+    {
+      "asset_ref": "A02",
+      "platform": "instagram",
+      "scheduled_at": "2026-11-13T10:15:00-05:00"
+    },
+    {
+      "asset_ref": "A02",
+      "platform": "youtube",
+      "scheduled_at": "2026-11-16T16:00:00-05:00"
+    },
+    {
+      "asset_ref": "A02",
+      "platform": "tiktok",
+      "scheduled_at": "2026-11-16T18:00:00-05:00"
+    },
+    {
+      "asset_ref": "A03",
+      "platform": "facebook",
+      "scheduled_at": "2026-11-17T10:00:00-05:00"
+    },
+    {
+      "asset_ref": "A03",
+      "platform": "tiktok",
+      "scheduled_at": "2026-11-18T10:00:00-05:00"
+    },
+    {
+      "asset_ref": "A03",
+      "platform": "instagram",
+      "scheduled_at": "2026-11-18T10:15:00-05:00"
+    },
+    {
+      "asset_ref": "A03",
+      "platform": "youtube",
+      "scheduled_at": "2026-11-18T16:00:00-05:00"
+    },
+    {
+      "asset_ref": "A04",
+      "platform": "facebook",
+      "scheduled_at": "2026-11-20T10:00:00-05:00"
+    },
+    {
+      "asset_ref": "A04",
+      "platform": "instagram",
+      "scheduled_at": "2026-11-20T10:15:00-05:00"
+    },
+    {
+      "asset_ref": "A04",
+      "platform": "tiktok",
+      "scheduled_at": "2026-11-20T10:30:00-05:00"
+    },
+    {
+      "asset_ref": "A04",
+      "platform": "youtube",
+      "scheduled_at": "2026-11-20T16:00:00-05:00"
+    },
+    {
+      "asset_ref": "A05",
+      "platform": "tiktok",
+      "scheduled_at": "2026-11-23T18:00:00-05:00"
+    },
+    {
+      "asset_ref": "A05",
+      "platform": "facebook",
+      "scheduled_at": "2026-11-24T10:00:00-05:00"
+    },
+    {
+      "asset_ref": "A05",
+      "platform": "instagram",
+      "scheduled_at": "2026-11-24T10:15:00-05:00"
+    },
+    {
+      "asset_ref": "A05",
+      "platform": "youtube",
+      "scheduled_at": "2026-11-24T16:00:00-05:00"
+    }
+  ],
+  "remaining_work": [
+    "After scheduled times, observe each platform outcome and record the publication evidence.",
+    "Investigate failures or uncertain outcomes before retrying, using the existing schedule record to avoid duplicates.",
+    "Collect performance over a recorded window; keep unavailable measurements null.",
+    "Keep manual personal-profile outcomes separate until evidence is supplied."
+  ],
+  "interpretation_limits": [
+    "The snapshot proves twenty pending schedules were read back and matched; it does not prove twenty publications.",
+    "No publication or performance result is inferred from the passage of time.",
+    "This example does not establish an installed skill, implemented API, Signal Agent adapter, or automatic monitoring task.",
+    "Five prepared manual personal-profile handoffs are separate from the twenty verified provider schedules; no manual publication is asserted."
+  ],
+  "copy_provenance": {
+    "unit": "caption families before per-platform adaptation",
+    "recovered_original_showcase_caption_families": 2,
+    "reconstructed_speaking_video_caption_families": 3,
+    "new_caption_families": 0,
+    "by_asset": [
+      {
+        "asset_ref": "A01",
+        "provenance_kind": "recovered_original"
+      },
+      {
+        "asset_ref": "A02",
+        "provenance_kind": "reconstructed_from_sources"
+      },
+      {
+        "asset_ref": "A03",
+        "provenance_kind": "reconstructed_from_sources"
+      },
+      {
+        "asset_ref": "A04",
+        "provenance_kind": "recovered_original"
+      },
+      {
+        "asset_ref": "A05",
+        "provenance_kind": "reconstructed_from_sources"
+      }
+    ],
+    "note": "The two showcase caption families came from the earlier release packet. The three speaking-video caption families were reconstructed from recovered scripts/context; they were not presented as recovered original social posts. Platform formatting and descriptive titles were recorded as adaptations."
+  },
+  "manual_handoffs": [
+    {
+      "asset_ref": "A01",
+      "platform": "facebook",
+      "destination_type": "personal_profile",
+      "publishing_route": "manual",
+      "preparation_state": "prepared",
+      "publication_state": "not_observed",
+      "publication_evidence": null
+    },
+    {
+      "asset_ref": "A02",
+      "platform": "facebook",
+      "destination_type": "personal_profile",
+      "publishing_route": "manual",
+      "preparation_state": "prepared",
+      "publication_state": "not_observed",
+      "publication_evidence": null
+    },
+    {
+      "asset_ref": "A03",
+      "platform": "facebook",
+      "destination_type": "personal_profile",
+      "publishing_route": "manual",
+      "preparation_state": "prepared",
+      "publication_state": "not_observed",
+      "publication_evidence": null
+    },
+    {
+      "asset_ref": "A04",
+      "platform": "facebook",
+      "destination_type": "personal_profile",
+      "publishing_route": "manual",
+      "preparation_state": "prepared",
+      "publication_state": "not_observed",
+      "publication_evidence": null
+    },
+    {
+      "asset_ref": "A05",
+      "platform": "facebook",
+      "destination_type": "personal_profile",
+      "publishing_route": "manual",
+      "preparation_state": "prepared",
+      "publication_state": "not_observed",
+      "publication_evidence": null
+    }
+  ]
+}

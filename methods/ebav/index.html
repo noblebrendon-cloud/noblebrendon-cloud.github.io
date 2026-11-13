@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Evidence-Bound Adversarial Verification (EBAV) | Open Methods | Brendon R. Coleman</title>
+  <meta name="description" content="EBAV v0.1.0: a seven-stage evidence-governed field method for independently challenging AI-assisted software and separately authorizing release actions. Formal working paper and operating protocol." />
+  <meta name="author" content="Brendon R. Coleman" />
+  <link rel="canonical" href="https://brendonrcoleman.com/methods/ebav/" />
+  <meta property="og:title" content="Evidence-Bound Adversarial Verification (EBAV)" />
+  <meta property="og:description" content="Formal working paper and open method for claim-to-evidence verification, adversarial challenge, regression-driven correction, and scoped human authorization." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://brendonrcoleman.com/methods/ebav/" />
+  <meta property="article:published_time" content="2026-11-13" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="/assets/style.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Evidence-Bound Adversarial Verification (EBAV): A Governed Field Method for AI-Assisted Software Verification and Release", "author": {"@type": "Person", "name": "Brendon R. Coleman", "url": "https://brendonrcoleman.com/"}, "datePublished": "2026-11-13", "dateModified": "2026-11-13", "version": "0.1.0", "inLanguage": "en-US", "url": "https://brendonrcoleman.com/methods/ebav/", "license": "https://creativecommons.org/licenses/by/4.0/", "isAccessibleForFree": true, "keywords": "adversarial software verification; AI-assisted development; bounded authorization; evidence provenance; reproducible builds; mutation testing", "description": "Working paper and operating specification for Evidence-Bound Adversarial Verification, a seven-stage evidence-governed field method. Not peer reviewed or certified."}</script>
+  <style>
+    .ebav-method { max-width: 890px; min-width: 0; }
+    .ebav-method h2 { margin: 2.1rem 0 .85rem; scroll-margin-top: 1.75rem; }
+    .ebav-method h3 { margin: 1.45rem 0 .65rem; scroll-margin-top: 1.75rem; }
+    .ebav-method p, .ebav-method li { line-height: 1.8; }
+    .ebav-method li { margin-bottom: .45rem; }
+    .ebav-method ul,.ebav-method ol { padding-left: 1.4rem; }
+    .ebav-method table { width: 100%; border-collapse: collapse; margin: 1.4rem 0; font-size: .94rem; }
+    .ebav-method th,.ebav-method td { border: 1px solid var(--border); padding: .7rem; vertical-align: top; text-align: left; overflow-wrap: anywhere; }
+    .ebav-method pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 1rem; border: 1px solid var(--border); border-radius: .4rem; overflow-x: auto; }
+    .ebav-method code { overflow-wrap: anywhere; }
+    .ebav-method blockquote { border-left: 4px solid var(--accent-base); margin: 1.5rem 0; padding: .3rem 1rem; font-size: 1.05rem; }
+    .ebav-method a { overflow-wrap: anywhere; }
+    .ebav-lede { font-size: 1.1rem; max-width: 780px; }
+    .ebav-meta { color: var(--muted); margin-top: .6rem; }
+    .ebav-tools { display: flex; gap:.75rem; flex-wrap:wrap; padding: 1rem 0; }
+    .ebav-tools a { display:inline-block; border:1px solid var(--border); padding:.65rem 1rem; border-radius:.45rem; }
+    .ebav-note { border:1px solid var(--border); border-radius:.5rem; padding: 1.1rem; margin:1.4rem 0; }
+    @media(max-width:720px){.ebav-method table {display:block;overflow-x:auto;} .ebav-method {padding: 20px 16px;}}
+  </style>
+</head>
+<body><div class="site-shell">
+<header class="site-header"><div class="brand"><a href="/">Brendon R. Coleman</a><span class="tag">open method · v0.1.0</span></div>
+<nav class="nav" aria-label="Primary"><a href="/">Home</a><a href="/articles/">Articles</a><a href="/public-architecture/">Research</a><a href="/methods/" aria-current="page">Methods</a><a href="/books/">Books</a><a href="/about/">About</a></nav></header>
+<main>
+<section class="hero"><div class="hero-content"><span class="section-kicker">Open Methods · Field Method · Version 0.1.0</span>
+<h1 class="hero-title">Evidence-Bound Adversarial Verification (EBAV)</h1>
+<p class="hero-subtitle">A governed field method for AI-assisted software verification and release</p>
+<p class="ebav-meta">Brendon R. Coleman · November 13, 2026 · Working paper · CC BY 4.0</p>
+<div class="cta-row"><a class="btn btn-secondary" href="/methods/">Open Methods</a><a class="btn btn-secondary" href="#abstract">Read the paper</a><a class="btn btn-secondary" href="/methods/ebav/PAPER.md">Markdown source</a><a class="btn btn-secondary" href="/methods/ebav/EBAV-PROTOCOL.md">Operating specification</a></div>
+</div></section>
+<section class="section"><div class="contact-box"><h2 class="section-title">The governing principle</h2><p class="ebav-lede"><strong>No claim may authorize a greater action than the evidence supporting that claim establishes.</strong></p>
+<p>Construct → Freeze → Challenge → Classify → Correct → Reverify → Authorize.</p>
+<p>EBAV is a proposed methodology integrating established security and release-engineering practices. This is not a claim of a new industry standard, formal certification, peer review, or experimentally established superiority.</p></div></section>
+<section class="section"><article class="contact-box essay-body ebav-method" aria-label="EBAV formal working paper">
+<div class="ebav-note"><strong>Publication status:</strong> Version 0.1.0 (field method / working paper). The Jesus Is King case is retrospective and evidence-bounded; no public launch or validated comparative trial is claimed. A Zenodo DOI has not yet been issued. This page will be updated after a verified archive exists.</div>
+<h2 id="abstract">Abstract</h2>
+<p>AI-assisted software development can produce executable artifacts faster than the evidence needed to trust, install, or deploy them. Conventional testing, peer inspection, reproducible builds, supply-chain provenance, and change authorization address different portions of that problem; none alone establishes all the facts required for a controlled operational transition. <strong>Evidence-Bound Adversarial Verification (EBAV)</strong> is proposed here as a compositional field method that binds seven activities into one governed cycle: <strong>Construct, Freeze, Challenge, Classify, Correct, Reverify, Authorize</strong>. The proposed invariant is that <strong>no claim may authorize a greater action than the evidence supporting that claim establishes</strong>. EBAV separates the builder, adversarial reviewer, owner-authorizer, and operator; preserves rejected revisions and their evidence; translates confirmed failures into retained regression tests; and treats the authorization of a particular artifact as separate from authorization to install or execute it.</p>
+<p>This paper defines EBAV's claims, gate state, records, minimum evidence, failure semantics, authorization boundaries, and validation agenda. A retrospective case account draws on reported review records from the <em>Jesus Is King</em> (JIK) application and its Phase 15B2 cloud-inventory wrapper, where successive independent reviews found defects not exposed by increasingly large passing suites. Those reports illustrate EBAV's operational logic but do <strong>not</strong> establish comparative effectiveness, formal certification, cryptographic reviewer identity, or public deployment readiness. The contribution is an inspectable workflow synthesis rather than a claim to have invented its constituent techniques. EBAV v0.1.0 is released as a field method for independent replication and empirical evaluation.</p>
+<p><strong>Keywords:</strong> adversarial verification; evidence provenance; AI-assisted software engineering; bounded authorization; reproducible builds; mutation testing; release governance.</p>
+<h2 id="1-introduction-the-evidence-to-authority-gap">1. Introduction: the evidence-to-authority gap</h2>
+<p>A software team may be able to say that a unit test passed but still be unable to say whether the shipped package came from the tested source, whether another party challenged the assumptions behind the tests, whether the target server is the one intended, or whether the person approving a package also authorized a database migration. These are distinct claims with different evidence requirements. The risk grows in AI-assisted development when drafting, editing, reviewing, and summarizing can be compressed into one conversational workflow. A coherent explanation from the same system that generated the code is not independent assurance.</p>
+<p>EBAV addresses the <strong>evidence-to-authority gap</strong>: movement from a limited observation (for example, <em>tests passed in a mock environment</em>) to an unjustified operational conclusion (<em>therefore this tool may run in production</em>). It does not replace threat modeling, secure coding, formal methods, penetration testing, or provider-specific operational controls. Instead, it supplies a governance envelope around those practices: exact candidate identity, challenge, falsifiable evidence, independent disposition, bounded human authorization, and retained uncertainty.</p>
+<p>The central formulation is:</p>
+<blockquote>
+<p><strong>EBAV invariant:</strong> No claim may authorize a greater action than the evidence supporting that claim establishes.</p>
+</blockquote>
+<p>This is a normative design rule, not a mathematically proven property of any implementation. The gates must be enforced through procedure and, where feasible, independently testable controls.</p>
+<h2 id="2-position-relative-to-established-work">2. Position relative to established work</h2>
+<p>EBAV deliberately combines practices that predate it. The following relationships are based on published primary sources rather than assertions of novelty.</p>
+<table>
+<thead>
+<tr>
+  <th>Established practice</th>
+  <th>What it contributes</th>
+  <th>What EBAV adds as a workflow choice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Structured code inspection</td>
+  <td>Distinct inspection roles, criteria, and defect classification (Fagan, 1976) [1]</td>
+  <td>Preserves a reviewer's challenge as evidence tied to an exact candidate and gate decision.</td>
+</tr>
+<tr>
+  <td>Mutation testing</td>
+  <td>Deliberately changed programs probe whether tests detect faults (Jia &amp; Harman, 2011) [2]</td>
+  <td>Requires a distinction between targeted assertion catches and harness stops; mutations alone cannot certify correctness.</td>
+</tr>
+<tr>
+  <td>Secure development guidance</td>
+  <td>NIST SSDF frames preparation, protection, development, and vulnerability response [3]</td>
+  <td>Adds explicit claim-to-authorization scoping and preserves conditional decisions in each transition.</td>
+</tr>
+<tr>
+  <td>Security testing guidance</td>
+  <td>OWASP WSTG catalogs adaptable security-testing methods [4]</td>
+  <td>Requires threat-driven negative cases and recordable reviewer dispositions, not only a checklist.</td>
+</tr>
+<tr>
+  <td>Reproducible builds</td>
+  <td>Matching defined source, build environment, and instructions produce bit-identical artifacts [5]</td>
+  <td>Separates byte identity from safety and from permission to deploy.</td>
+</tr>
+<tr>
+  <td>Software-supply-chain provenance</td>
+  <td>SLSA specifies build provenance expectations and levels; in-toto describes attestations about ordered steps [6,7]</td>
+  <td>Uses identity and evidence records without claiming SLSA conformance or cryptographic attestations unless actually established.</td>
+</tr>
+<tr>
+  <td>AI risk management</td>
+  <td>NIST AI RMF's Generative AI Profile addresses voluntary risk-management practices [8]</td>
+  <td>Makes review-source independence, uncertainty, and human authority explicit in AI-assisted coding.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Novelty boundary.</strong> EBAV's proposed contribution is the <strong>composition and operating contract</strong>: (a) promote only bounded claims, (b) preserve immutable candidate revisions, (c) require adversarial review independent of builder self-attestation, (d) turn confirmed defects into retained tests, and (e) keep operational approval distinct from artifact acceptance. The paper does <strong>not</strong> assert priority over all earlier workflows, invent new cryptography, claim certification, or offer experimental evidence of superiority.</p>
+<h2 id="3-model-and-terminology">3. Model and terminology</h2>
+<h3 id="3-1-core-objects">3.1 Core objects</h3>
+<p>Let a candidate state be:</p>
+<p><code>Sₙ = (Aₙ, Iₙ, Tₙ, Eₙ, Fₙ, Gₙ)</code></p>
+<p>where <strong>A</strong> is an artifact or implementation, <strong>I</strong> its explicitly pinned identity (for example source commit and artifact digests), <strong>T</strong> the test set and environment, <strong>E</strong> the evidence ledger, <strong>F</strong> the open findings and uncertainty, and <strong>G</strong> the current gate disposition. A review/repair transformation produces a successor state:</p>
+<p><code>Sₙ → (challenge, repair, review) → Sₙ₊₁</code></p>
+<p>An <strong>evidence-bounded claim</strong> is a tuple:</p>
+<p><code>C = (subject, assertion, scope, method, evidence_refs, limits, observed_at, reviewer)</code></p>
+<p>An <strong>authorization</strong> is not an inference from <code>C</code>; it is a separate, affirmative event:</p>
+<p><code>U = (actor_as_recorded, action, target, artifact_identity, preconditions, exclusions, expiry_or_session, evidence_ref)</code></p>
+<p>A release gate is a decision about a specified set of claims and acceptance criteria. Valid states are <code>PASS</code>, <code>CONDITIONAL</code>, <code>FAIL</code>, and <code>NOT_REVIEWED</code>. A CONDITIONAL decision identifies remaining evidence gaps and does not silently promote an artifact to the next operational authority level.</p>
+<h3 id="3-2-evidence-classes">3.2 Evidence classes</h3>
+<p>The ledger distinguishes <strong>independently reproduced</strong> results (IR), <strong>directly observed</strong> results (DO), <strong>owner-attested</strong> actions (OA), <strong>builder-reported</strong> checks (BR), <strong>inference</strong> (IN), and <strong>unknown/unverified</strong> matters (UN). An independent review of transferred copies is not the same claim as a live inspection of authoritative originals. A checksum verifies equality to a digest if the digest source is trusted; it does not prove who created the file, whether the contents are true, or whether the action was authorized.</p>
+<h3 id="3-3-non-negotiable-invariants">3.3 Non-negotiable invariants</h3>
+<ol>
+<li><strong>Identity:</strong> An approval or PASS names the exact candidate revision and evidence boundary. Any material successor receives its own identity.</li>
+<li><strong>Preservation:</strong> Rejected and superseded candidates are retained; repair creates a successor instead of rewriting the reviewed original.</li>
+<li><strong>Challenge:</strong> Builder self-tests do not substitute for independent adversarial review. Organizational, tooling, and model-family independence must be described, not assumed.</li>
+<li><strong>Evidence honesty:</strong> Missing stdout, partial captures, redactions, unverified timestamps, or inherited permissions remain explicit limitations; a consistent ledger is not proof of authentic external execution.</li>
+<li><strong>Regression retention:</strong> A confirmed defect leads to a reproducible negative test or an explicit documented reason that reproduction is not feasible.</li>
+<li><strong>Least authority:</strong> Package acceptance does not authorize installation; installation does not authorize migrations, secrets access, public intake, or unrelated provider changes.</li>
+<li><strong>Fail-closed uncertainty:</strong> Ambiguous identity, unsafe output capture, incomplete process cleanup, uncertain provider state, or a failed review blocks the relevant advancement without silent retry.</li>
+<li><strong>Confidentiality:</strong> Public evidence packages must omit secret payloads, live challenge codes, access tokens, and unnecessarily identifying operator data. Hashes are not redaction.</li>
+</ol>
+<h2 id="4-the-ebav-seven-stage-protocol">4. The EBAV seven-stage protocol</h2>
+<h3 id="stage-1-construct">Stage 1 — Construct</h3>
+<p>The builder receives a bounded task and a written scope that separates requested outcomes, excluded actions, assumptions, environment, and acceptance criteria. It produces a candidate and baseline tests. The builder may report tests but cannot certify that its own implementation satisfies the independent review gate.</p>
+<p><strong>Minimum outputs:</strong> task contract; candidate source; dependency/environment description; baseline test identifiers; known limitations; excluded operations.</p>
+<h3 id="stage-2-freeze">Stage 2 — Freeze</h3>
+<p>Identify exact source and artifacts with suitable cryptographic digests and source-control references. Preserve test definitions, commands, environments and results. Choose whether the unit of identity is a commit, tree, manifest, archive, binary, or all of them. Record build reproducibility separately from source provenance and package acceptance.</p>
+<p><strong>Minimum outputs:</strong> immutable candidate identifier; manifest of files and checksums; source/rebuild bindings; preservation statement; disclosure of unavailable evidence.</p>
+<h3 id="stage-3-challenge">Stage 3 — Challenge</h3>
+<p>A reviewer not acting as the builder validates the seal, inspects source and trust boundaries, runs baseline tests in an appropriate isolated environment, then independently devises falsification attempts. Techniques can include malformed-input probes, encoded-data bypasses, permission denial, process-lifecycle races, mutated code, contradictory evidence, stale configuration, and altered authorization messages. Reviews must include the actual mechanism by which a fault could cross a trust boundary, not merely a numerical test count.</p>
+<p><strong>Minimum outputs:</strong> reviewer identity as represented, environment, source/candidate identity, executed tests, independent negative cases, reproduction artifacts, and limits of reviewer independence.</p>
+<h3 id="stage-4-classify">Stage 4 — Classify</h3>
+<p>For each finding, record evidence class, severity or consequence, reproduced/possible/unverified status, affected claim, and remediation criterion. The gate decision is PASS, CONDITIONAL, FAIL, or NOT_REVIEWED <strong>for a named scope</strong>. A PASS may have disclosed limitations; it is not a universal safety claim. CONDITIONAL must not be relabeled PASS merely because prior tests were green.</p>
+<p><strong>Minimum outputs:</strong> decision; findings matrix; tested/not-tested boundaries; confidentiality and authenticity limits; exact next authorized <em>review</em> activity.</p>
+<h3 id="stage-5-correct">Stage 5 — Correct</h3>
+<p>The builder creates a successor candidate. Each reproduced defect is mapped to a code change and regression test that fails against the predecessor and passes against the successor, wherever practical. Tests for previously accepted cases retain stable identities unless changes are explained. Do not silently patch the sealed predecessor or repair provider state under the authority of a code-review request.</p>
+<p><strong>Minimum outputs:</strong> successor identity; change summary; new test IDs; reproduction-before/fix-after evidence; baseline preservation checks.</p>
+<h3 id="stage-6-reverify">Stage 6 — Reverify</h3>
+<p>Independently verify the successor's seal, baseline preservation, original defect fixes, newly introduced changes, and residual risks. Count successful tests, targeted mutation catches, incidental harness failures, and untested environmental assumptions separately. If a new defect is found, return to Stage 4 and Stage 5 with a new successor; do not manufacture a PASS to end a long cycle.</p>
+<p><strong>Minimum outputs:</strong> successor decision with precise coverage; independent test ledger; contradiction checks; conditions that remain.</p>
+<h3 id="stage-7-authorize">Stage 7 — Authorize</h3>
+<p>The human authority issues a <em>new</em>, scoped decision for one concrete transition after reviewing the evidence. Approval identifies artifact digest, target resource or environment, exact action, permissions, duration, preconditions, exclusions, and stop/recovery behavior. Executing the action yields new operational observations that must themselves be reconciled. Acceptance of a package is never transitive permission to install or deploy it.</p>
+<p><strong>Minimum outputs:</strong> affirmative authorization record; exact action binding; execution receipt if run; post-action verification; unreconciled state left explicitly open.</p>
+<h2 id="5-roles-separation-and-threat-model">5. Roles, separation and threat model</h2>
+<p>EBAV distinguishes four functions: <strong>builder</strong> (implementation), <strong>adversarial reviewer</strong> (falsification and independent disposition), <strong>owner-authorizer</strong> (scope and consent), and <strong>operator</strong> (execution within authority). One person may hold multiple responsibilities in a small project, but a review should declare that limitation. Using two AI agents or two chat windows does not guarantee independence if they share source assumptions, training tendencies, or context. A model-generated statement of PASS is a claim requiring reproducible evidence, not an external audit certificate.</p>
+<p>EBAV focuses on these failure modes: unrecognized software defects, unsafe output handling, dishonest or incomplete evidence, confusion between artifact identity and operational target, excessive or inherited privileges, replay or scope expansion of old approvals, and unexamined assumptions about cloud state. It is not a substitute for secure cloud configuration, incident response, identity proofing, or penetration testing against a real deployment.</p>
+<h2 id="6-retrospective-field-case-jesus-is-king-october-november-2026">6. Retrospective field case: Jesus Is King (October–November 2026)</h2>
+<h3 id="6-1-context-and-evidence-boundary">6.1 Context and evidence boundary</h3>
+<p><em>Jesus Is King</em> is a proposed global witness web application using country selection, PostgreSQL-backed submissions, moderation, and public map/count presentation. The case considered here concerns packaging and preparation for controlled private staging—not a completed public launch. The chronology below is reconstructed from operator-provided development and independent-review reports in the working conversation. Some primary logs and original E: artifacts were not independently readable by the reviewer; the table must therefore not be cited as a third-party research audit.</p>
+<h3 id="6-2-package-gates">6.2 Package gates</h3>
+<p>The development record identifies a frozen source commit beginning <code>22629ac3</code>, with two offline builds (A01/B01) that the builder reported were byte-identical and each passed 613 focused tests. A subsequent package review reached PASS within stated limitations after evidence-transfer and owner-provenance checks. Package acceptance (Gate 4) then received a separately recorded human decision, an execution receipt, and an independent post-execution PASS <strong>within the transferred-record evidence scope</strong>. That acceptance expressly did not authorize VM installation, IAM cleanup, database changes, Cloud Run deployment, or public intake.</p>
+<p>The historical E: originals were not directly inspected in the post-execution independent review, and the full 39/39 postcheck console capture was not retained. Thus the case supports <em>bounded evidence management</em> rather than stronger claims about system-wide state.</p>
+<h3 id="6-3-adversarial-inventory-wrapper-revisions">6.3 Adversarial inventory-wrapper revisions</h3>
+<p>The project next developed a read-only cloud inventory wrapper intended to establish current VM and IAM state without executing provider mutations. The builder's own passing tests repeatedly failed to anticipate adversarial cases devised by a separate reviewer.</p>
+<p>The revision sequence is summarized below. Each item distinguishes the builder's reported test baseline from Silas's independent disposition.</p>
+<ul>
+<li><strong>r1 — 104 builder tests reported.</strong> Independent review: CONDITIONAL. Findings included persisted credential-bearing stderr, HTTP logging not blocked by preflight, uncertain interrupted-child handling, and a validator that accepted fabricated COMPLETE evidence.</li>
+<li><strong>r2 — 217 tests and 44 mutants reported caught.</strong> Independent review: CONDITIONAL. Findings included unexpected nested provider output entering evidence, confusion between parent reaping and process-group termination, and an unknown-configuration policy gap.</li>
+<li><strong>r3 — 279 tests and 65 mutants reported caught.</strong> Independent review: CONDITIONAL. Findings included a JSON-escaping bypass in credential detection and a narrow, theoretical process-group identifier reuse race.</li>
+<li><strong>r4 — 349 builder tests and 11 replays reported passing.</strong> As of the supplied development update, the 85-mutation run and final seal remained unfinished, and no independent r4 review had occurred. The candidate was not authorized for Cloud Shell execution.</li>
+</ul>
+<p>The examples demonstrate the methodological value of reviewer-designed counterexamples <strong>in this project</strong>: green baseline suites alone did not justify a run. They do not estimate the method's statistical effectiveness, compare it against other workflows, or show that every revision improved deployed security. The mutation counts describe developer/reviewer reports rather than a separately published reproduction package.</p>
+<h3 id="6-4-what-was-and-was-not-established">6.4 What was and was not established</h3>
+<p><strong>Supported by the case reports:</strong> exact source/package identities, independently reviewed transferred evidence, conditional findings and successor requirements, retained tests, multiple human approval boundaries, and a continued block on live installation. <strong>Not established:</strong> proof that AI reviewers were institutionally independent, verified Cloud Shell compatibility of the unexecuted wrapper, successful paused-IAM cleanup, a bound VM installation, complete live witness-to-map behavior, or public deployment. The reported Phase 15B2 provider inventory had not run as of the case cutoff.</p>
+<h2 id="7-evidence-and-authorization-records">7. Evidence and authorization records</h2>
+<p>A minimal EBAV packet can be implemented in Markdown, JSON, or a governed ledger. Format alone does not make records authentic. The following field contract is a specification proposal, not a claim that it has been implemented as an external service.</p>
+<table>
+<thead>
+<tr>
+  <th>Record</th>
+  <th>Required fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Candidate manifest</td>
+  <td><code>candidate_id</code>, <code>source_ref</code>, <code>file_sha256</code>, <code>build_environment</code>, <code>supersedes</code>, <code>preservation_scope</code></td>
+</tr>
+<tr>
+  <td>Review request</td>
+  <td><code>scope</code>, <code>threat_boundaries</code>, <code>negative_tests</code>, <code>excluded_actions</code>, <code>reviewer_constraints</code></td>
+</tr>
+<tr>
+  <td>Finding</td>
+  <td><code>finding_id</code>, <code>reproduction_status</code>, <code>mechanism</code>, <code>evidence_refs</code>, <code>affected_claim</code>, <code>remediation_criteria</code></td>
+</tr>
+<tr>
+  <td>Gate decision</td>
+  <td><code>candidate_id</code>, <code>status</code>, <code>passed_checks</code>, <code>unverified_checks</code>, <code>limitations</code>, <code>reviewer_as_recorded</code>, <code>evidence_digest</code></td>
+</tr>
+<tr>
+  <td>Human authorization</td>
+  <td><code>approver_as_recorded</code>, <code>action</code>, <code>exact_target</code>, <code>artifact_digest</code>, <code>time_window</code>, <code>exclusions</code>, <code>required_prechecks</code>, <code>stop_conditions</code></td>
+</tr>
+<tr>
+  <td>Operational receipt</td>
+  <td><code>actual_commands</code>, <code>observed_utc_times</code>, <code>exit_codes</code>, <code>stdout_stderr_handling</code>, <code>output_hashes</code>, <code>unresolved_state</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Evidence-strength rule:</strong> <code>hash match</code> is weaker than <code>source-to-output provenance</code>, which in turn is different from <code>correct behavior</code> and <code>authorized operation</code>. A valid record may explicitly show UNKNOWN. Any omitted capture or reviewer-access limitation must survive into downstream summaries.</p>
+<h2 id="8-proposed-evaluation-program">8. Proposed evaluation program</h2>
+<p>EBAV's effectiveness is a <strong>research question</strong>, not a demonstrated outcome. A rigorous subsequent study should pre-register comparison criteria and apply EBAV to multiple projects with different risk profiles.</p>
+<p><strong>Questions and hypotheses.</strong> (RQ1) Does independent EBAV review detect additional unique, reproducible defects beyond developer testing? (RQ2) Does evidence classification reduce unsupported release-readiness claims? (RQ3) Do scoped gates reduce unauthorized operational actions or accidental scope expansion? (RQ4) What engineering time, failure-to-completion, and review burden does EBAV impose?</p>
+<p><strong>Design.</strong> Select several comparable tasks/projects; establish a conventional CI/test-review baseline; use equivalent independent security evaluators; record candidate histories and environmental controls; compare EBAV and baseline under documented budgets. Consider randomized or crossover allocation where feasible, with a blind downstream adjudicator for whether a finding is a genuine defect. Replicate at least one project outside Jesus Is King and one project with non-AI-generated code to distinguish AI-specific from generic effects.</p>
+<p><strong>Measures.</strong> Unique confirmed defects per review-hour; percentage of confirmed defects with retained regressions; mutation score with equivalent/invalid mutants excluded; number of claim-evidence mismatches; number and severity of unauthorized action attempts; false-positive rate; mean time to bounded resolution; and the proportion of decisions with complete provenance. Record negative findings and stopped runs. A growing test count is not itself a security outcome.</p>
+<p><strong>Threats to validity.</strong> One case and retrospective self-selection, reviewer's access to the builder's earlier findings, shared AI model biases, changing tools/providers, inconsistent test environments, unreliable or unavailable primary evidence, confidentiality limits on reproducibility, and reviewer time costs. Positive evidence cannot prove absence of future vulnerabilities.</p>
+<h2 id="9-adoption-publishing-and-responsible-disclosure">9. Adoption, publishing and responsible disclosure</h2>
+<p>EBAV v0.1.0 is designed to be <strong>tool-agnostic</strong>: no requirement to use Claude, ChatGPT, a particular repository service, or a specific cloud provider. An adopter should begin with the highest-risk boundaries and size evidence requirements proportionately. For a static personal page the full protocol may be excessive; for credential-bearing tools that can mutate production systems, authorization and fail-closed evidence capture deserve greater scrutiny.</p>
+<p>Public publication should distinguish the reusable method from private operational artifacts. Do not publish keys, live interactive challenges, sensitive log excerpts, full principal inventories, unreleased deployment access paths, or unredacted owner-machine details. A Zenodo DOI archives a versioned research object; it does not independently validate the research or prove historical priority. GitHub commits and releases preserve a public version history, not cryptographic identity verification of every collaborator.</p>
+<p>The GitHub-to-Zenodo publication route should use a dedicated repository, an explicit license, versioned method documents, machine-readable citation metadata, a tagged GitHub release, and a verified Zenodo record DOI. At the time of this manuscript, no DOI is assigned to EBAV v0.1.0; no DOI should be fabricated or placed in publication metadata before archiving succeeds.</p>
+<h2 id="10-conclusion">10. Conclusion</h2>
+<p>EBAV proposes a disciplined transition from <strong>code that exists</strong>, to <strong>claims with bounded evidence</strong>, to <strong>independently challenged artifacts</strong>, to <strong>human-authorized actions</strong>. Its key practical guardrail is that a result never carries more authority than the actual observation and approval justify. The Jesus Is King field case illustrates how successive adversarial findings can improve tests while the operational gate remains closed; the case does not establish external validation or public-readiness. Version 0.1.0 is a documented, reproducible <em>method proposal</em> ready for external testing, critique, and refinement.</p>
+<h2 id="references">References</h2>
+<ol>
+<li>Fagan, M. E. (1976). Design and code inspections to reduce errors in program development. <em>IBM Systems Journal, 15</em>(3), 182–211. <a href="https://doi.org/10.1147/sj.153.0182">https://doi.org/10.1147/sj.153.0182</a></li>
+<li>Jia, Y., &amp; Harman, M. (2011). An analysis and survey of the development of mutation testing. <em>IEEE Transactions on Software Engineering, 37</em>(5), 649–678. <a href="https://doi.org/10.1109/TSE.2010.62">https://doi.org/10.1109/TSE.2010.62</a></li>
+<li>Souppaya, M., Scarfone, K., &amp; Dodson, D. (2022). <em>Secure Software Development Framework (SSDF) Version 1.1</em>. NIST SP 800-218. <a href="https://doi.org/10.6028/NIST.SP.800-218">https://doi.org/10.6028/NIST.SP.800-218</a></li>
+<li>OWASP Foundation. <em>Web Security Testing Guide</em>, version 4.2. <a href="https://wstg.owasp.org/v4.2/">https://wstg.owasp.org/v4.2/</a></li>
+<li>Reproducible Builds project. <em>Definitions: When is a build reproducible?</em> <a href="https://reproducible-builds.org/docs/definition/">https://reproducible-builds.org/docs/definition/</a></li>
+<li>SLSA Framework. <em>SLSA specification v1.2: Tracks and build provenance.</em> <a href="https://slsa.dev/spec/v1.2/tracks">https://slsa.dev/spec/v1.2/tracks</a></li>
+<li>in-toto Project. (2023). <em>in-toto specification v1.0.0.</em> <a href="https://github.com/in-toto/specification/blob/master/in-toto-spec.md">https://github.com/in-toto/specification/blob/master/in-toto-spec.md</a></li>
+<li>Autio, C., et al. (2024). <em>Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile.</em> NIST AI 600-1. <a href="https://doi.org/10.6028/NIST.AI.600-1">https://doi.org/10.6028/NIST.AI.600-1</a></li>
+<li>Zenodo. <em>Archive a release from GitHub.</em> <a href="https://help.zenodo.org/docs/github/archive-software/github-upload/">https://help.zenodo.org/docs/github/archive-software/github-upload/</a></li>
+<li>Zenodo. <em>.zenodo.json and GitHub release metadata.</em> <a href="https://help.zenodo.org/docs/github/describe-software/zenodo-json/">https://help.zenodo.org/docs/github/describe-software/zenodo-json/</a></li>
+</ol>
+<h2 id="appendix-a-minimal-reviewer-decision-illustrative">Appendix A. Minimal reviewer decision (illustrative)</h2>
+<pre><code class="language-json">{
+  &quot;method&quot;: &quot;EBAV&quot;,
+  &quot;method_version&quot;: &quot;0.1.0&quot;,
+  &quot;candidate_id&quot;: &quot;example-r2&quot;,
+  &quot;candidate_sha256&quot;: &quot;sha256:&lt;full-value-required&gt;&quot;,
+  &quot;review_scope&quot;: &quot;offline, no provider access&quot;,
+  &quot;decision&quot;: &quot;CONDITIONAL&quot;,
+  &quot;evidence_classes&quot;: [&quot;independently_reproduced&quot;, &quot;builder_reported&quot;],
+  &quot;reproduced_findings&quot;: [&quot;EXAMPLE-001&quot;],
+  &quot;limitations&quot;: [&quot;Live environment compatibility not tested&quot;],
+  &quot;authorized_next_action&quot;: &quot;prepare successor candidate for review&quot;,
+  &quot;excluded_actions&quot;: [&quot;installation&quot;, &quot;deployment&quot;, &quot;IAM mutation&quot;]
+}
+</code></pre>
+<h2 id="appendix-b-reuse-declaration">Appendix B. Reuse declaration</h2>
+<p><strong>Version:</strong> v0.1.0 — Field Method / Working Paper (not peer reviewed, not formally certified).<br />
+<strong>Author and proposed-method attribution:</strong> Brendon R. Coleman.<br />
+<strong>AI assistance disclosure:</strong> AI systems assisted research synthesis, manuscript drafting, code-oriented workflow design, and editorial preparation under human direction. This disclosure is not a claim of independent methodological validation.<br />
+<strong>License:</strong> Creative Commons Attribution 4.0 International (CC BY 4.0) for method documentation and reusable templates.<br />
+<strong>Primary case:</strong> Jesus Is King, retrospective reports through November 13, 2026.<br />
+<strong>Archival status:</strong> GitHub/Zenodo release pending external publication and DOI verification.</p>
+
+<div class="ebav-note"><h2 id="reuse-and-archive">Reuse and archival status</h2>
+<p>Documentation and example templates: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Citation metadata and working paper are versioned as 0.1.0. A dedicated GitHub/Zenodo record remains pending; no DOI is assigned. Public records intentionally exclude JIK credentials, interactive challenges, and restricted operational evidence.</p>
+<div class="ebav-tools"><a href="/methods/ebav/PAPER.md">Original Markdown paper</a><a href="/methods/ebav/EBAV-PROTOCOL.md">EBAV protocol</a><a href="/methods/ebav/VALIDATION-PLAN.md">Evaluation plan</a><a href="/methods/ebav/CITATION.cff">Citation metadata</a></div></div>
+</article></section></main>
+<footer class="site-footer"><div class="footer-nav"><a href="/">Home</a><a href="/articles/">Articles</a><a href="/public-architecture/">Research</a><a href="/methods/">Methods</a></div><div class="footer-meta">&copy; <span id="y"></span> Brendon R. Coleman</div></footer></div>
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+</body></html>

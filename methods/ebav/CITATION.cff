@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Cite the EBAV working paper v0.1.0. DOI pending Zenodo archival."
+title: "Evidence-Bound Adversarial Verification (EBAV): A Governed Field Method for AI-Assisted Software Verification and Release"
+type: generic
+authors:
+  - family-names: Coleman
+    given-names: Brendon R.
+version: 0.1.0
+date-released: 2026-11-13
+license: CC-BY-4.0
+url: "https://brendonrcoleman.com/methods/ebav/"
+abstract: >-
+  EBAV is a proposed seven-stage field method for evidence-bounded claims,
+  immutable artifact preservation, independent adversarial software review,
+  regression-driven correction, and separately scoped human authorization.
+keywords:
+  - adversarial software verification
+  - AI-assisted software engineering
+  - release governance
+  - provenance
+  - mutation testing

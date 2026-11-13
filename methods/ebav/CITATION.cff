@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Cite the EBAV working paper v0.1.0. DOI pending Zenodo archival."
 title: "Evidence-Bound Adversarial Verification (EBAV): A Governed Field Method for AI-Assisted Software Verification and Release"
-type: generic
+type: software
 authors:
   - family-names: Coleman
     given-names: Brendon R.

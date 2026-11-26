@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://brendonrcoleman.com/</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-11-25</lastmod>
   </url>
   <url>
     <loc>https://brendonrcoleman.com/about/</loc>
@@ -20,7 +20,7 @@
   </url>
   <url>
     <loc>https://brendonrcoleman.com/essays/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-25</lastmod>
   </url>
   <url>
     <loc>https://brendonrcoleman.com/essays/the-numbers-are-not-the-mission/</loc>
@@ -131,5 +131,9 @@
   <url>
     <loc>https://brendonrcoleman.com/methods/ebav/</loc>
     <lastmod>2026-11-13</lastmod>
+  </url>
+  <url>
+    <loc>https://brendonrcoleman.com/essays/coherent-leadership/</loc>
+    <lastmod>2026-11-25</lastmod>
   </url>
 </urlset>
